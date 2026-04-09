@@ -33,4 +33,11 @@ public class IcdController : ControllerBase
         var diaqnozlar = await _icd.GetDiaqnozlarAsync(bashliqId);
         return Ok(diaqnozlar);
     }
+
+    [HttpGet("diaqnozlar/{diaqnozId}/qeydler")]
+    public async Task<IActionResult> GetQeydler(int diaqnozId)
+    {
+        var qeydler = await _icd.GetQeydlerAsync(diaqnozId);
+        return Ok(qeydler);
+    }
 }

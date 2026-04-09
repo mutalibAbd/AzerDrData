@@ -35,4 +35,13 @@ public class IcdService
             .Select(d => new IcdDiaqnozDto(d.Id, d.Code, d.Name))
             .ToListAsync();
     }
+
+    public async Task<List<IcdQeydDto>> GetQeydlerAsync(int diaqnozId)
+    {
+        return await _db.IcdQeydler
+            .Where(q => q.DiaqnozId == diaqnozId)
+            .OrderBy(q => q.Id)
+            .Select(q => new IcdQeydDto(q.Id, q.Name))
+            .ToListAsync();
+    }
 }

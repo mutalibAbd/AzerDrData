@@ -14,6 +14,8 @@ public class AppDbContext : DbContext
     public DbSet<IcdRubrika> IcdRubrikas => Set<IcdRubrika>();
     public DbSet<IcdBashliq> IcdBashliqlar => Set<IcdBashliq>();
     public DbSet<IcdDiaqnoz> IcdDiaqnozlar => Set<IcdDiaqnoz>();
+    public DbSet<IcdQeyd> IcdQeydler => Set<IcdQeyd>();
+    public DbSet<DoctorSkip> DoctorSkips => Set<DoctorSkip>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -103,6 +105,33 @@ public class AppDbContext : DbContext
             e.HasOne(d => d.Bashliq)
                 .WithMany(b => b.Diaqnozlar)
                 .HasForeignKey(d => d.BashliqId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<IcdQeyd>(e =>
+        {
+            e.ToTable("icd_qeydler");
+            e.Property(q => q.Id).ValueGeneratedNever();
+
+            e.HasOne(q => q.Diaqnoz)
+                .WithMany(d => d.Qeydler)
+                .HasForeignKey(q => q.DiaqnozId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        modelBuilder.Entity<DoctorSkip>(e =>
+        {
+            e.ToTable("doctor_skips");
+            e.HasIndex(ds => new { ds.DoctorId, ds.AnomalyId }).IsUnique();
+
+            e.HasOne(ds => ds.Doctor)
+                .WithMany()
+                .HasForeignKey(ds => ds.DoctorId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            e.HasOne(ds => ds.Anomaly)
+                .WithMany()
+                .HasForeignKey(ds => ds.AnomalyId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }

@@ -59,6 +59,7 @@ public class AnomalyService
                 .SetProperty(a => a.AssignedAt, (DateTime?)null));
 
         // Atomically pick and assign one anomaly using raw SQL for SKIP LOCKED
+        // Excludes anomalies this doctor has previously skipped
         using var conn = _db.Database.GetDbConnection();
         await conn.OpenAsync();
         using var cmd = conn.CreateCommand();
@@ -70,6 +71,7 @@ public class AnomalyService
             WHERE "Id" = (
                 SELECT "Id" FROM anomalies
                 WHERE "Status" = 'pending'
+                  AND "Id" NOT IN (SELECT "AnomalyId" FROM doctor_skips WHERE "DoctorId" = @doctorId)
                 ORDER BY "Id"
                 LIMIT 1
                 FOR UPDATE SKIP LOCKED
@@ -116,6 +118,7 @@ public class AnomalyService
             BashliqName = request.BashliqName,
             DiaqnozCode = request.DiaqnozCode,
             DiaqnozName = request.DiaqnozName,
+            IcdQeydName = request.IcdQeydName,
             Qeyd = request.Qeyd
         });
 
@@ -131,6 +134,20 @@ public class AnomalyService
                 .SetProperty(a => a.Status, "pending")
                 .SetProperty(a => a.AssignedTo, (Guid?)null)
                 .SetProperty(a => a.AssignedAt, (DateTime?)null));
+
+        if (rows > 0)
+        {
+            // Track the skip so this doctor won't get the same anomaly again
+            if (!await _db.DoctorSkips.AnyAsync(ds => ds.DoctorId == doctorId && ds.AnomalyId == anomalyId))
+            {
+                _db.DoctorSkips.Add(new DoctorSkip
+                {
+                    DoctorId = doctorId,
+                    AnomalyId = anomalyId
+                });
+                await _db.SaveChangesAsync();
+            }
+        }
 
         return rows > 0;
     }

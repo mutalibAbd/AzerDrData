@@ -38,8 +38,9 @@ public static class SeedData
 
             int bashliqAutoId = 1;
             int diaqnozAutoId = 1;
+            int qeydAutoId = 1;
 
-            foreach (var r in rubrikas)
+            foreach(var r in rubrikas)
             {
                 var rubrika = new IcdRubrika
                 {
@@ -68,16 +69,31 @@ public static class SeedData
 
                         db.IcdDiaqnozlar.Add(new IcdDiaqnoz
                         {
-                            Id = diaqnozAutoId++,
+                            Id = diaqnozAutoId,
                             BashliqId = bashliq.Id,
                             Code = d.Code,
                             Name = d.Name
                         });
+
+                        if (d.Qeydlər != null)
+                        {
+                            foreach (var q in d.Qeydlər)
+                            {
+                                db.IcdQeydler.Add(new IcdQeyd
+                                {
+                                    Id = qeydAutoId++,
+                                    DiaqnozId = diaqnozAutoId,
+                                    Name = q.Name
+                                });
+                            }
+                        }
+
+                        diaqnozAutoId++;
                     }
                 }
             }
             await db.SaveChangesAsync();
-            Console.WriteLine($"[Seed] ICD hierarchy saved. Bashliqlar: {bashliqAutoId - 1}, Diaqnozlar: {diaqnozAutoId - 1}");
+            Console.WriteLine($"[Seed] ICD hierarchy saved. Bashliqlar: {bashliqAutoId - 1}, Diaqnozlar: {diaqnozAutoId - 1}, Qeydlər: {qeydAutoId - 1}");
         }
 
         // Seed anomalies
@@ -123,6 +139,7 @@ public static class SeedData
     // JSON deserialization models
     private record IcdRubrikaJson(int Id, string Code, string Name, List<IcdBashliqJson> Bashliqlar);
     private record IcdBashliqJson(int Id, string Code, string Name, List<IcdDiaqnozJson> Diaqnozlar);
-    private record IcdDiaqnozJson(int Id, string Code, string Name);
+    private record IcdDiaqnozJson(int Id, string Code, string Name, List<IcdQeydJson>? Qeydlər);
+    private record IcdQeydJson(int Id, string Name);
     private record AnomalyJson(int Id, string ReportId, string PatientId, string Date, string? Diagnosis, string? Explanation, bool Coded);
 }

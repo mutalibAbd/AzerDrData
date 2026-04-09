@@ -17,4 +17,5 @@ public class IcdDiaqnoz
 
     // Navigation
     public IcdBashliq Bashliq { get; set; } = null!;
+    public List<IcdQeyd> Qeydler { get; set; } = new();
 }

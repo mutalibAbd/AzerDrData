@@ -34,6 +34,7 @@ public record SaveCodingRequest(
     string BashliqName,
     string DiaqnozCode,
     string DiaqnozName,
+    string? IcdQeydName,
     string? Qeyd
 );
 
@@ -47,6 +48,7 @@ public record ErrorReportRequest(
 public record IcdRubrikaDto(int Id, string Code, string Name);
 public record IcdBashliqDto(int Id, string Code, string Name);
 public record IcdDiaqnozDto(int Id, string Code, string Name);
+public record IcdQeydDto(int Id, string Name);
 
 // Admin
 public record CreateDoctorRequest(string Username, string Password, string FullName);

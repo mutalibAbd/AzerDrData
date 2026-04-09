@@ -28,6 +28,9 @@ public class AnomalyCoding
     [MaxLength(200)]
     public string DiaqnozName { get; set; } = string.Empty;
 
+    [MaxLength(300)]
+    public string? IcdQeydName { get; set; }
+
     public string? Qeyd { get; set; }
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
