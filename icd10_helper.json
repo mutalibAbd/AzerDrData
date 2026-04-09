@@ -1,0 +1,3087 @@
+[
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q00 Anensefali və oxşar malformasiyalar",
+    "diaqnoz": "Q00.0 Anensefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q00 Anensefali və oxşar malformasiyalar",
+    "diaqnoz": "Q00.1 Kranioraxiskisis"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q00 Anensefali və oxşar malformasiyalar",
+    "diaqnoz": "Q00.2 İnensefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q01 Ensefalosel",
+    "diaqnoz": "Q01.0 Frontal ensefalosel"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q01 Ensefalosel",
+    "diaqnoz": "Q01.1 Nazofrontal ensefalosel"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q01 Ensefalosel",
+    "diaqnoz": "Q01.2 Oksipital ensefalosel"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q01 Ensefalosel",
+    "diaqnoz": "Q01.8 Digər yerlərin ensefaloseli"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q01 Ensefalosel",
+    "diaqnoz": "Q01.9 Ensefalosel, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q03 Anadangəlmə hidrosefali",
+    "diaqnoz": "Q03.0 Silvius su kəmərinin qüsurları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q03 Anadangəlmə hidrosefali",
+    "diaqnoz": "Q03.1 Magendie və Luschka deşiklərinin atreziyası"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q03 Anadangəlmə hidrosefali",
+    "diaqnoz": "Q03.8 Digər anadangəlmə hidrosefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q03 Anadangəlmə hidrosefali",
+    "diaqnoz": "Q03.9 Konjenital hidrosefali, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.0 Korpus kallosumun anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.1 Arinensefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.2 Holoprosensefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.3 Beynin digər reduksiya deformasiyaları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.4 Septo-optik displaziya"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.5 Meqalensefali"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.6 Anadangəlmə serebral kistlər"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.8 Beynin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q04 Beynin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q04.9 Beynin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.0 Hidrosefali ilə servikal spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.1 Hidrosefali ilə torakal spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.2 Hidrosefali ilə bel spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.3 Hidrosefali ilə sakral spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.4 Hidrosefali ilə müəyyən edilməmiş spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.5 Servikal spina bifida hidrosefali olmadan"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.6 Hidrosefali olmayan torakal spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.7 Hidrosefali olmayan bel spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.8 Hidrosefali olmayan sakral spina bifida"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q05 Spina bifida",
+    "diaqnoz": "Q05.9 Spina bifida, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.0 Amyeliya"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.1 Onurğa beyninin hipoplaziyası və displaziyası"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.2 Diastematomieliya"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.3 Digər anadangəlmə cauda equina malformasiyaları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.4 Hidromieliya"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.8 Onurğa beyninin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q06 Onurğa beyninin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q06.9 Onurğa beyninin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q07 Sinir sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q07.0 Arnold-Chiari sindromu"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q07 Sinir sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q07.8 Sinir sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q00-Q07 Sinir sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q07 Sinir sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q07.9 Sinir sisteminin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.0 Anadangəlmə ptozis"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.1 Anadangəlmə ektropion"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.2 Anadangəlmə entropiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.3 Göz qapağının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.4 Lakrimal aparatın olmaması və agenezi"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.5 Anadangəlmə stenoz və lakrimal kanalın daralması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.6 Lakrimal aparatın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q10 Göz qapağının, lakrimal aparatın və orbitin anadangəlmə qüsurları",
+    "diaqnoz": "Q10.7 Orbitin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q11 Anoftalmos, mikroftalmos və makroftalmos",
+    "diaqnoz": "Q11.0 Kistik göz bəbəyi"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q11 Anoftalmos, mikroftalmos və makroftalmos",
+    "diaqnoz": "Q11.1 Digər anoftalmos"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q11 Anoftalmos, mikroftalmos və makroftalmos",
+    "diaqnoz": "Q11.2 Mikroftalmos"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q11 Anoftalmos, mikroftalmos və makroftalmos",
+    "diaqnoz": "Q11.3 Makroftalmos"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.0 Anadangəlmə katarakta"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.1 Anadangəlmə yerdəyişmiş lens"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.2 Lens koloboması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.3 Anadangəlmə afakiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.4 Sferofakiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.8 Digər anadangəlmə lens qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q12 Anadangəlmə lens qüsurları",
+    "diaqnoz": "Q12.9 Anadangəlmə lens qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.0 İrisin kolobması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.1 İrisin olmaması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.2 İrisin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.3 Anadangəlmə buynuz qişanın qeyri-şəffaflığı"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.4 Digər anadangəlmə buynuz qişanın qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.5 Mavi sklera"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.8 Gözün ön seqmentinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q13 Gözün ön seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q13.9 Müəyyən edilməmiş gözün ön seqmentinin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.0 Vitreus yumorunun anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.1 Retinanın anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.2 Optik diskin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.3 Xoroidin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.8 Gözün arxa seqmentinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q14 Gözün arxa seqmentinin anadangəlmə qüsurları",
+    "diaqnoz": "Q14.9 Gözün arxa seqmentinin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q15 Gözün digər anadangəlmə qüsurları",
+    "diaqnoz": "Q15.0 Anadangəlmə qlaukoma"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q15 Gözün digər anadangəlmə qüsurları",
+    "diaqnoz": "Q15.8 Gözün digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q15 Gözün digər anadangəlmə qüsurları",
+    "diaqnoz": "Q15.9 Gözün anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.0 (qulaq) aurikülün anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.1 Eşitmə kanalının anadangəlmə olmaması, atreziyası və daralması (xarici)"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.2 Eustaki borusunun olmaması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.3 Qulaq sümüklərinin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.4 Orta qulağın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.5 Daxili qulağın anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q16 Eşitmə qabiliyyətinin pozulmasına səbəb olan anadangəlmə qulağın qüsurları",
+    "diaqnoz": "Q16.9 Eşitmə qabiliyyətinin pozulmasına səbəb olan qulağın anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.0 Aksesuar qulaqcığı"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.1 Makrotiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.2 Mikrotiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.3 Digər formalı qulaq"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.4 Yanlış yerləşdirilmiş qulaq"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.5 Çıxarılan qulaq"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.8 Qulağın digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q17 Qulağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q17.9 Qulağın anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.0 Sinus, fistula və budaq yarığının kistası"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.1 Preaurikulyar sinus və kist"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.2 Digər budaq yarıq malformasiyaları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.3 Boyun toxuması"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.4 Makrostomiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.5 Mikrostomiya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.6 Makroxeyliya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.7 Mikroxeyliya"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.8 Üz və boyun digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q10-Q18 Göz, qulaq, üz və boyun anadangəlmə qüsurları",
+    "bashliq": "Q18 Üz və boyun digər anadangəlmə qüsurları",
+    "diaqnoz": "Q18.9 Müəyyən edilməmiş üz və boyun anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.0 Ümumi arterial gövdə"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.1 İki çıxışlı sağ mədəcik"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.2 Sol mədəciyin ikiqat çıxışı"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.3 Diskordant ventrikuloarterial əlaqə"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.4 İkiqat giriş mədəcik"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.5 Diskordant atrioventrikulyar əlaqə"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.6 Atriyal əlavələrin izomeriyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.8 Ürək kameralarının və birləşmələrinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q20 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları",
+    "diaqnoz": "Q20.9 Ürək kameralarının və birləşmələrinin anadangəlmə qüsurları, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.0 Ventriküler septal defekt"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.1 Atrial septal defekt"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.2 Atrioventrikulyar septal defekt"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.3 Fallot tetralogiyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.4 Aortopulmoner septal defekt"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.8 Ürək septumunun digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q21 Ürək septumunun anadangəlmə qüsurları",
+    "diaqnoz": "Q21.9 Ürək septumunun anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.0 Ağciyər qapaqlarının atreziyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.1 Ağciyər qapağının anadangəlmə stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.2 Anadangəlmə ağciyər qapaq çatışmazlığı"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.3 Ağciyər qapağının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.4 Anadangəlmə triküspid stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.5 Ebstein anomaliyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.6 Hipoplastik sağ ürək sindromu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.8 Tricuspid qapağının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q22 Ağciyər və triküspid qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q22.9 Tricuspid qapağın anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.0 Aorta qapağının anadangəlmə stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.1 Aorta qapağının anadangəlmə çatışmazlığı"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.2 Anadangəlmə mitral stenoz"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.3 Anadangəlmə mitral çatışmazlıq"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.4 Hipoplastik sol ürək sindromu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.8 Aorta və mitral qapaqların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q23 Aorta və mitral qapaqların anadangəlmə qüsurları",
+    "diaqnoz": "Q23.9 Müəyyən edilməmiş aorta və mitral qapaqların anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.0 Dekstrokardiya"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.1 Laevokardiya"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.2 Cor triatriatum"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.3 Ağciyər infundibulyar stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.4 Anadangəlmə subaorta stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.5 Koronar damarların malformasiyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.6 Anadangəlmə ürək blokadası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.8 Ürəyin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q24 Ürəyin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q24.9 Ürəyin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.0 Patent duktus arteriosus"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.1 Aortanın koarktasiyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.2 Aortanın atreziyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.3 Aortanın stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.4 Aortanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.5 Ağciyər arteriyasının atreziyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.6 Ağciyər arteriyasının stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.7 Ağciyər arteriyasının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.8 Böyük arteriyaların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q25 Böyük arteriyaların anadangəlmə qüsurları",
+    "diaqnoz": "Q25.9 Böyük arteriyaların anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.0 Kava venanın anadangəlmə stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.1 Davamlı sol üst vena kava"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.2 Ümumi anomal ağciyər venoz bağlantısı"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.3 Qismən anomal ağciyər venoz bağlantısı"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.4 Anormal ağciyər venoz bağlantısı, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.5 Portal venoz anomal əlaqə"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.6 Portal vena-hepatik arteriya fistula"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.8 Böyük damarların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q26 Böyük damarların anadangəlmə qüsurları",
+    "diaqnoz": "Q26.9 Böyük damarın anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.0 Göbək arteriyasının anadangəlmə olmaması və hipoplaziyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.1 Anadangəlmə böyrək arteriyasının stenozu"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.2 Böyrək arteriyasının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.3 Periferik arteriovenoz malformasiya"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.4 Anadangəlmə flebektaziya"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.8 Periferik damar sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q27 Periferik damar sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q27.9 Periferik damar sisteminin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.0 Preserebral damarların arteriovenoz malformasiyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.1 Preserebral damarların digər malformasiyaları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.2 Beyin damarlarının arteriovenoz malformasiyası"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.3 Serebral damarların digər malformasiyaları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.8 Qan dövranı sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q20-Q28 Qan dövranı sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q28 Qan dövranı sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q28.9 Qan dövranı sisteminin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.0 Xoanal atreziya"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.1 Burnun yaşı və inkişaf etməməsi"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.2 Çatlaq, çentikli və yarıq burun"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.3 Anadangəlmə perforasiya olunmuş burun septumu"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.8 Digər anadangəlmə burun qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q30 Anadangəlmə burun qüsurları",
+    "diaqnoz": "Q30.9 Müəyyən edilməmiş anadangəlmə burun qüsuru"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.0 Qırtlaq şəbəkəsi"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.1 Anadangəlmə subglottik stenoz"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.2 Qırtlaq hipoplaziyası"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.3 Larinqosel"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.5 Anadangəlmə larinqomalaziya"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.8 Qırtlağın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q31 Qırtlağın anadangəlmə qüsurları",
+    "diaqnoz": "Q31.9 Qırtlağın anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q32 Traxeyanın və bronxun anadangəlmə qüsurları",
+    "diaqnoz": "Q32.0 Anadangəlmə traxeomalaziya"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q32 Traxeyanın və bronxun anadangəlmə qüsurları",
+    "diaqnoz": "Q32.1 Traxeyanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q32 Traxeyanın və bronxun anadangəlmə qüsurları",
+    "diaqnoz": "Q32.2 Anadangəlmə bronxomalaziya"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q32 Traxeyanın və bronxun anadangəlmə qüsurları",
+    "diaqnoz": "Q32.3 Bronxun anadangəlmə stenozu"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q32 Traxeyanın və bronxun anadangəlmə qüsurları",
+    "diaqnoz": "Q32.4 Bronxun digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.0 Anadangəlmə kistik ağciyər"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.1 Ağciyərin köməkçi lobu"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.2 Ağciyərin sekvestrasiyası"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.3 Ağciyərlərin agenezi"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.4 Anadangəlmə bronşektazi"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.5 Ağciyərdə ektopik toxuma"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.6 Ağciyərlərin hipoplaziyası və displaziyası"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.8 Ağciyərin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q33 Ağciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q33.9 Ağciyərin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q34 Tənəffüs sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q34.0 Plevranın anomaliyası"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q34 Tənəffüs sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q34.1 Mediastenin anadangəlmə kisti"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q34 Tənəffüs sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q34.8 Tənəffüs sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q30-Q34 Tənəffüs sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q34 Tənəffüs sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q34.9 Tənəffüs sisteminin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q35 Yarıq damaq",
+    "diaqnoz": "Q35.1 Yarıq sərt damaq"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q35 Yarıq damaq",
+    "diaqnoz": "Q35.3 Yarıq yumşaq damaq"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q35 Yarıq damaq",
+    "diaqnoz": "Q35.5 Yarıq sərt damaq yarıq yumşaq damaq ilə"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q35 Yarıq damaq",
+    "diaqnoz": "Q35.7 Yarıq uvula"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q35 Yarıq damaq",
+    "diaqnoz": "Q35.9 Yarıq damaq, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q36 Yarıq dodaq",
+    "diaqnoz": "Q36.0 Yarıq dodaq, ikitərəfli"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q36 Yarıq dodaq",
+    "diaqnoz": "Q36.1 Yarıq dodaq, median"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q36 Yarıq dodaq",
+    "diaqnoz": "Q36.9 Yarıq dodaq, birtərəfli"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.0 İkitərəfli yarıq dodaqlı sərt damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.1 Birtərəfli yarıq dodaqlı sərt damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.2 İkitərəfli yarıq dodaqlı yumşaq damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.3 Birtərəfli yarıq dodaqlı yumşaq damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.4 İkitərəfli yarıq dodaqlı sərt və yumşaq damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.5 Birtərəfli yarıq dodaqlı sərt və yumşaq damaq yarığı"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.8 İkitərəfli dodaq yarığı ilə təyin olunmamış yarıq damaq"
+  },
+  {
+    "rubrika": "Q35-Q37 Yarıq dodaq və yarıq damaq",
+    "bashliq": "Q37 Yarıq damaq ilə yarıq dodaq",
+    "diaqnoz": "Q37.9 Birtərəfli yarıq dodaq ilə təyin olunmamış yarıq damaq"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.0 Başqa yerdə təsnif edilməyən dodaqların anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.1 Ankiloqlossiya"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.2 Makroqlossiya"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.3 Dilin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.4 Tüpürcək vəzilərinin və kanallarının anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.5 Başqa yerdə təsnif edilməyən damağın anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.6 Ağız boşluğunun digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.7 Faringeal çanta"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q38 Dil, ağız və farenksin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q38.8 Farenksin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.0 Fistulasız özofagusun atreziyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.1 Traxeo-özofageal fistula ilə qida borusunun atreziyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.2 Atreziya olmadan anadangəlmə traxeo-özofageal fistula"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.3 Qida borusunun anadangəlmə stenozu və daralması"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.4 Anadangəlmə özofagus şəbəkəsi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.5 Özofagusun anadangəlmə dilatasiyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.6 Özofagusun divertikulumu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.8 Özofagusun digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q39 Özofagusun anadangəlmə qüsurları",
+    "diaqnoz": "Q39.9 Özofagusun anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.0 Anadangəlmə hipertrofik pilorik stenoz"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.1 Anadangəlmə hiatus yırtığı"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.2 Mədənin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.3 Mədənin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.8 Yuxarı həzm sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q40 Yuxarı həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q40.9 Yuxarı həzm sisteminin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q41 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q41.0 Anadangəlmə olmaması, onikibarmaq bağırsağın atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q41 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q41.1 Anadangəlmə yoxluq, jejunum atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q41 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q41.2 Anadangəlmə yoxluq, ileumun atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q41 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q41.8 Nazik bağırsağın digər müəyyən hissələrinin anadangəlmə olmaması, atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q41 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q41.9 Nazik bağırsağın anadangəlmə olmaması, atreziyası və stenozu, müəyyən edilməmiş hissəsi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.0 Anadangəlmə olmaması, atreziyası və fistula ilə düz bağırsağın stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.1 Fistulasız düz bağırsağın anadangəlmə olmaması, atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.2 Anadangəlmə yoxluq, fistula ilə anusun atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.3 Anadangəlmə yoxluq, fistulasız anusun atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.8 Yoğun bağırsağın digər hissələrinin anadangəlmə olmaması, atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q42 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu",
+    "diaqnoz": "Q42.9 Yoğun bağırsağın anadangəlmə olmaması, atreziyası və stenozu, müəyyən edilməmiş hissəsi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.0 Mekkel divertikulu"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.1 Hirschsprung xəstəliyi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.2 Yoğun bağırsağın digər anadangəlmə funksional pozğunluqları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.3 Bağırsaq fiksasiyasının anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.4 Bağırsağın dublikasiyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.5 Ektopik anus"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.6 Düz bağırsağın və anusun anadangəlmə fistulaları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.7 Davamlı kloaka"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.8 Bağırsağın digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q43 Bağırsağın digər anadangəlmə qüsurları",
+    "diaqnoz": "Q43.9 Bağırsağın anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.0 Öd kisəsinin agenezi, aplaziyası və hipoplaziyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.1 Öd kisəsinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.2 Öd yollarının atreziyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.3 Anadangəlmə stenoz və öd yollarının daralması"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.4 Xoledok kisti"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.5 Öd yollarının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.6 Qaraciyərin kistik xəstəliyi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q44 Öd kisəsinin, öd yollarının və qaraciyərin anadangəlmə qüsurları",
+    "diaqnoz": "Q44.7 Qaraciyərin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.0 Pankreasın agenezi, aplaziyası və hipoplaziyası"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.1 Halqavari mədəaltı vəzi"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.2 Anadangəlmə pankreas kisti"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.3 Pankreas və pankreas kanalının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.8 Həzm sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q38-Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "bashliq": "Q45 Həzm sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q45.9 Həzm sisteminin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.0 Yumurtalığın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.1 İnkişaf edən yumurtalıq kisti"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.2 Yumurtalığın anadangəlmə burulması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.3 Yumurtalığın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.4 Fallopiya borusunun embrion kisti"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.5 Geniş bağın embrion kisti"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q50 Yumurtalıqların, fallopiya borularının və geniş bağların anadangəlmə qüsurları",
+    "diaqnoz": "Q50.6 Fallopiya borusunun və geniş bağın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.0 Uterusun agenezi və aplaziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.1 Uşaqlıq boynu və vajinanın ikiqat artması ilə uterusun ikiqat artması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.2 Uterusun digər ikiqat artması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.3 İkibuynuzlu uşaqlıq"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.4 Unikornativ uşaqlıq"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.5 Uşaqlıq boynunun agenezi və aplaziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.6 Uşaqlıq boynunun embrion kisti"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.7 Uşaqlıq yolu ilə həzm və sidik yolları arasında anadangəlmə fistulalar"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.8 Uşaqlıq və uşaqlıq boynunun digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q51 Uterusun və serviksin anadangəlmə qüsurları",
+    "diaqnoz": "Q51.9 Uşaqlıq və uşaqlıq boynunun anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.0 Vajinanın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.1 Vajinanın ikiqat artması"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.2 Anadangəlmə rektovaginal fistula"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.3 Qızlıq pərdəsinin imperforasiyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.4 Vajinanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.5 Dodaqların birləşməsi"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.6 Klitorisin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.7 Vulvanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.8 Qadın cinsiyyət orqanlarının digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q52 Qadın cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q52.9 Qadın cinsiyyət orqanlarının anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q53 Enməmiş xaya",
+    "diaqnoz": "Q53.0 Ektopik testis"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q53 Enməmiş xaya",
+    "diaqnoz": "Q53.1 Enməmiş xaya, birtərəfli"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q53 Enməmiş xaya",
+    "diaqnoz": "Q53.2 Enməmiş xaya, ikitərəfli"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q53 Enməmiş xaya",
+    "diaqnoz": "Q53.9 Enməmiş xaya, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.0 Hipospadias, balanik"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.1 Hipospadias, penis"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.2 Hipospadias, penoskrotal"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.3 Hipospadias, perineal"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.4 Anadangəlmə xorda"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.8 Digər hipospadiyalar"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q54 Hipospadias",
+    "diaqnoz": "Q54.9 Hipospadias, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.0 Testisin olmaması və aplaziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.1 Xaya və xayanın hipoplaziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.2 Xaya və xayanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.3 Vas deferens atreziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.4 Vas deferens, epididim, seminal veziküllər və prostatın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.5 Penisin anadangəlmə olmaması və aplaziyası"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.6 Penisin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.8 Kişi cinsiyyət orqanlarının digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q55 Kişi cinsiyyət orqanlarının digər anadangəlmə qüsurları",
+    "diaqnoz": "Q55.9 Müəyyən edilməmiş kişi cinsiyyət orqanının anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q56 Qeyri-müəyyən cinsiyyət və psevdohermafroditizm",
+    "diaqnoz": "Q56.0 Hermafroditizm, başqa yerdə təsnif edilmir"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q56 Qeyri-müəyyən cinsiyyət və psevdohermafroditizm",
+    "diaqnoz": "Q56.1 Kişi psevdohermafroditizmi, başqa yerdə təsnif edilmir"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q56 Qeyri-müəyyən cinsiyyət və psevdohermafroditizm",
+    "diaqnoz": "Q56.2 Başqa yerdə təsnif edilməyən qadın psevdohermafroditizmi"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q56 Qeyri-müəyyən cinsiyyət və psevdohermafroditizm",
+    "diaqnoz": "Q56.3 Psevdohermafroditizm, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q50-Q56 Cinsiyyət orqanlarının anadangəlmə qüsurları",
+    "bashliq": "Q56 Qeyri-müəyyən cinsiyyət və psevdohermafroditizm",
+    "diaqnoz": "Q56.4 Müəyyən edilməmiş cinsiyyət"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.0 Böyrək agenezi, birtərəfli"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.1 Böyrək agenezi, ikitərəfli"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.2 Böyrək agenezi, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.3 Böyrək hipoplaziyası, birtərəfli"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.4 Böyrək hipoplaziyası, ikitərəfli"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.5 Böyrək hipoplaziyası, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q60 Böyrək agenezi və böyrəyin digər reduksiya qüsurları",
+    "diaqnoz": "Q60.6 Potter sindromu"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.0 Konjenital tək böyrək kisti"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.1 Polikistik böyrək, autosomal resessiv"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.2 Polikistik böyrək, otosomal dominant"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.3 Polikistik böyrək, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.4 Böyrək displaziyası"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.5 Medulyar kistik böyrək"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.8 Digər kistik böyrək xəstəlikləri"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q61 Kistik böyrək xəstəliyi",
+    "diaqnoz": "Q61.9 Kistik böyrək xəstəliyi, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.0 Anadangəlmə hidronefroz"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.1 Sidik axarının atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.2 Anadangəlmə meqaloureter"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.3 Böyrək çanağının və ureterin digər obstruktiv qüsurları"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.4 Sidik axarının agenezi"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.5 Sidik axarının dublikasiyası"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.6 Sidik kanalının yanlış yerləşməsi"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.7 Anadangəlmə veziko-uretero-renal reflü"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q62 Böyrək çanağının anadangəlmə obstruktiv qüsurları və sidik axarının anadangəlmə qüsurları",
+    "diaqnoz": "Q62.8 Sidik axarının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.0 Əlavə böyrək"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.1 Lobulasiya edilmiş, ərimiş və at nalı böyrəyi"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.2 Ektopik böyrək"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.3 Hiperplastik və nəhəng böyrək"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.8 Böyrəklərin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q63 Böyrəklərin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q63.9 Böyrəklərin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.0 Epispadias"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.1 Sidik kisəsinin ekstrofiyası"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.2 Anadangəlmə posterior uretral klapanlar"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.3 Uretra və sidik kisəsi boynun digər atreziyası və stenozu"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.4 Urakusun malformasiyası"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.5 Sidik kisəsinin və uretranın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.6 Sidik kisəsinin anadangəlmə divertikulumu"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.7 Sidik kisəsi və uretranın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.8 Sidik sisteminin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q60-Q64 Sidik sisteminin anadangəlmə qüsurları",
+    "bashliq": "Q64 Sidik sisteminin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q64.9 Sidik sisteminin anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.0 Ombanın anadangəlmə dislokasiyası, birtərəfli"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.1 Ombanın anadangəlmə dislokasiyası, ikitərəfli"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.2 Ombanın anadangəlmə dislokasiyası, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.3 Ombanın anadangəlmə subluksasiyası, birtərəfli"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.4 Ombanın anadangəlmə subluksasiyası, ikitərəfli"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.5 Ombanın anadangəlmə subluksasiyası, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.6 Qeyri-sabit kalça"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.8 Ombanın digər anadangəlmə deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q65 Ombanın anadangəlmə deformasiyaları",
+    "diaqnoz": "Q65.9 Ombanın anadangəlmə deformasiyası, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.0 Talipes equinovarus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.1 Talipes calcaneovarus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.2 Metatarsus varus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.3 Ayaqların digər anadangəlmə varus deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.4 Talipes calcaneovalgus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.5 Anadangəlmə pes planus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.6 Ayaqların digər anadangəlmə valgus deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.7 Pes cavus"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.8 Ayaqların digər anadangəlmə deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q66 Ayaqların anadangəlmə deformasiyaları",
+    "diaqnoz": "Q66.9 Ayaqların anadangəlmə deformasiyası, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.0 Üz asimmetriyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.1 Kompressiya fasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.2 Dolikosefali"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.3 Plagiosefali"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.4 Kəllə, üz və çənənin digər anadangəlmə deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.5 Onurğanın anadangəlmə deformasiyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.6 Pectus excavatum"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.7 Pectus carinatum"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q67 Başın, üzün, onurğanın və döş qəfəsinin anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q67.8 Sinə qəfəsinin digər anadangəlmə deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.0 sternokleidomastoid əzələnin anadangəlmə deformasiyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.1 Əllərin anadangəlmə deformasiyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.2 Dizin anadangəlmə deformasiyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.3 Bud sümüyünün anadangəlmə əyilməsi"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.4 Tibia və fibulanın anadangəlmə əyilməsi"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.5 Ayağın uzun sümüklərinin anadangəlmə əyilməsi, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q68 Digər anadangəlmə dayaq-hərəkət deformasiyaları",
+    "diaqnoz": "Q68.8 Digər müəyyən edilmiş anadangəlmə dayaq-hərəkət aparatının deformasiyaları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q69 Polidaktiliya",
+    "diaqnoz": "Q69.0 Aksesuar barmaq(lar)ı"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q69 Polidaktiliya",
+    "diaqnoz": "Q69.1 Aksesuar baş barmaq(lar)ı"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q69 Polidaktiliya",
+    "diaqnoz": "Q69.2 Aksesuar ayaq barmaqları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q69 Polidaktiliya",
+    "diaqnoz": "Q69.9 Polidaktiliya, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.0 Qarışıq barmaqlar"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.1 Torulu barmaqlar"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.2 Birləşdirilmiş ayaq barmaqları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.3 Torulu ayaq barmaqları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.4 Polisindaktiliya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q70 Sindaktiliya",
+    "diaqnoz": "Q70.9 Sindaktiliya, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.0 Üst ekstremitələrin anadangəlmə tam olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.1 Üst qolun və ön kolun anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.2 Həm ön kolun, həm də əlin anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.3 Əl və barmaq(lar)ın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.4 Radiusun uzununa azalma qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.5 Dirsək sümükünün uzunlamasına reduksiya qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.6 Lobster pəncəli əli"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.8 Üst ekstremitələrin digər reduksiya qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q71 Üst ekstremitələrin reduksiya qüsurları",
+    "diaqnoz": "Q71.9 Üst ətrafın reduksiya qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.0 Alt ekstremitələrin anadangəlmə tam olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.1 Ayağın mövcudluğu ilə bud və alt ayağın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.2 Həm alt ayağın, həm də ayağın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.3 Ayağın və barmağın anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.4 Bud sümüyünün uzununa reduksiya defekti"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.5 Tibianın uzunlamasına reduksiya qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.6 Fibulanın uzununa azalma qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.7 Ayaq yarması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.8 Aşağı ətrafların digər reduksiya qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q72 Aşağı ətrafların reduksiya qüsurları",
+    "diaqnoz": "Q72.9 Aşağı ətrafın reduksiya qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q73 Müəyyən edilməmiş əzanın reduksiya qüsurları",
+    "diaqnoz": "Q73.0 Müəyyən edilməmiş üzv(lər)in anadangəlmə olmaması"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q73 Müəyyən edilməmiş əzanın reduksiya qüsurları",
+    "diaqnoz": "Q73.1 Fokomeliya, təyin olunmamış üzv(lər)"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q73 Müəyyən edilməmiş əzanın reduksiya qüsurları",
+    "diaqnoz": "Q73.8 Müəyyən edilməmiş üzv(lər)in digər reduksiya qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.0 Çiyin qurşağı da daxil olmaqla yuxarı ətrafların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.1 Dizin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.2 Çanaq qurşağı da daxil olmaqla, aşağı ətrafların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.3 Anadangəlmə artrogripoz multipleks"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.8 Əzaların (əzaların) digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q74 Əzaların digər anadangəlmə qüsurları",
+    "diaqnoz": "Q74.9 Əzaların müəyyən edilməmiş anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.0 Kraniosinostoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.1 Kraniofasiyal disostoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.2 Hipertelorizm"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.3 Makrosefaliya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.4 Mandibulofasiyal disostoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.5 Okulomandibular disostoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.8 Kəllə və üz sümüklərinin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q75 Kəllə və üz sümüklərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q75.9 Kəllə və üz sümüklərinin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.0 Spina bifida occulta"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.1 Klippel-Feil sindromu"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.2 Anadangəlmə spondilolistez"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.3 Anadangəlmə sümük qüsurları səbəbindən anadangəlmə skolyoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.4 Skoliozla əlaqəli olmayan onurğanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.5 Servikal qabırğa"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.6 Qabırğaların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.7 Döş sümüyünün anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.8 Sümük döş qəfəsinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q76 Onurğa və sümük döş qəfəsinin anadangəlmə qüsurları",
+    "diaqnoz": "Q76.9 Sümük döş qəfəsinin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.0 Axondrogenez"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.1 Tanatoforik qısa boy"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.2 Qısa qabırğa sindromu"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.3 Kondrodisplazi punktata"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.4 Axondroplaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.5 Distrofik displaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.6 Xondroektodermal displaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.7 Spondiloepifizeal displaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.8 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan digər osteoxondrodisplaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q77 Boru sümüklərinin və onurğanın böyüməsi qüsurları olan osteoxondrodisplaziya",
+    "diaqnoz": "Q77.9 Boruvari sümüklərin və onurğanın inkişaf qüsurları olan osteoxondrodisplaziya, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.0 Qüsursuz osteogenez"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.1 Poliostotik lifli displaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.2 Osteopetroz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.3 Proqressiv diafiz displaziyası"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.4 Enxondromatoz"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.5 Metafizal displaziya"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.6 Çoxlu anadangəlmə ekzostozlar"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.8 Digər müəyyən edilmiş osteoxondrodisplaziyalar"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q78 Digər osteoxondrodisplaziyalar",
+    "diaqnoz": "Q78.9 Osteoxondrodisplaziya, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.0 Anadangəlmə diafraqma yırtığı"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.1 Diafraqmanın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.2 Exomphalos"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.3 Qastroşizis"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.4 Prune qarın sindromu"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.5 Qarın divarının digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.6 Elers-Danlos sindromu"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.8 Dayaq-hərəkət sisteminin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q65-Q79 Dayaq-hərəkət sisteminin anadangəlmə qüsurları və deformasiyaları",
+    "bashliq": "Q79 Başqa yerdə təsnif edilməyən dayaq-hərəkət sisteminin anadangəlmə qüsurları",
+    "diaqnoz": "Q79.9 Dayaq-hərəkət sisteminin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.0 İxtiyoz vulgaris"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.1 X ilə əlaqəli iktiyoz"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.2 Lamellar iktiyoz"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.3 Anadangəlmə büllöz iktiyoziform eritrodermiya"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.4 Harlequin döl"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.8 Digər anadangəlmə iktiyoz"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q80 Anadangəlmə iktiyoz",
+    "diaqnoz": "Q80.9 Konjenital iktiyoz, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q81 Epidermoliz büllozası",
+    "diaqnoz": "Q81.0 Epidermoliz bullosa simplex"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q81 Epidermoliz büllozası",
+    "diaqnoz": "Q81.1 Epidermoliz bullosa letalis"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q81 Epidermoliz büllozası",
+    "diaqnoz": "Q81.2 Distrofik epidermoliz büllozası"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q81 Epidermoliz büllozası",
+    "diaqnoz": "Q81.8 Digər epidermoliz büllozası"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q81 Epidermoliz büllozası",
+    "diaqnoz": "Q81.9 Epidermoliz büllozası, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.0 İrsi limfoödem"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.1 Xeroderma piqmentozum"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.2 Mastositoz"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.3 Kontinentiya piqmenti"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.4 Ektodermal displaziya (anhidroz)"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.5 Anadangəlmə qeyri-neoplastik nevus"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.8 Dərinin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q82 Dərinin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q82.9 Dərinin anadangəlmə qüsuru, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q83 Döşün anadangəlmə qüsurları",
+    "diaqnoz": "Q83.1 Aksessuar döş"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q83 Döşün anadangəlmə qüsurları",
+    "diaqnoz": "Q83.2 Məmə yoxluğu"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q83 Döşün anadangəlmə qüsurları",
+    "diaqnoz": "Q83.3 Aksesuar məmə"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q83 Döşün anadangəlmə qüsurları",
+    "diaqnoz": "Q83.8 Süd vəzisinin digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q83 Döşün anadangəlmə qüsurları",
+    "diaqnoz": "Q83.9 Döşün anadangəlmə qüsuru, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.0 Anadangəlmə alopesiya"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.1 Saçın anadangəlmə morfoloji pozğunluqları, başqa yerdə təsnif edilmir"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.2 Saçın digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.3 Anonixiya"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.4 Anadangəlmə leykonixiya"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.5 Genişlənmiş və hipertrofik dırnaqlar"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.6 Dırnaqların digər anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.8 Dərinin digər müəyyən edilmiş anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q84 İntequmentin digər anadangəlmə qüsurları",
+    "diaqnoz": "Q84.9 Müəyyən edilməmiş intequmentin anadangəlmə qüsuru"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q85 Fakomatozlar, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q85.0 Neyrofibromatoz (bədxassəli olmayan)"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q85 Fakomatozlar, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q85.1 Vərəmli skleroz"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q85 Fakomatozlar, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q85.8 Başqa yerdə təsnif edilməyən digər fakomatozlar"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q85 Fakomatozlar, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q85.9 Fakomatoz, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q86 Başqa yerdə təsnif edilməyən məlum ekzogen səbəblərə görə anadangəlmə malformasiya sindromları",
+    "diaqnoz": "Q86.0 Fetal spirt sindromu (dismorfik)"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q86 Başqa yerdə təsnif edilməyən məlum ekzogen səbəblərə görə anadangəlmə malformasiya sindromları",
+    "diaqnoz": "Q86.1 Fetal hidantoin sindromu"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q86 Başqa yerdə təsnif edilməyən məlum ekzogen səbəblərə görə anadangəlmə malformasiya sindromları",
+    "diaqnoz": "Q86.2 Warfarin səbəbiylə dismorfizm"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q86 Başqa yerdə təsnif edilməyən məlum ekzogen səbəblərə görə anadangəlmə malformasiya sindromları",
+    "diaqnoz": "Q86.8 Məlum ekzogen səbəblərə görə digər anadangəlmə malformasiya sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.0 Əsasən üzün görünüşünə təsir edən anadangəlmə malformasiya sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.1 Əsasən qısa boy ilə əlaqəli anadangəlmə malformasiya sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.2 Əsasən əzaları əhatə edən anadangəlmə qüsur sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.3 Erkən böyümə ilə əlaqəli anadangəlmə malformasiya sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.4 Marfan sindromu"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.5 Digər skelet dəyişiklikləri ilə digər anadangəlmə malformasiya sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q87 Çox sistemə təsir edən digər müəyyən edilmiş anadangəlmə qüsur sindromları",
+    "diaqnoz": "Q87.8 Başqa yerdə təsnif edilməyən digər təyin olunmuş anadangəlmə qüsur sindromları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.0 Dalağın anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.1 Böyrəküstü vəzinin anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.2 Digər endokrin bezlərin anadangəlmə qüsurları"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.3 Qarşılıqlı vəziyyət"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.4 Birləşmiş əkizlər"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.7 Çoxlu anadangəlmə qüsurlar, başqa yerdə təsnif edilmir"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.8 Digər müəyyən edilmiş anadangəlmə qüsurlar"
+  },
+  {
+    "rubrika": "Q80-Q89 Digər anadangəlmə qüsurlar",
+    "bashliq": "Q89 Başqa yerdə təsnif edilməyən digər anadangəlmə qüsurlar",
+    "diaqnoz": "Q89.9 Konjenital malformasiya, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q90 Daun sindromu",
+    "diaqnoz": "Q90.0 Trisomiya 21, meyotik ayrılmazlıq"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q90 Daun sindromu",
+    "diaqnoz": "Q90.1 Trisomiya 21, mozaiklik (mitotik ayrılmazlıq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q90 Daun sindromu",
+    "diaqnoz": "Q90.2 Trisomiya 21, translokasiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q90 Daun sindromu",
+    "diaqnoz": "Q90.9 Daun sindromu, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.0 Trisomiya 18, meyotik ayrılmazlıq"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.1 Trisomiya 18, mozaika (mitotik ayrılmazlıq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.2 Trisomiya 18, translokasiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.3 Edvards sindromu, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.4 Trisomiya 13, meyotik ayrılmazlıq"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.5 Trisomiya 13, mozaiklik (mitotik ayrılmazlıq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.6 Trisomiya 13, translokasiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q91 Edvard sindromu və Patau sindromu",
+    "diaqnoz": "Q91.7 Patau sindromu, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.0 Bütün xromosom trisomiyası, meyotik ayrılmazlıq"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.1 Tam xromosom trisomiyası, mozaiklik (mitotik ayrılmazlıq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.2 Böyük qismən trisomiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.3 Kiçik qismən trisomiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.4 Təkrarlanmalar yalnız prometafazada müşahidə olunur"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.5 Digər mürəkkəb yenidənqurmalarla təkrarlamalar"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.6 Əlavə marker xromosomları"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.7 Triploidiya və poliploidiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.8 Digər müəyyən edilmiş trisomiyalar və autosomların qismən trisomiyaları"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q92 Başqa yerdə təsnif edilməyən autosomların digər trisomiyaları və qismən trisomiyaları",
+    "diaqnoz": "Q92.9 Trisomiya və autosomların qismən trisomiyası, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.0 Bütün xromosom monosomiyası, meyotik ayrılmazlıq"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.1 Tam xromosom monosomiyası, mozaiklik (mitotik ayrılmazlıq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.2 Xromosom üzük və ya disentrik ilə əvəz olunur"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.3 4-cü xromosomun qısa qolunun silinməsi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.4 5-ci xromosomun qısa qolunun silinməsi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.5 Xromosomun bir hissəsinin digər silinməsi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.6 Delesiyalar yalnız prometafazada müşahidə olunur"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.7 Digər mürəkkəb yenidən qurulmalarla silinmələr"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.8 Autosomlardan digər silinmələr"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q93 Monosomiyalar və autosomlardan silinmələr, başqa yerdə təsnif edilmir",
+    "diaqnoz": "Q93.9 Avtosomlardan silinmə, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.0 Normal insanda balanslaşdırılmış translokasiya və insertasiya"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.1 Normal fərddə xromosomların inversiyası"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.2 Anormal fərddə balanslaşdırılmış otozomal yenidən qurulma"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.3 Anormal fərddə balanslaşdırılmış cins/autosomal yenidən qurulma"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.4 Marker heterokromatini olan şəxslər"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.5 Otosomal kövrək sahəsi olan şəxslər"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.8 Digər balanslaşdırılmış yenidənqurma və struktur işarələri"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q95 Başqa yerdə təsnif edilməyən balanslaşdırılmış yenidənqurma və struktur işarələri",
+    "diaqnoz": "Q95.9 Balanslaşdırılmış yenidən qurulma və struktur işarəsi, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.0 Karyotip 45, X"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.1 Karyotip 46,X iso (Xq)"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.2 anormal cinsi xromosomlu karyotip 46,X, izo (Xq) istisna olmaqla"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.3 Mozaiklik, 45, X/46, XX və ya XY"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.4 Mozaiklik, anormal cinsi xromosomlu 45,X/digər hüceyrə xətti(lər)."
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.8 Turner sindromunun digər variantları"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q96 Turner sindromu",
+    "diaqnoz": "Q96.9 Turner sindromu, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.0 Karyotip 47,XXX"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.1 Üçdən çox X xromosomu olan qadın"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.2 Mozaiklik, müxtəlif sayda X xromosomlu xətlər"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.3 46,XY karyotipli qadın"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.8 Digər müəyyən edilmiş cinsi xromosom anomaliyaları, qadın fenotipi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q97 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, qadın fenotipi",
+    "diaqnoz": "Q97.9 Cinsi xromosom anomaliyaları, qadın fenotipi, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.0 Klinefelter sindromu karyotip 47,XXY"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.1 Klinefelter sindromu, ikidən çox X xromosomu olan kişi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.2 Klinefelter sindromu, 46,XX karyotipli kişi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.3 46,XX karyotipli digər kişi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.4 Klinefelter sindromu, təyin olunmamış"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.5 Karyotip 47,XYY"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.6 Struktur olaraq anormal cinsi xromosomu olan kişi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.7 Cinsi xromosom mozaikası olan kişi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.8 Digər müəyyən edilmiş cinsi xromosom anomaliyaları, kişi fenotipi"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q98 Başqa yerdə təsnif edilməyən digər cinsi xromosom anomaliyaları, kişi fenotipi",
+    "diaqnoz": "Q98.9 Cinsi xromosom anomaliyaları, kişi fenotipi, dəqiqləşdirilməmiş"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q99 Başqa yerdə təsnif edilməyən digər xromosom anomaliyaları",
+    "diaqnoz": "Q99.0 Kimera 46,XX/46,XY"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q99 Başqa yerdə təsnif edilməyən digər xromosom anomaliyaları",
+    "diaqnoz": "Q99.1 46,XX əsl hermafrodit"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q99 Başqa yerdə təsnif edilməyən digər xromosom anomaliyaları",
+    "diaqnoz": "Q99.2 Kövrək X xromosomu"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q99 Başqa yerdə təsnif edilməyən digər xromosom anomaliyaları",
+    "diaqnoz": "Q99.8 Digər müəyyən edilmiş xromosom anomaliyaları"
+  },
+  {
+    "rubrika": "Q90-Q99 Başqa yerdə təsnif edilməyən xromosom anomaliyaları",
+    "bashliq": "Q99 Başqa yerdə təsnif edilməyən digər xromosom anomaliyaları",
+    "diaqnoz": "Q99.9 Xromosom anomaliyaları, təyin olunmamış"
+  }
+]

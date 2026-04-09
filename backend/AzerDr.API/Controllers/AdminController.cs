@@ -1,0 +1,77 @@
+using AzerDr.API.DTOs;
+using AzerDr.API.Services;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+
+namespace AzerDr.API.Controllers;
+
+[ApiController]
+[Route("api/[controller]")]
+[Authorize(Roles = "admin")]
+public class AdminController : ControllerBase
+{
+    private readonly AdminService _admin;
+
+    public AdminController(AdminService admin) => _admin = admin;
+
+    [HttpGet("doctors")]
+    public async Task<IActionResult> GetDoctors()
+    {
+        var doctors = await _admin.GetDoctorsAsync();
+        return Ok(doctors);
+    }
+
+    [HttpPost("doctors")]
+    public async Task<IActionResult> CreateDoctor([FromBody] CreateDoctorRequest request)
+    {
+        var result = await _admin.CreateDoctorAsync(request);
+        if (result == null)
+            return Conflict(new { message = "Username already exists" });
+
+        return Created($"/api/admin/doctors/{result.Id}", result);
+    }
+
+    [HttpPut("doctors/{id}")]
+    public async Task<IActionResult> UpdateDoctor(Guid id, [FromBody] UpdateDoctorRequest request)
+    {
+        var success = await _admin.UpdateDoctorAsync(id, request);
+        if (!success)
+            return NotFound(new { message = "Doctor not found" });
+
+        return Ok(new { message = "Doctor updated" });
+    }
+
+    [HttpDelete("doctors/{id}")]
+    public async Task<IActionResult> DeleteDoctor(Guid id)
+    {
+        var success = await _admin.DeleteDoctorAsync(id);
+        if (!success)
+            return NotFound(new { message = "Doctor not found" });
+
+        return Ok(new { message = "Doctor deactivated" });
+    }
+
+    [HttpGet("progress")]
+    public async Task<IActionResult> GetProgress()
+    {
+        var progress = await _admin.GetProgressAsync();
+        return Ok(progress);
+    }
+
+    [HttpGet("error-reports")]
+    public async Task<IActionResult> GetErrorReports([FromQuery] string? status)
+    {
+        var reports = await _admin.GetErrorReportsAsync(status);
+        return Ok(reports);
+    }
+
+    [HttpPut("error-reports/{id}")]
+    public async Task<IActionResult> ReviewErrorReport(int id, [FromBody] ReviewErrorRequest request)
+    {
+        var success = await _admin.ReviewErrorReportAsync(id, request.Status);
+        if (!success)
+            return NotFound(new { message = "Error report not found" });
+
+        return Ok(new { message = $"Error report {request.Status}" });
+    }
+}

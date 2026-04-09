@@ -1,0 +1,16 @@
+# .NET
+backend/AzerDr.API/bin/
+backend/AzerDr.API/obj/
+
+# Node
+frontend/node_modules/
+frontend/dist/
+
+# IDE
+.vs/
+.vscode/
+*.user
+
+# OS
+Thumbs.db
+.DS_Store

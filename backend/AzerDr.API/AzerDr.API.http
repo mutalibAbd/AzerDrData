@@ -1,0 +1,6 @@
+@AzerDr.API_HostAddress = http://localhost:5195
+
+GET {{AzerDr.API_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
