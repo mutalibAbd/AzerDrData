@@ -51,13 +51,14 @@ public record IcdDiaqnozDto(int Id, string Code, string Name);
 public record IcdQeydDto(int Id, string Name);
 
 // Admin
-public record CreateDoctorRequest(string Username, string Password, string FullName);
-public record UpdateDoctorRequest(string? FullName, string? Password, bool? IsActive);
+public record CreateDoctorRequest(string Username, string Password, string FullName, string? Role = "doctor");
+public record UpdateDoctorRequest(string? FullName, string? Password, bool? IsActive, string? Role);
 
 public record DoctorListItem(
     Guid Id,
     string Username,
     string FullName,
+    string Role,
     bool IsActive,
     int CodingCount,
     DateTime CreatedAt

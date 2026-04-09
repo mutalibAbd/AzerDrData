@@ -333,10 +333,10 @@ public class SupabaseAdminService : IAdminService
     public async Task<List<DoctorListItem>> GetDoctorsAsync()
     {
         var users = await _client.From<SupabaseUser>("users",
-            "role=eq.doctor&order=created_at.asc");
+            "order=created_at.asc");
 
+        // Exclude the current admin viewing the list? No, show all users
         var doctorIds = users.Select(u => u.Id).ToList();
-        // Get coding counts per doctor
         var codingCounts = new Dictionary<Guid, int>();
         foreach (var uid in doctorIds)
         {
@@ -346,7 +346,7 @@ public class SupabaseAdminService : IAdminService
         }
 
         return users.Select(u => new DoctorListItem(
-            u.Id, u.Username, u.FullName, u.IsActive,
+            u.Id, u.Username, u.FullName, u.Role, u.IsActive,
             codingCounts.GetValueOrDefault(u.Id, 0),
             u.CreatedAt
         )).ToList();
@@ -364,11 +364,11 @@ public class SupabaseAdminService : IAdminService
             username = request.Username,
             password_hash = BCrypt.Net.BCrypt.HashPassword(request.Password),
             full_name = request.FullName,
-            role = "doctor"
+            role = request.Role ?? "doctor"
         });
 
         if (result == null) return null;
-        return new DoctorListItem(result.Id, result.Username, result.FullName, result.IsActive, 0, result.CreatedAt);
+        return new DoctorListItem(result.Id, result.Username, result.FullName, result.Role, result.IsActive, 0, result.CreatedAt);
     }
 
     public async Task<bool> UpdateDoctorAsync(Guid id, UpdateDoctorRequest request)
@@ -377,10 +377,11 @@ public class SupabaseAdminService : IAdminService
         if (request.FullName != null) updateData["full_name"] = request.FullName;
         if (request.Password != null) updateData["password_hash"] = BCrypt.Net.BCrypt.HashPassword(request.Password);
         if (request.IsActive.HasValue) updateData["is_active"] = request.IsActive.Value;
+        if (request.Role != null) updateData["role"] = request.Role;
 
         if (updateData.Count == 0) return true;
 
-        var rows = await _client.Update("users", $"id=eq.{id}&role=eq.doctor", updateData);
+        var rows = await _client.Update("users", $"id=eq.{id}", updateData);
         return rows > 0;
     }
 

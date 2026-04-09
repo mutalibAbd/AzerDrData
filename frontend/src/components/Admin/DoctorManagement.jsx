@@ -6,7 +6,7 @@ import api from '../../services/api';
 export default function DoctorManagement() {
   const [doctors, setDoctors] = useState([]);
   const [showForm, setShowForm] = useState(false);
-  const [form, setForm] = useState({ username: '', password: '', fullName: '' });
+  const [form, setForm] = useState({ username: '', password: '', fullName: '', role: 'doctor' });
   const [loading, setLoading] = useState(false);
   const [editingId, setEditingId] = useState(null);
   const [editName, setEditName] = useState('');
@@ -23,8 +23,8 @@ export default function DoctorManagement() {
     setLoading(true);
     try {
       await api.post('/admin/doctors', form);
-      toast.success('Həkim yaradıldı');
-      setForm({ username: '', password: '', fullName: '' });
+      toast.success('İstifadəçi yaradıldı');
+      setForm({ username: '', password: '', fullName: '', role: 'doctor' });
       setShowForm(false);
       loadDoctors();
     } catch (err) {
@@ -62,18 +62,18 @@ export default function DoctorManagement() {
   return (
     <div className="bg-white border rounded-lg">
       <div className="px-4 py-3 border-b flex items-center justify-between">
-        <h3 className="font-semibold text-gray-800">Həkimlər</h3>
+        <h3 className="font-semibold text-gray-800">İstifadəçilər</h3>
         <button
           onClick={() => setShowForm(!showForm)}
           className="flex items-center gap-1 text-sm bg-blue-600 text-white px-3 py-1.5 rounded hover:bg-blue-700"
         >
-          <Plus size={14} /> Yeni həkim
+          <Plus size={14} /> Yeni istifadəçi
         </button>
       </div>
 
       {showForm && (
         <form onSubmit={handleCreate} className="p-4 bg-blue-50 border-b space-y-3">
-          <div className="grid grid-cols-3 gap-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
             <input
               placeholder="İstifadəçi adı"
               value={form.username}
@@ -96,6 +96,14 @@ export default function DoctorManagement() {
               className="border rounded px-3 py-2 text-sm"
               required
             />
+            <select
+              value={form.role}
+              onChange={(e) => setForm({ ...form, role: e.target.value })}
+              className="border rounded px-3 py-2 text-sm bg-white"
+            >
+              <option value="doctor">Həkim</option>
+              <option value="admin">Admin</option>
+            </select>
           </div>
           <button type="submit" disabled={loading} className="text-sm bg-green-600 text-white px-4 py-1.5 rounded hover:bg-green-700 disabled:opacity-50">
             {loading ? 'Yaradılır...' : 'Yarat'}
@@ -145,6 +153,7 @@ export default function DoctorManagement() {
                 </>
               )}
               <span className="text-sm text-gray-400 ml-2">@{d.username}</span>
+              {d.role === 'admin' && <span className="ml-2 text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded">Admin</span>}
               {!d.isActive && <span className="ml-2 text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded">Deaktiv</span>}
             </div>
             <div className="flex items-center gap-3">
@@ -159,7 +168,7 @@ export default function DoctorManagement() {
           </div>
         ))}
         {doctors.length === 0 && (
-          <div className="p-6 text-center text-gray-400">Heç bir həkim yoxdur</div>
+          <div className="p-6 text-center text-gray-400">Heç bir istifadəçi yoxdur</div>
         )}
       </div>
     </div>

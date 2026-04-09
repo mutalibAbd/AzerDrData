@@ -24,7 +24,7 @@ public class SupabaseRestClient
         _http = new HttpClient();
         _http.DefaultRequestHeaders.Add("apikey", apiKey);
         _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
-        _http.DefaultRequestHeaders.Add("Prefer", "return=representation");
+        // NOTE: Do NOT set Prefer as default - it breaks RPC calls. Set per-request instead.
 
         _jsonOptions = new JsonSerializerOptions
         {
@@ -77,7 +77,9 @@ public class SupabaseRestClient
         var url = $"{_baseUrl}/rest/v1/{table}";
         var json = JsonSerializer.Serialize(data, _jsonOptions);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
-        var response = await _http.PostAsync(url, content);
+        using var request = new HttpRequestMessage(HttpMethod.Post, url) { Content = content };
+        request.Headers.Add("Prefer", "return=representation");
+        var response = await _http.SendAsync(request);
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
         var list = JsonSerializer.Deserialize<List<T>>(responseJson, _jsonOptions);
@@ -92,6 +94,7 @@ public class SupabaseRestClient
         var json = JsonSerializer.Serialize(data, _jsonOptions);
         var content = new StringContent(json, Encoding.UTF8, "application/json");
         using var request = new HttpRequestMessage(HttpMethod.Patch, url) { Content = content };
+        request.Headers.Add("Prefer", "return=representation");
         var response = await _http.SendAsync(request);
         response.EnsureSuccessStatusCode();
         var responseJson = await response.Content.ReadAsStringAsync();
@@ -109,7 +112,12 @@ public class SupabaseRestClient
             : "{}";
         var content = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await _http.PostAsync(url, content);
-        response.EnsureSuccessStatusCode();
+        if (!response.IsSuccessStatusCode)
+        {
+            var errorBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"[RPC Error] {functionName}: {(int)response.StatusCode} {errorBody}");
+            throw new HttpRequestException($"RPC {functionName} failed: {(int)response.StatusCode} - {errorBody}");
+        }
         var responseJson = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<List<T>>(responseJson, _jsonOptions) ?? [];
     }
@@ -122,7 +130,12 @@ public class SupabaseRestClient
             : "{}";
         var content = new StringContent(json, Encoding.UTF8, "application/json");
         var response = await _http.PostAsync(url, content);
-        response.EnsureSuccessStatusCode();
+        if (!response.IsSuccessStatusCode)
+        {
+            var errorBody = await response.Content.ReadAsStringAsync();
+            Console.WriteLine($"[RPC Error] {functionName}: {(int)response.StatusCode} {errorBody}");
+            throw new HttpRequestException($"RPC {functionName} failed: {(int)response.StatusCode} - {errorBody}");
+        }
         var responseJson = await response.Content.ReadAsStringAsync();
         return JsonSerializer.Deserialize<T>(responseJson, _jsonOptions);
     }

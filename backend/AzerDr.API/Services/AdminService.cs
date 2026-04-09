@@ -16,12 +16,12 @@ public class AdminService : IAdminService
     public async Task<List<DoctorListItem>> GetDoctorsAsync()
     {
         return await _db.Users
-            .Where(u => u.Role == "doctor")
             .OrderBy(u => u.CreatedAt)
             .Select(u => new DoctorListItem(
                 u.Id,
                 u.Username,
                 u.FullName,
+                u.Role,
                 u.IsActive,
                 u.Codings.Count,
                 u.CreatedAt
@@ -39,23 +39,24 @@ public class AdminService : IAdminService
             Username = request.Username,
             PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password),
             FullName = request.FullName,
-            Role = "doctor"
+            Role = request.Role ?? "doctor"
         };
 
         _db.Users.Add(user);
         await _db.SaveChangesAsync();
 
-        return new DoctorListItem(user.Id, user.Username, user.FullName, user.IsActive, 0, user.CreatedAt);
+        return new DoctorListItem(user.Id, user.Username, user.FullName, user.Role, user.IsActive, 0, user.CreatedAt);
     }
 
     public async Task<bool> UpdateDoctorAsync(Guid id, UpdateDoctorRequest request)
     {
         var user = await _db.Users.FindAsync(id);
-        if (user == null || user.Role != "doctor") return false;
+        if (user == null) return false;
 
         if (request.FullName != null) user.FullName = request.FullName;
         if (request.Password != null) user.PasswordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
         if (request.IsActive.HasValue) user.IsActive = request.IsActive.Value;
+        if (request.Role != null) user.Role = request.Role;
 
         await _db.SaveChangesAsync();
         return true;
