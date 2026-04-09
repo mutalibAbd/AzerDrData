@@ -17,13 +17,13 @@ import { createClient } from '@supabase/supabase-js';
 import { readFileSync } from 'fs';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
-import { createHash } from 'crypto';
+import bcrypt from 'bcryptjs';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // ── Configuration ──────────────────────────────────────────
 const SUPABASE_URL = process.env.SUPABASE_URL || 'https://ujpzllhzpbydvecnomaq.supabase.co';
-const SUPABASE_KEY = process.env.SUPABASE_KEY || 'sb_publishable_q_RaTHWuTO2874vnxT_MkA_kUGquN6E';
+const SUPABASE_KEY = process.env.SUPABASE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InVqcHpsbGh6cGJ5ZHZlY25vbWFxIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc3NTc0OTY1NSwiZXhwIjoyMDkxMzI1NjU1fQ._YzeW74Di_tvirTq5tldr56v_86Onbdp2WiLBO23l9M';
 
 const supabase = createClient(SUPABASE_URL, SUPABASE_KEY);
 
@@ -50,11 +50,10 @@ async function batchInsert(table, rows, batchSize = 500) {
   return true;
 }
 
-// BCrypt hash for default passwords (pre-computed)
-// admin123 → BCrypt hash
-const ADMIN_HASH = '$2a$11$rK7PzQx3JfKJqGS7Hg5xQOq.kz3YOv1HQhKjvP5yX0eGm6W7.ONWK';
+// Generate BCrypt hashes at runtime
+const ADMIN_HASH = bcrypt.hashSync('admin123', 11);
 // test123 → BCrypt hash
-const DOCTOR_HASH = '$2a$11$YJ6xP8u6bJ6ZEq3n4pS3UOq.kz3YOv1HQhKjvP5yX0eGm6W7.ONWK';
+const DOCTOR_HASH = bcrypt.hashSync('test123', 11);
 
 // ── Seed Functions ─────────────────────────────────────────
 
