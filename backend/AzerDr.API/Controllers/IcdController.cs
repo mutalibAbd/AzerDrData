@@ -1,4 +1,4 @@
-using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -9,9 +9,9 @@ namespace AzerDr.API.Controllers;
 [Authorize]
 public class IcdController : ControllerBase
 {
-    private readonly IcdService _icd;
+    private readonly IIcdService _icd;
 
-    public IcdController(IcdService icd) => _icd = icd;
+    public IcdController(IIcdService icd) => _icd = icd;
 
     [HttpGet("rubrikas")]
     public async Task<IActionResult> GetRubrikas()

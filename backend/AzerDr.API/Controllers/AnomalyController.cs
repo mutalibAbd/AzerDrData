@@ -1,6 +1,6 @@
 using System.Security.Claims;
 using AzerDr.API.DTOs;
-using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -11,9 +11,9 @@ namespace AzerDr.API.Controllers;
 [Authorize]
 public class AnomalyController : ControllerBase
 {
-    private readonly AnomalyService _anomaly;
+    private readonly IAnomalyService _anomaly;
 
-    public AnomalyController(AnomalyService anomaly) => _anomaly = anomaly;
+    public AnomalyController(IAnomalyService anomaly) => _anomaly = anomaly;
 
     private Guid GetUserId() =>
         Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);

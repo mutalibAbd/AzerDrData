@@ -1,5 +1,5 @@
 using AzerDr.API.DTOs;
-using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
 using Microsoft.AspNetCore.Mvc;
 
 namespace AzerDr.API.Controllers;
@@ -8,9 +8,9 @@ namespace AzerDr.API.Controllers;
 [Route("api/[controller]")]
 public class AuthController : ControllerBase
 {
-    private readonly AuthService _auth;
+    private readonly IAuthService _auth;
 
-    public AuthController(AuthService auth) => _auth = auth;
+    public AuthController(IAuthService auth) => _auth = auth;
 
     [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginRequest request)

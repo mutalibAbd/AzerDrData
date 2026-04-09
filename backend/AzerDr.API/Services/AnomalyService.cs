@@ -3,9 +3,11 @@ using AzerDr.API.DTOs;
 using AzerDr.API.Models;
 using Microsoft.EntityFrameworkCore;
 
+using AzerDr.API.Services.Interfaces;
+
 namespace AzerDr.API.Services;
 
-public class AnomalyService
+public class AnomalyService : IAnomalyService
 {
     private readonly AppDbContext _db;
 

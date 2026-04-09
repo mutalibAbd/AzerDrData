@@ -1,5 +1,5 @@
 using System.Security.Claims;
-using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +10,9 @@ namespace AzerDr.API.Controllers;
 [Authorize]
 public class DashboardController : ControllerBase
 {
-    private readonly AnomalyService _anomaly;
+    private readonly IAnomalyService _anomaly;
 
-    public DashboardController(AnomalyService anomaly) => _anomaly = anomaly;
+    public DashboardController(IAnomalyService anomaly) => _anomaly = anomaly;
 
     private Guid GetUserId() =>
         Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);

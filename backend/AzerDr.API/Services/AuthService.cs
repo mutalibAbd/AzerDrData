@@ -7,9 +7,11 @@ using AzerDr.API.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
+using AzerDr.API.Services.Interfaces;
+
 namespace AzerDr.API.Services;
 
-public class AuthService
+public class AuthService : IAuthService
 {
     private readonly AppDbContext _db;
     private readonly IConfiguration _config;

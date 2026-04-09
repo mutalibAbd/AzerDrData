@@ -1,21 +1,37 @@
 using System.Text;
 using AzerDr.API.Data;
 using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
+using AzerDr.API.Services.Supabase;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+// Database provider: "local" (EF Core + PostgreSQL) or "supabase" (REST API)
+var dbProvider = builder.Configuration["Database:Provider"] ?? "local";
+Console.WriteLine($"[Config] Database provider: {dbProvider}");
 
-// Services
-builder.Services.AddScoped<AuthService>();
-builder.Services.AddScoped<AnomalyService>();
-builder.Services.AddScoped<IcdService>();
-builder.Services.AddScoped<AdminService>();
+if (dbProvider == "supabase")
+{
+    // Supabase mode: use REST API (HTTPS, works without direct PostgreSQL/IPv4)
+    builder.Services.AddSingleton<SupabaseRestClient>();
+    builder.Services.AddScoped<IAuthService, SupabaseAuthService>();
+    builder.Services.AddScoped<IAnomalyService, SupabaseAnomalyService>();
+    builder.Services.AddScoped<IIcdService, SupabaseIcdService>();
+    builder.Services.AddScoped<IAdminService, SupabaseAdminService>();
+}
+else
+{
+    // Local mode: EF Core + direct PostgreSQL
+    builder.Services.AddDbContext<AppDbContext>(options =>
+        options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+    builder.Services.AddScoped<IAuthService, AuthService>();
+    builder.Services.AddScoped<IAnomalyService, AnomalyService>();
+    builder.Services.AddScoped<IIcdService, IcdService>();
+    builder.Services.AddScoped<IAdminService, AdminService>();
+}
 
 // JWT Authentication
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
@@ -54,9 +70,10 @@ builder.Services.AddHostedService<AzerDr.API.Middleware.StaleAssignmentCleanup>(
 
 var app = builder.Build();
 
-// Seed data on startup
-using (var scope = app.Services.CreateScope())
+// Seed data on startup (only in local mode)
+if (dbProvider != "supabase")
 {
+    using var scope = app.Services.CreateScope();
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var dataPath = Path.Combine(app.Environment.ContentRootPath, "..", "..", "data");
     try
@@ -70,6 +87,10 @@ using (var scope = app.Services.CreateScope())
             Console.WriteLine($"[Seed INNER] {ex.InnerException.Message}");
         throw;
     }
+}
+else
+{
+    Console.WriteLine("[Config] Supabase mode: skipping local seed (data should be seeded via supabase/seed.mjs)");
 }
 
 app.UseCors("AllowFrontend");

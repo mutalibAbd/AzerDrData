@@ -1,5 +1,5 @@
 using AzerDr.API.DTOs;
-using AzerDr.API.Services;
+using AzerDr.API.Services.Interfaces;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,9 +10,9 @@ namespace AzerDr.API.Controllers;
 [Authorize(Roles = "admin")]
 public class AdminController : ControllerBase
 {
-    private readonly AdminService _admin;
+    private readonly IAdminService _admin;
 
-    public AdminController(AdminService admin) => _admin = admin;
+    public AdminController(IAdminService admin) => _admin = admin;
 
     [HttpGet("doctors")]
     public async Task<IActionResult> GetDoctors()

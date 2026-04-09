@@ -2,9 +2,11 @@ using AzerDr.API.Data;
 using AzerDr.API.DTOs;
 using Microsoft.EntityFrameworkCore;
 
+using AzerDr.API.Services.Interfaces;
+
 namespace AzerDr.API.Services;
 
-public class IcdService
+public class IcdService : IIcdService
 {
     private readonly AppDbContext _db;
 
