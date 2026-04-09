@@ -7,8 +7,12 @@ const useCodingStore = create((set) => ({
   loading: false,
 
   fetchStats: async () => {
-    const { data } = await api.get('/dashboard/stats');
-    set({ stats: data });
+    try {
+      const { data } = await api.get('/dashboard/stats');
+      set({ stats: data });
+    } catch {
+      set({ stats: null });
+    }
   },
 
   fetchNext: async () => {
@@ -19,6 +23,8 @@ const useCodingStore = create((set) => ({
       return data;
     } catch (err) {
       set({ currentAnomaly: null, loading: false });
+      // Return error info so callers can distinguish "no data" from "auth error"
+      if (err.response?.status === 401) return { _authError: true };
       return null;
     }
   },

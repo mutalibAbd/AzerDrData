@@ -16,6 +16,7 @@ export default function CodingWorkspace() {
   const handleStart = async () => {
     const result = await fetchNext();
     if (!result) toast.error('Kodlanmamış anomaliya qalmayıb!');
+    else if (result._authError) toast.error('Sessiya bitib, yenidən daxil olun');
   };
 
   const handleSave = async () => {
