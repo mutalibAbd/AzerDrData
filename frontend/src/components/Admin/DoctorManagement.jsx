@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Plus, UserX, RefreshCw } from 'lucide-react';
+import { Plus, UserX, RefreshCw, Pencil } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
 
@@ -8,6 +8,8 @@ export default function DoctorManagement() {
   const [showForm, setShowForm] = useState(false);
   const [form, setForm] = useState({ username: '', password: '', fullName: '' });
   const [loading, setLoading] = useState(false);
+  const [editingId, setEditingId] = useState(null);
+  const [editName, setEditName] = useState('');
 
   useEffect(() => { loadDoctors(); }, []);
 
@@ -42,6 +44,19 @@ export default function DoctorManagement() {
     if (!newPass) return;
     await api.put(`/admin/doctors/${id}`, { password: newPass });
     toast.success('Şifrə yeniləndi');
+  };
+
+  const handleEditName = async (id) => {
+    if (!editName.trim()) return;
+    try {
+      await api.put(`/admin/doctors/${id}`, { fullName: editName.trim() });
+      toast.success('Ad yeniləndi');
+      setEditingId(null);
+      setEditName('');
+      loadDoctors();
+    } catch {
+      toast.error('Xəta baş verdi');
+    }
   };
 
   return (
@@ -92,7 +107,43 @@ export default function DoctorManagement() {
         {doctors.map((d) => (
           <div key={d.id} className="px-4 py-3 flex items-center justify-between">
             <div>
-              <span className="font-medium text-gray-800">{d.fullName}</span>
+              {editingId === d.id ? (
+                <div className="flex items-center gap-2">
+                  <input
+                    value={editName}
+                    onChange={(e) => setEditName(e.target.value)}
+                    className="border rounded px-2 py-1 text-sm w-48"
+                    autoFocus
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter') handleEditName(d.id);
+                      if (e.key === 'Escape') { setEditingId(null); setEditName(''); }
+                    }}
+                  />
+                  <button
+                    onClick={() => handleEditName(d.id)}
+                    className="text-xs bg-green-600 text-white px-2 py-1 rounded hover:bg-green-700"
+                  >
+                    Saxla
+                  </button>
+                  <button
+                    onClick={() => { setEditingId(null); setEditName(''); }}
+                    className="text-xs text-gray-500 hover:text-gray-700"
+                  >
+                    Ləğv
+                  </button>
+                </div>
+              ) : (
+                <>
+                  <span className="font-medium text-gray-800">{d.fullName}</span>
+                  <button
+                    onClick={() => { setEditingId(d.id); setEditName(d.fullName); }}
+                    className="text-gray-400 hover:text-blue-600 ml-1"
+                    title="Adı redaktə et"
+                  >
+                    <Pencil size={12} />
+                  </button>
+                </>
+              )}
               <span className="text-sm text-gray-400 ml-2">@{d.username}</span>
               {!d.isActive && <span className="ml-2 text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded">Deaktiv</span>}
             </div>

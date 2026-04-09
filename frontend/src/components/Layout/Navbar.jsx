@@ -22,7 +22,7 @@ export default function Navbar() {
           onClick={() => navigate('/')}
           className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm ${isActive('/') ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50'}`}
         >
-          <LayoutDashboard size={16} /> Dashboard
+          <LayoutDashboard size={16} /> İdarə paneli
         </button>
         {user?.role === 'admin' && (
           <button

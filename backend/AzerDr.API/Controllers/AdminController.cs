@@ -26,7 +26,7 @@ public class AdminController : ControllerBase
     {
         var result = await _admin.CreateDoctorAsync(request);
         if (result == null)
-            return Conflict(new { message = "Username already exists" });
+            return Conflict(new { message = "Bu istifadəçi adı artıq mövcuddur" });
 
         return Created($"/api/admin/doctors/{result.Id}", result);
     }
@@ -36,9 +36,9 @@ public class AdminController : ControllerBase
     {
         var success = await _admin.UpdateDoctorAsync(id, request);
         if (!success)
-            return NotFound(new { message = "Doctor not found" });
+            return NotFound(new { message = "Həkim tapılmadı" });
 
-        return Ok(new { message = "Doctor updated" });
+        return Ok(new { message = "Həkim yeniləndi" });
     }
 
     [HttpDelete("doctors/{id}")]
@@ -46,9 +46,9 @@ public class AdminController : ControllerBase
     {
         var success = await _admin.DeleteDoctorAsync(id);
         if (!success)
-            return NotFound(new { message = "Doctor not found" });
+            return NotFound(new { message = "Həkim tapılmadı" });
 
-        return Ok(new { message = "Doctor deactivated" });
+        return Ok(new { message = "Həkim deaktiv edildi" });
     }
 
     [HttpGet("progress")]
@@ -70,8 +70,8 @@ public class AdminController : ControllerBase
     {
         var success = await _admin.ReviewErrorReportAsync(id, request.Status);
         if (!success)
-            return NotFound(new { message = "Error report not found" });
+            return NotFound(new { message = "Xəta bildirişi tapılmadı" });
 
-        return Ok(new { message = $"Error report {request.Status}" });
+        return Ok(new { message = $"Xəta bildirişi {(request.Status == "accepted" ? "qəbul edildi" : "rədd edildi")}" });
     }
 }

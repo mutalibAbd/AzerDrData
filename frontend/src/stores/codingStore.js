@@ -14,7 +14,7 @@ const useCodingStore = create((set) => ({
   fetchNext: async () => {
     set({ loading: true });
     try {
-      const { data } = await api.post('/anomalies/next');
+      const { data } = await api.post('/anomaly/next');
       set({ currentAnomaly: data, loading: false });
       return data;
     } catch (err) {
@@ -24,17 +24,17 @@ const useCodingStore = create((set) => ({
   },
 
   saveCoding: async (anomalyId, coding) => {
-    await api.post(`/anomalies/${anomalyId}/save`, coding);
+    await api.post(`/anomaly/${anomalyId}/save`, coding);
     set({ currentAnomaly: null });
   },
 
   skipAnomaly: async (anomalyId) => {
-    await api.post(`/anomalies/${anomalyId}/skip`);
+    await api.post(`/anomaly/${anomalyId}/skip`);
     set({ currentAnomaly: null });
   },
 
   reportError: async (anomalyId, report) => {
-    await api.post(`/anomalies/${anomalyId}/error-report`, report);
+    await api.post(`/anomaly/${anomalyId}/error-report`, report);
   },
 
   clear: () => set({ currentAnomaly: null }),

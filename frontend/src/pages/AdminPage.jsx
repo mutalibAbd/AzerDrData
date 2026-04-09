@@ -22,7 +22,7 @@ export default function AdminPage() {
     <div className="min-h-screen bg-gray-50">
       <Navbar />
       <div className="max-w-5xl mx-auto p-6 space-y-6">
-        <h2 className="text-xl font-bold text-gray-800">Admin Panel</h2>
+        <h2 className="text-xl font-bold text-gray-800">Admin Paneli</h2>
         <StatsCards stats={stats} />
 
         <div className="flex gap-1 border-b">

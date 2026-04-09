@@ -23,7 +23,7 @@ public class AnomalyController : ControllerBase
     {
         var result = await _anomaly.GetNextAsync(GetUserId());
         if (result == null)
-            return NotFound(new { message = "No more anomalies to code" });
+            return NotFound(new { message = "Kodlanmamış anomaliya qalmayıb" });
 
         return Ok(result);
     }
@@ -33,9 +33,9 @@ public class AnomalyController : ControllerBase
     {
         var success = await _anomaly.SaveCodingAsync(id, GetUserId(), request);
         if (!success)
-            return BadRequest(new { message = "Anomaly not found or not assigned to you" });
+            return BadRequest(new { message = "Anomaliya tapılmadı və ya sizə təyin edilməyib" });
 
-        return Ok(new { message = "Coding saved successfully" });
+        return Ok(new { message = "Kodlama uğurla saxlanıldı" });
     }
 
     [HttpPost("{id}/skip")]
@@ -43,9 +43,9 @@ public class AnomalyController : ControllerBase
     {
         var success = await _anomaly.SkipAsync(id, GetUserId());
         if (!success)
-            return BadRequest(new { message = "Anomaly not found or not assigned to you" });
+            return BadRequest(new { message = "Anomaliya tapılmadı və ya sizə təyin edilməyib" });
 
-        return Ok(new { message = "Anomaly skipped" });
+        return Ok(new { message = "Anomaliya keçildi" });
     }
 
     [HttpPost("{id}/error-report")]
@@ -53,8 +53,8 @@ public class AnomalyController : ControllerBase
     {
         var success = await _anomaly.ReportErrorAsync(id, GetUserId(), request);
         if (!success)
-            return NotFound(new { message = "Anomaly not found" });
+            return NotFound(new { message = "Anomaliya tapılmadı" });
 
-        return Ok(new { message = "Error reported successfully" });
+        return Ok(new { message = "Xəta uğurla bildirildi" });
     }
 }

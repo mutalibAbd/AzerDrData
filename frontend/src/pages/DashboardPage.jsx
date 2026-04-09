@@ -16,7 +16,7 @@ export default function DashboardPage() {
       <Navbar />
       <div className="max-w-5xl mx-auto p-6 space-y-6">
         <div className="flex items-center justify-between">
-          <h2 className="text-xl font-bold text-gray-800">Dashboard</h2>
+          <h2 className="text-xl font-bold text-gray-800">İdarə paneli</h2>
           <button
             onClick={() => navigate('/coding')}
             className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700"

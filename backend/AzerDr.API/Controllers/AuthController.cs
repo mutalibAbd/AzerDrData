@@ -17,7 +17,7 @@ public class AuthController : ControllerBase
     {
         var result = await _auth.LoginAsync(request);
         if (result == null)
-            return Unauthorized(new { message = "Invalid username or password" });
+            return Unauthorized(new { message = "Yanlış istifadəçi adı və ya şifrə" });
 
         return Ok(result);
     }
