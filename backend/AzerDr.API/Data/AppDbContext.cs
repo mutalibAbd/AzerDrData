@@ -28,6 +28,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<Anomaly>(e =>
         {
             e.ToTable("anomalies");
+            e.Property(a => a.Id).ValueGeneratedNever();
             e.HasIndex(a => a.Status);
             e.HasIndex(a => a.AssignedTo);
             e.HasIndex(a => a.PatientId);
@@ -80,11 +81,13 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<IcdRubrika>(e =>
         {
             e.ToTable("icd_rubrikas");
+            e.Property(r => r.Id).ValueGeneratedNever();
         });
 
         modelBuilder.Entity<IcdBashliq>(e =>
         {
             e.ToTable("icd_bashliqlar");
+            e.Property(b => b.Id).ValueGeneratedNever();
 
             e.HasOne(b => b.Rubrika)
                 .WithMany(r => r.Bashliqlar)
@@ -95,6 +98,7 @@ public class AppDbContext : DbContext
         modelBuilder.Entity<IcdDiaqnoz>(e =>
         {
             e.ToTable("icd_diaqnozlar");
+            e.Property(d => d.Id).ValueGeneratedNever();
 
             e.HasOne(d => d.Bashliq)
                 .WithMany(b => b.Diaqnozlar)

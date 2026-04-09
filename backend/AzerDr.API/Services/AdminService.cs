@@ -71,16 +71,24 @@ public class AdminService
 
     public async Task<List<ProgressItem>> GetProgressAsync()
     {
-        return await _db.Users
+        var doctors = await _db.Users
             .Where(u => u.Role == "doctor" && u.IsActive)
-            .Select(u => new ProgressItem(
+            .Select(u => new
+            {
                 u.Id,
                 u.FullName,
-                u.Codings.Count,
-                u.Codings.OrderByDescending(c => c.CreatedAt).Select(c => (DateTime?)c.CreatedAt).FirstOrDefault()
-            ))
-            .OrderByDescending(p => p.CodingCount)
+                CodingCount = u.Codings.Count(),
+                LastCodingAt = u.Codings
+                    .OrderByDescending(c => c.CreatedAt)
+                    .Select(c => (DateTime?)c.CreatedAt)
+                    .FirstOrDefault()
+            })
             .ToListAsync();
+
+        return doctors
+            .OrderByDescending(d => d.CodingCount)
+            .Select(d => new ProgressItem(d.Id, d.FullName, d.CodingCount, d.LastCodingAt))
+            .ToList();
     }
 
     public async Task<List<ErrorReportItem>> GetErrorReportsAsync(string? status = null)

@@ -9,7 +9,7 @@ public class IcdBashliq
 
     public int RubrikaId { get; set; }
 
-    [Required, MaxLength(50)]
+    [Required, MaxLength(200)]
     public string Code { get; set; } = string.Empty;
 
     [Required, MaxLength(200)]

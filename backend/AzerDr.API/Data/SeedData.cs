@@ -9,11 +9,14 @@ public static class SeedData
 {
     public static async Task SeedAsync(AppDbContext db, string dataPath)
     {
+        Console.WriteLine("[Seed] Starting database seed...");
         await db.Database.EnsureCreatedAsync();
+        Console.WriteLine("[Seed] EnsureCreatedAsync done.");
 
         // Seed admin user if no users exist
         if (!await db.Users.AnyAsync())
         {
+            Console.WriteLine("[Seed] Creating admin user...");
             db.Users.Add(new User
             {
                 Username = "admin",
@@ -22,13 +25,16 @@ public static class SeedData
                 Role = "admin"
             });
             await db.SaveChangesAsync();
+            Console.WriteLine("[Seed] Admin user created.");
         }
 
         // Seed ICD hierarchy
         if (!await db.IcdRubrikas.AnyAsync())
         {
+            Console.WriteLine("[Seed] Loading ICD hierarchy...");
             var icdJson = await File.ReadAllTextAsync(Path.Combine(dataPath, "icd10_hierarchy.json"));
             var rubrikas = JsonSerializer.Deserialize<List<IcdRubrikaJson>>(icdJson, JsonOpts)!;
+            Console.WriteLine($"[Seed] Deserialized {rubrikas.Count} rubrikas.");
 
             int bashliqAutoId = 1;
             int diaqnozAutoId = 1;
@@ -71,16 +77,21 @@ public static class SeedData
                 }
             }
             await db.SaveChangesAsync();
+            Console.WriteLine($"[Seed] ICD hierarchy saved. Bashliqlar: {bashliqAutoId - 1}, Diaqnozlar: {diaqnozAutoId - 1}");
         }
 
         // Seed anomalies
         if (!await db.Anomalies.AnyAsync())
         {
+            Console.WriteLine("[Seed] Loading anomalies...");
             var anomalyJson = await File.ReadAllTextAsync(Path.Combine(dataPath, "anomalies.json"));
             var anomalies = JsonSerializer.Deserialize<List<AnomalyJson>>(anomalyJson, JsonOpts)!;
+            Console.WriteLine($"[Seed] Deserialized {anomalies.Count} anomalies.");
 
+            int batchNum = 0;
             foreach (var batch in anomalies.Chunk(500))
             {
+                batchNum++;
                 foreach (var a in batch)
                 {
                     db.Anomalies.Add(new Anomaly
@@ -95,8 +106,12 @@ public static class SeedData
                     });
                 }
                 await db.SaveChangesAsync();
+                Console.WriteLine($"[Seed] Anomaly batch {batchNum} saved ({batch.Length} records).");
             }
+            Console.WriteLine("[Seed] All anomalies seeded.");
         }
+
+        Console.WriteLine("[Seed] Seed complete!");
     }
 
     private static readonly JsonSerializerOptions JsonOpts = new()

@@ -59,7 +59,17 @@ using (var scope = app.Services.CreateScope())
 {
     var db = scope.ServiceProvider.GetRequiredService<AppDbContext>();
     var dataPath = Path.Combine(app.Environment.ContentRootPath, "..", "..", "data");
-    await SeedData.SeedAsync(db, dataPath);
+    try
+    {
+        await SeedData.SeedAsync(db, dataPath);
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine($"[Seed ERROR] {ex.GetType().Name}: {ex.Message}");
+        if (ex.InnerException != null)
+            Console.WriteLine($"[Seed INNER] {ex.InnerException.Message}");
+        throw;
+    }
 }
 
 app.UseCors("AllowFrontend");

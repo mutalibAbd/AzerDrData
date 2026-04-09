@@ -59,29 +59,40 @@ public class AnomalyService
                 .SetProperty(a => a.AssignedAt, (DateTime?)null));
 
         // Atomically pick and assign one anomaly using raw SQL for SKIP LOCKED
-        var anomaly = await _db.Database
-            .SqlQueryRaw<NextAnomalyResult>("""
-                UPDATE anomalies
-                SET status = 'in_progress',
-                    assigned_to = {0},
-                    assigned_at = NOW()
-                WHERE id = (
-                    SELECT id FROM anomalies
-                    WHERE status = 'pending'
-                    ORDER BY id
-                    LIMIT 1
-                    FOR UPDATE SKIP LOCKED
-                )
-                RETURNING id, report_id AS "ReportId", patient_id AS "PatientId",
-                          date::text AS "Date", diagnosis AS "Diagnosis", explanation AS "Explanation"
-                """, doctorId)
-            .FirstOrDefaultAsync();
+        using var conn = _db.Database.GetDbConnection();
+        await conn.OpenAsync();
+        using var cmd = conn.CreateCommand();
+        cmd.CommandText = """
+            UPDATE anomalies
+            SET "Status" = 'in_progress',
+                "AssignedTo" = @doctorId,
+                "AssignedAt" = NOW()
+            WHERE "Id" = (
+                SELECT "Id" FROM anomalies
+                WHERE "Status" = 'pending'
+                ORDER BY "Id"
+                LIMIT 1
+                FOR UPDATE SKIP LOCKED
+            )
+            RETURNING "Id", "ReportId", "PatientId",
+                      "Date"::text, "Diagnosis", "Explanation"
+            """;
 
-        if (anomaly == null) return null;
+        var param = cmd.CreateParameter();
+        param.ParameterName = "doctorId";
+        param.Value = doctorId;
+        cmd.Parameters.Add(param);
+
+        using var reader = await cmd.ExecuteReaderAsync();
+        if (!await reader.ReadAsync()) return null;
 
         return new AnomalyResponse(
-            anomaly.Id, anomaly.ReportId, anomaly.PatientId,
-            anomaly.Date, anomaly.Diagnosis, anomaly.Explanation);
+            reader.GetInt32(0),
+            reader.GetString(1),
+            reader.GetString(2),
+            reader.GetString(3),
+            reader.GetString(4),
+            reader.GetString(5));
     }
 
     public async Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request)
@@ -153,14 +164,4 @@ public class AnomalyService
                 .SetProperty(a => a.AssignedAt, (DateTime?)null));
     }
 
-    // Helper class for raw SQL result mapping
-    private class NextAnomalyResult
-    {
-        public int Id { get; set; }
-        public string ReportId { get; set; } = "";
-        public string PatientId { get; set; } = "";
-        public string Date { get; set; } = "";
-        public string Diagnosis { get; set; } = "";
-        public string Explanation { get; set; } = "";
-    }
 }
