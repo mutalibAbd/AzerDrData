@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
-import { Trophy } from 'lucide-react';
+import { Trophy, Stethoscope } from 'lucide-react';
 import api from '../../services/api';
 
-const medals = ['🥇', '🥈', '🥉'];
+const rankColors = ['text-yellow-500', 'text-gray-400', 'text-amber-600'];
 
 export default function Leaderboard({ compact = false }) {
   const [items, setItems] = useState([]);
@@ -32,8 +32,12 @@ export default function Leaderboard({ compact = false }) {
         {displayed.map((item) => (
           <div key={item.rank} className={`px-4 py-2.5 flex items-center justify-between ${item.rank <= 3 ? 'bg-yellow-50/40' : ''}`}>
             <div className="flex items-center gap-3">
-              <span className="text-lg w-8 text-center">
-                {item.rank <= 3 ? medals[item.rank - 1] : <span className="text-sm font-bold text-gray-300">#{item.rank}</span>}
+              <span className="w-8 flex justify-center">
+                {item.rank <= 3 ? (
+                  <Stethoscope size={20} className={rankColors[item.rank - 1]} />
+                ) : (
+                  <span className="text-sm font-bold text-gray-300">#{item.rank}</span>
+                )}
               </span>
               <span className={`font-medium ${item.rank <= 3 ? 'text-gray-900' : 'text-gray-700'} text-sm`}>
                 {item.doctorName}

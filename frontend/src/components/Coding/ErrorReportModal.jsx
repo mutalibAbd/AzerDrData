@@ -29,12 +29,12 @@ export default function ErrorReportModal({ anomalyId, onClose }) {
   };
 
   return (
-    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50">
-      <div className="bg-white rounded-lg w-full max-w-lg p-6">
+    <div className="fixed inset-0 bg-black/40 flex items-center justify-center z-50" onClick={onClose}>
+      <div className="bg-white rounded-lg w-full max-w-lg p-6" onClick={(e) => e.stopPropagation()}>
         <div className="flex items-center justify-between mb-4">
           <h3 className="font-semibold text-gray-800 flex items-center gap-2">
             <GitBranch size={18} className="text-purple-500" />
-            ICD-10 Məntiq Xətası
+            İCD-10 kodu təklif et
           </h3>
           <button onClick={onClose} className="text-gray-400 hover:text-gray-600">
             <X size={20} />
@@ -49,7 +49,7 @@ export default function ErrorReportModal({ anomalyId, onClose }) {
               onChange={(e) => setDescription(e.target.value)}
               rows={4}
               className="w-full border border-gray-300 rounded-md px-3 py-2"
-              placeholder="ICD kodu ilə bağlı problemi izah edin... Məs: Bu anomaliya üçün uyğun ICD kodu tapılmır, diaqnoz məlumatı kifayət deyil, və s."
+              placeholder="ICD kodu ilə bağlı təklifinizi yazın... Məs: Bu anomaliya üçün uyğun ICD kodu, diaqnoz haqqında rəyiniz, və s."
               required
             />
           </div>

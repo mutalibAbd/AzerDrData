@@ -149,7 +149,7 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
             className="flex items-center gap-1 text-sm text-purple-600 hover:text-purple-800 border border-purple-200 rounded px-2 py-1 hover:bg-purple-50"
           >
             <AlertTriangle size={14} />
-            ICD xətası bildir
+            ICD kodu təklif et
           </button>
         )}
       </div>

@@ -93,7 +93,7 @@ export default function PatientInfo({ anomaly }) {
         {/* Prominent title */}
         <div className="flex items-center justify-center gap-2 py-2 px-4 bg-gradient-to-r from-indigo-100 via-blue-100 to-indigo-100 rounded-lg border border-indigo-200">
           <Microscope size={20} className="text-indigo-600" />
-          <span className="text-base font-bold text-indigo-800 tracking-wide">Dr.Azərin Anormal tapıntıları</span>
+          <span className="text-base font-bold text-indigo-800 tracking-wide">Dr.Azərin anormal tapıntıları</span>
         </div>
 
         <div>

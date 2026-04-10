@@ -26,7 +26,7 @@ export default function MyCodings() {
   return (
     <div className="bg-white border rounded-lg">
       <div className="px-4 py-3 border-b">
-        <h3 className="font-semibold text-gray-800">Mənim kodlamalarım</h3>
+        <h3 className="font-semibold text-gray-800">Mənim kodlaşdırmalarım</h3>
       </div>
       {codings.length === 0 ? (
         <div className="p-6 text-center text-gray-400">Hələ heç bir kodlama yoxdur</div>
