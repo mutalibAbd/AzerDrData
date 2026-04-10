@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Save, SkipForward, AlertTriangle, ArrowLeft, Loader } from 'lucide-react';
+import { Save, SkipForward, AlertTriangle, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
 import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
@@ -41,6 +41,22 @@ export default function CodingWorkspace() {
       // Auto-fetch next
       const next = await fetchNext();
       if (!next) toast.success('Bütün anomaliyalar kodlandı! 🎉');
+    } catch {
+      toast.error('Xəta baş verdi');
+    }
+    setSaving(false);
+  };
+
+  const handleSaveAndFinish = async () => {
+    if (!icdData.diaqnozCode) {
+      toast.error('Zəhmət olmasa ICD diaqnoz seçin');
+      return;
+    }
+    setSaving(true);
+    try {
+      await saveCoding(currentAnomaly.id, { ...icdData, qeyd: qeyd || null });
+      toast.success('Kodlama saxlanıldı!');
+      navigate('/');
     } catch {
       toast.error('Xəta baş verdi');
     }
@@ -111,6 +127,13 @@ export default function CodingWorkspace() {
             className="flex items-center gap-1 px-4 py-2 text-sm border border-gray-300 rounded hover:bg-gray-50"
           >
             <SkipForward size={16} /> Keç
+          </button>
+          <button
+            onClick={handleSaveAndFinish}
+            disabled={saving || !icdData.diaqnozCode}
+            className="flex items-center gap-1 px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
+          >
+            <CheckCircle size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Bitir'}
           </button>
           <button
             onClick={handleSave}
