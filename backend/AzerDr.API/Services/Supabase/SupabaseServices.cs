@@ -323,7 +323,7 @@ public class SupabaseAnomalyService : IAnomalyService
             .ToList();
 
         var doctors = await _client.From<SupabaseUser>("users",
-            "select=id,full_name&role=eq.doctor");
+            "select=id,full_name");
         var doctorMap = doctors.ToDictionary(d => d.Id, d => d.FullName);
 
         return grouped.Select((x, i) => new LeaderboardItem(
