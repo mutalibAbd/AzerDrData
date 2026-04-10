@@ -55,25 +55,36 @@ export default function CodingPage() {
             <h2 className="text-xl font-bold text-gray-800 mb-4">ICD-10 Kodlama</h2>
             <CodingWorkspace />
           </div>
-          <div className="lg:col-span-1 space-y-4">
-            <Leaderboard compact />
-            <button
-              onClick={loadIcdData}
-              className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border text-sm font-medium transition-all ${
-                showIcdRef
-                  ? 'bg-teal-600 text-white border-teal-600'
-                  : 'bg-white text-teal-700 border-teal-300 hover:bg-teal-50'
-              }`}
-            >
-              <BookOpen size={16} />
-              Ümumi Fetal İCD10
-            </button>
+          <div className="lg:col-span-1">
+            <div className="mb-4 h-[28px]" /> {/* spacer to align with h2 */}
+            <div className="space-y-4">
+              <Leaderboard compact />
+              <button
+                onClick={loadIcdData}
+                className={`w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg border text-sm font-medium transition-all ${
+                  showIcdRef
+                    ? 'bg-teal-600 text-white border-teal-600'
+                    : 'bg-white text-teal-700 border-teal-300 hover:bg-teal-50'
+                }`}
+              >
+                <BookOpen size={16} />
+                Ümumi Fetal İCD10
+              </button>
+            </div>
           </div>
         </div>
+      </div>
 
-        {showIcdRef && icdData && (
-          <div className="mt-6 bg-white border-2 border-teal-200 rounded-lg overflow-hidden">
-            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 px-5 py-3 border-b border-teal-200 flex items-center justify-between">
+      {/* Bottom slide-up popup */}
+      {showIcdRef && icdData && (
+        <div className="fixed inset-0 z-50 flex items-end" onClick={() => setShowIcdRef(false)}>
+          <div className="absolute inset-0 bg-black/30" />
+          <div
+            className="relative w-full bg-white border-t-2 border-teal-300 rounded-t-xl shadow-2xl animate-slide-up"
+            style={{ maxHeight: '55vh' }}
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="bg-gradient-to-r from-teal-50 to-cyan-50 px-5 py-3 border-b border-teal-200 flex items-center justify-between rounded-t-xl">
               <h3 className="font-semibold text-gray-800 flex items-center gap-2">
                 <BookOpen size={18} className="text-teal-600" />
                 Ümumi Fetal İCD-10 Kodları
@@ -94,7 +105,7 @@ export default function CodingPage() {
                 </button>
               </div>
             </div>
-            <div className="max-h-96 overflow-y-auto">
+            <div className="overflow-y-auto" style={{ maxHeight: 'calc(55vh - 56px)' }}>
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 sticky top-0">
                   <tr>
@@ -122,8 +133,8 @@ export default function CodingPage() {
               )}
             </div>
           </div>
-        )}
-      </div>
+        </div>
+      )}
     </div>
   );
 }
