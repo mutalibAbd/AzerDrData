@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Save, SkipForward, AlertTriangle, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
+import { Save, SkipForward, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
 import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
@@ -11,7 +11,7 @@ export default function CodingWorkspace() {
   const { currentAnomaly, loading, fetchNext, saveCoding, skipAnomaly } = useCodingStore();
   const [icdData, setIcdData] = useState({});
   const [qeyd, setQeyd] = useState('');
-  const [showErrorModal, setShowErrorModal] = useState(false);
+  const [showIcdErrorModal, setShowIcdErrorModal] = useState(false);
   const [saving, setSaving] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   const navigate = useNavigate();
@@ -96,8 +96,8 @@ export default function CodingWorkspace() {
 
   return (
     <div className="space-y-4">
-      <PatientInfo anomaly={currentAnomaly} onReportError={() => setShowErrorModal(true)} />
-      <IcdSelector value={icdData} onChange={setIcdData} />
+      <PatientInfo anomaly={currentAnomaly} />
+      <IcdSelector value={icdData} onChange={setIcdData} onReportIcdError={() => setShowIcdErrorModal(true)} />
 
       {/* Note */}
       <div className="bg-white border rounded-lg p-5">
@@ -145,8 +145,8 @@ export default function CodingWorkspace() {
         </div>
       </div>
 
-      {showErrorModal && (
-        <ErrorReportModal anomalyId={currentAnomaly.id} onClose={() => setShowErrorModal(false)} />
+      {showIcdErrorModal && (
+        <ErrorReportModal anomalyId={currentAnomaly.id} onClose={() => setShowIcdErrorModal(false)} />
       )}
     </div>
   );

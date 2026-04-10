@@ -174,6 +174,27 @@ public class AnomalyService : IAnomalyService
         return true;
     }
 
+    public async Task<List<LeaderboardItem>> GetLeaderboardAsync()
+    {
+        var items = await _db.AnomalyCodings
+            .GroupBy(c => c.DoctorId)
+            .Select(g => new { DoctorId = g.Key, Count = g.Count() })
+            .OrderByDescending(x => x.Count)
+            .Take(20)
+            .ToListAsync();
+
+        var doctorIds = items.Select(i => i.DoctorId).ToList();
+        var doctors = await _db.Users
+            .Where(u => doctorIds.Contains(u.Id))
+            .ToDictionaryAsync(u => u.Id, u => u.FullName);
+
+        return items.Select((x, i) => new LeaderboardItem(
+            doctors.GetValueOrDefault(x.DoctorId, "Naməlum"),
+            x.Count,
+            i + 1
+        )).ToList();
+    }
+
     public async Task ReleaseStaleAssignments()
     {
         var threshold = DateTime.UtcNow.AddMinutes(-30);

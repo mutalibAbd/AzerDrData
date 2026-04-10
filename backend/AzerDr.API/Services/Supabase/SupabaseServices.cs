@@ -309,6 +309,29 @@ public class SupabaseAnomalyService : IAnomalyService
         });
         return true;
     }
+
+    public async Task<List<LeaderboardItem>> GetLeaderboardAsync()
+    {
+        var codings = await _client.From<SupabaseCoding>("anomaly_codings",
+            "select=doctor_id");
+
+        var grouped = codings
+            .GroupBy(c => c.DoctorId)
+            .Select(g => new { DoctorId = g.Key, Count = g.Count() })
+            .OrderByDescending(x => x.Count)
+            .Take(20)
+            .ToList();
+
+        var doctors = await _client.From<SupabaseUser>("users",
+            "select=id,full_name&role=eq.doctor");
+        var doctorMap = doctors.ToDictionary(d => d.Id, d => d.FullName);
+
+        return grouped.Select((x, i) => new LeaderboardItem(
+            doctorMap.GetValueOrDefault(x.DoctorId, "Naməlum"),
+            x.Count,
+            i + 1
+        )).ToList();
+    }
 }
 
 public class SupabaseIcdService : IIcdService

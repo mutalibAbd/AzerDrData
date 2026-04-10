@@ -15,6 +15,7 @@ public interface IAnomalyService
     Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request);
     Task<bool> SkipAsync(int anomalyId, Guid doctorId);
     Task<bool> ReportErrorAsync(int anomalyId, Guid doctorId, ErrorReportRequest request);
+    Task<List<LeaderboardItem>> GetLeaderboardAsync();
 }
 
 public interface IIcdService

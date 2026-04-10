@@ -1,9 +1,11 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { Heart } from 'lucide-react';
 import useCodingStore from '../stores/codingStore';
 import useAuthStore from '../stores/authStore';
 import Navbar from '../components/Layout/Navbar';
 import StatsCards from '../components/Dashboard/StatsCards';
+import Leaderboard from '../components/Dashboard/Leaderboard';
 import MyCodings from '../components/Dashboard/MyCodings';
 
 export default function DashboardPage() {
@@ -32,7 +34,19 @@ export default function DashboardPage() {
           </button>
         </div>
         <StatsCards stats={stats} />
-        <MyCodings />
+
+        {/* Thank you message */}
+        <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-4 flex items-center gap-3">
+          <Heart size={22} className="text-teal-500 flex-shrink-0" />
+          <p className="text-sm font-medium text-teal-800">
+            Dr. Azərin 10 illik anomaliya bazasının İCD-10 kodlaşdırmasına dəstək olduğunuz üçün təşəkkür edirik.
+          </p>
+        </div>
+
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <Leaderboard />
+          <MyCodings />
+        </div>
       </div>
     </div>
   );

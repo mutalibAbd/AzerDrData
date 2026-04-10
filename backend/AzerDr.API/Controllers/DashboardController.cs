@@ -30,4 +30,11 @@ public class DashboardController : ControllerBase
         var codings = await _anomaly.GetMyCodingsAsync(GetUserId(), page, size);
         return Ok(codings);
     }
+
+    [HttpGet("leaderboard")]
+    public async Task<IActionResult> GetLeaderboard()
+    {
+        var leaderboard = await _anomaly.GetLeaderboardAsync();
+        return Ok(leaderboard);
+    }
 }

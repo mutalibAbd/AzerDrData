@@ -54,6 +54,9 @@ public record IcdDiaqnozDto(int Id, string Code, string Name);
 public record IcdQeydDto(int Id, string Name, List<IcdQeydChildDto>? Children = null);
 public record IcdQeydChildDto(int Id, string Name);
 
+// Leaderboard
+public record LeaderboardItem(string DoctorName, int CodingCount, int Rank);
+
 // Admin
 public record CreateDoctorRequest(string Username, string Password, string FullName, string? Role = "doctor");
 public record UpdateDoctorRequest(string? FullName, string? Password, bool? IsActive, string? Role);
