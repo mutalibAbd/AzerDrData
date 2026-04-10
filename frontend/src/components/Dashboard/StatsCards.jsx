@@ -17,7 +17,9 @@ export default function StatsCards({ stats }) {
     purple: 'bg-purple-50 text-purple-700 border-purple-200',
   };
 
-  const percent = stats.total > 0 ? Math.round((stats.coded / stats.total) * 100) : 0;
+  const rawPercent = stats.total > 0 ? (stats.coded / stats.total) * 100 : 0;
+  const displayPercent = rawPercent > 0 && rawPercent < 1 ? rawPercent.toFixed(1) : Math.round(rawPercent);
+  const barWidth = rawPercent > 0 ? Math.max(rawPercent, 1) : 0;
 
   return (
     <div className="space-y-4">
@@ -35,12 +37,12 @@ export default function StatsCards({ stats }) {
       <div className="bg-white border rounded-lg p-4">
         <div className="flex justify-between text-sm mb-2">
           <span className="text-gray-600">Ümumi irəliləyiş</span>
-          <span className="font-medium">{percent}%</span>
+          <span className="font-medium">{displayPercent}%</span>
         </div>
         <div className="w-full bg-gray-200 rounded-full h-3">
           <div
             className="bg-green-500 h-3 rounded-full transition-all"
-            style={{ width: `${percent}%` }}
+            style={{ width: `${barWidth}%` }}
           />
         </div>
       </div>
