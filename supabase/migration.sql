@@ -72,14 +72,16 @@ CREATE TABLE IF NOT EXISTS anomaly_codings (
   id SERIAL PRIMARY KEY,
   anomaly_id INT UNIQUE NOT NULL REFERENCES anomalies(id) ON DELETE CASCADE,
   doctor_id UUID NOT NULL REFERENCES users(id) ON DELETE CASCADE,
-  rubrika_code VARCHAR(50) NOT NULL,
+  rubrika_code TEXT NOT NULL,
   rubrika_name VARCHAR(200) NOT NULL,
-  bashliq_code VARCHAR(50) NOT NULL,
+  bashliq_code TEXT NOT NULL,
   bashliq_name VARCHAR(200) NOT NULL,
-  diaqnoz_code VARCHAR(50) NOT NULL,
+  diaqnoz_code TEXT NOT NULL,
   diaqnoz_name VARCHAR(200) NOT NULL,
   icd_qeyd_name VARCHAR(300),
   qeyd TEXT,
+  patient_id TEXT,
+  report_id TEXT,
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
 );
 
@@ -200,7 +202,13 @@ CREATE OR REPLACE FUNCTION save_coding(
 ) RETURNS BOOLEAN AS $$
 DECLARE
   affected INT;
+  v_patient_id TEXT;
+  v_report_id TEXT;
 BEGIN
+  -- Get patient_id and report_id from anomaly
+  SELECT patient_id, report_id INTO v_patient_id, v_report_id
+  FROM anomalies WHERE id = p_anomaly_id;
+
   -- Mark anomaly as completed
   UPDATE anomalies
   SET status = 'completed', coded_by = p_doctor_id, coded_at = NOW()
@@ -211,19 +219,21 @@ BEGIN
     RETURN FALSE;
   END IF;
 
-  -- Insert the coding record
+  -- Insert the coding record with patient_id and report_id
   INSERT INTO anomaly_codings (
     anomaly_id, doctor_id,
     rubrika_code, rubrika_name,
     bashliq_code, bashliq_name,
     diaqnoz_code, diaqnoz_name,
-    icd_qeyd_name, qeyd
+    icd_qeyd_name, qeyd,
+    patient_id, report_id
   ) VALUES (
     p_anomaly_id, p_doctor_id,
     p_rubrika_code, p_rubrika_name,
     p_bashliq_code, p_bashliq_name,
     p_diaqnoz_code, p_diaqnoz_name,
-    p_icd_qeyd_name, p_qeyd
+    p_icd_qeyd_name, p_qeyd,
+    v_patient_id, v_report_id
   );
 
   RETURN TRUE;

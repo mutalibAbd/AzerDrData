@@ -1,5 +1,6 @@
-import { useState } from 'react';
-import { Save, SkipForward, AlertTriangle } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { Save, SkipForward, AlertTriangle, ArrowLeft, Loader } from 'lucide-react';
 import toast from 'react-hot-toast';
 import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
@@ -12,12 +13,19 @@ export default function CodingWorkspace() {
   const [qeyd, setQeyd] = useState('');
   const [showErrorModal, setShowErrorModal] = useState(false);
   const [saving, setSaving] = useState(false);
+  const [initialLoad, setInitialLoad] = useState(true);
+  const navigate = useNavigate();
 
-  const handleStart = async () => {
-    const result = await fetchNext();
-    if (!result) toast.error('Kodlanmamış anomaliya qalmayıb!');
-    else if (result._authError) toast.error('Sessiya bitib, yenidən daxil olun');
-  };
+  // Auto-fetch first anomaly when entering coding page
+  useEffect(() => {
+    if (!currentAnomaly && initialLoad) {
+      fetchNext().then((result) => {
+        if (!result) toast.error('Kodlanmamış anomaliya qalmayıb!');
+        else if (result._authError) toast.error('Sessiya bitib, yenidən daxil olun');
+        setInitialLoad(false);
+      });
+    }
+  }, []);
 
   const handleSave = async () => {
     if (!icdData.diaqnozCode) {
@@ -50,14 +58,22 @@ export default function CodingWorkspace() {
   if (!currentAnomaly) {
     return (
       <div className="flex flex-col items-center justify-center py-20">
-        <p className="text-gray-500 mb-4">Kodlamaya başlamaq üçün düyməyə basın</p>
-        <button
-          onClick={handleStart}
-          disabled={loading}
-          className="bg-blue-600 text-white px-8 py-3 rounded-lg text-lg hover:bg-blue-700 disabled:opacity-50"
-        >
-          {loading ? 'Yüklənir...' : '🚀 Çalışmaya başla'}
-        </button>
+        {loading ? (
+          <>
+            <Loader size={32} className="animate-spin text-blue-500 mb-3" />
+            <p className="text-gray-500">Anomaliya yüklənir...</p>
+          </>
+        ) : (
+          <>
+            <p className="text-gray-500 mb-4">Kodlanmamış anomaliya tapılmadı</p>
+            <button
+              onClick={() => navigate('/')}
+              className="flex items-center gap-1 px-4 py-2 text-sm text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
+            >
+              <ArrowLeft size={16} /> Ana Səhifəyə Qayıt
+            </button>
+          </>
+        )}
       </div>
     );
   }
@@ -81,12 +97,20 @@ export default function CodingWorkspace() {
 
       {/* Actions */}
       <div className="flex items-center justify-between">
-        <button
-          onClick={() => setShowErrorModal(true)}
-          className="flex items-center gap-1 text-sm text-amber-600 hover:text-amber-800"
-        >
-          <AlertTriangle size={16} /> Yazım xətası bildir
-        </button>
+        <div className="flex items-center gap-3">
+          <button
+            onClick={() => navigate('/')}
+            className="flex items-center gap-1 px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
+          >
+            <ArrowLeft size={16} /> Ana Səhifəyə Qayıt
+          </button>
+          <button
+            onClick={() => setShowErrorModal(true)}
+            className="flex items-center gap-1 text-sm text-amber-600 hover:text-amber-800"
+          >
+            <AlertTriangle size={16} /> Yazım xətası bildir
+          </button>
+        </div>
         <div className="flex gap-3">
           <button
             onClick={handleSkip}

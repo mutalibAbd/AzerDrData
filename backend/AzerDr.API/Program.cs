@@ -9,7 +9,9 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Database provider: "local" (EF Core + PostgreSQL) or "supabase" (REST API)
+// Environment variable overrides for production secrets
+// Convention: Jwt__Key, Supabase__Url, Supabase__ServiceRoleKey, etc.
+// ASP.NET Core automatically maps SECTION__KEY env vars to Configuration["Section:Key"]
 var dbProvider = builder.Configuration["Database:Provider"] ?? "local";
 Console.WriteLine($"[Config] Database provider: {dbProvider}");
 
@@ -54,12 +56,17 @@ builder.Services.AddAuthorization();
 builder.Services.AddControllers();
 
 // CORS
+var corsOrigins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? ["http://localhost:5173"];
+var envCorsOrigins = Environment.GetEnvironmentVariable("CORS_ORIGINS");
+if (!string.IsNullOrEmpty(envCorsOrigins))
+{
+    corsOrigins = envCorsOrigins.Split(',', StringSplitOptions.RemoveEmptyEntries | StringSplitOptions.TrimEntries);
+}
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins(
-                builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? ["http://localhost:5173"])
+        policy.WithOrigins(corsOrigins)
             .AllowAnyHeader()
             .AllowAnyMethod();
     });
@@ -91,6 +98,22 @@ if (dbProvider != "supabase")
 else
 {
     Console.WriteLine("[Config] Supabase mode: skipping local seed (data should be seeded via supabase/seed.mjs)");
+}
+
+// Global exception handler for production
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler(errorApp =>
+    {
+        errorApp.Run(async context =>
+        {
+            context.Response.StatusCode = StatusCodes.Status500InternalServerError;
+            context.Response.ContentType = "application/json";
+            await context.Response.WriteAsJsonAsync(new { message = "Serverdə xəta baş verdi" });
+        });
+    });
+    app.UseHsts();
+    app.UseHttpsRedirection();
 }
 
 app.UseCors("AllowFrontend");

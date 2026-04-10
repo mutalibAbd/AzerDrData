@@ -40,10 +40,19 @@ public class IcdService : IIcdService
 
     public async Task<List<IcdQeydDto>> GetQeydlerAsync(int diaqnozId)
     {
-        return await _db.IcdQeydler
+        var all = await _db.IcdQeydler
             .Where(q => q.DiaqnozId == diaqnozId)
             .OrderBy(q => q.Id)
-            .Select(q => new IcdQeydDto(q.Id, q.Name))
             .ToListAsync();
+
+        var parents = all.Where(q => q.ParentId == null).ToList();
+
+        return parents.Select(p => new IcdQeydDto(
+            p.Id,
+            p.Name,
+            all.Where(c => c.ParentId == p.Id)
+               .Select(c => new IcdQeydChildDto(c.Id, c.Name))
+               .ToList()
+        )).ToList();
     }
 }

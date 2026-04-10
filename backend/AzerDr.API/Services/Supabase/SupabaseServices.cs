@@ -2,6 +2,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
 using System.Text.Json.Serialization;
+using System.Text.RegularExpressions;
 using AzerDr.API.DTOs;
 using AzerDr.API.Services.Interfaces;
 using Microsoft.IdentityModel.Tokens;
@@ -104,6 +105,9 @@ internal class SupabaseQeyd
 
     [JsonPropertyName("name")]
     public string Name { get; set; } = "";
+
+    [JsonPropertyName("parent_id")]
+    public int? ParentId { get; set; }
 }
 
 internal class SupabaseErrorReport
@@ -243,17 +247,26 @@ public class SupabaseAnomalyService : IAnomalyService
         return new AnomalyResponse(a.Id, a.ReportId, a.PatientId, a.Date, a.Diagnosis, a.Explanation);
     }
 
+    // Extract short ICD code from full text (e.g. "(Q00–Q07) Sinir..." → "Q00-Q07")
+    private static string ExtractIcdCode(string fullText)
+    {
+        if (string.IsNullOrWhiteSpace(fullText)) return fullText;
+        // Match ICD-10 code pattern: Q00-Q07, Q00, Q00.0, etc.
+        var match = Regex.Match(fullText, @"(Q\d{2}(?:[–\-]Q?\d{2,3})?(?:\.\d{1,2})?)");
+        return match.Success ? match.Value.Replace('–', '-') : fullText.Length > 50 ? fullText[..50] : fullText;
+    }
+
     public async Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request)
     {
         var result = await _client.RpcSingle<bool>("save_coding", new
         {
             p_anomaly_id = anomalyId,
             p_doctor_id = doctorId,
-            p_rubrika_code = request.RubrikaCode,
+            p_rubrika_code = ExtractIcdCode(request.RubrikaCode),
             p_rubrika_name = request.RubrikaName,
-            p_bashliq_code = request.BashliqCode,
+            p_bashliq_code = ExtractIcdCode(request.BashliqCode),
             p_bashliq_name = request.BashliqName,
-            p_diaqnoz_code = request.DiaqnozCode,
+            p_diaqnoz_code = ExtractIcdCode(request.DiaqnozCode),
             p_diaqnoz_name = request.DiaqnozName,
             p_icd_qeyd_name = request.IcdQeydName,
             p_qeyd = request.Qeyd
@@ -320,7 +333,17 @@ public class SupabaseIcdService : IIcdService
     {
         var items = await _client.From<SupabaseQeyd>("icd_qeydler",
             $"diaqnoz_id=eq.{diaqnozId}&order=id.asc");
-        return items.Select(i => new IcdQeydDto(i.Id, i.Name)).ToList();
+
+        var parents = items.Where(i => i.ParentId == null).ToList();
+        var children = items.Where(i => i.ParentId != null).ToList();
+
+        return parents.Select(p => new IcdQeydDto(
+            p.Id,
+            p.Name,
+            children.Where(c => c.ParentId == p.Id)
+                    .Select(c => new IcdQeydChildDto(c.Id, c.Name))
+                    .ToList()
+        )).ToList();
     }
 }
 
@@ -400,22 +423,14 @@ public class SupabaseAdminService : IAdminService
         var items = new List<ProgressItem>();
         foreach (var d in doctors)
         {
-            var codings = await _client.From<SupabaseCoding>("anomaly_codings",
-                $"doctor_id=eq.{d.Id}&select=created_at&order=created_at.desc&limit=1");
+            var allCodings = await _client.From<SupabaseCoding>("anomaly_codings",
+                $"doctor_id=eq.{d.Id}&select=anomaly_id,created_at&order=created_at.desc");
 
             items.Add(new ProgressItem(
                 d.Id, d.FullName,
-                codings.Count > 0 ? codings.Count : 0, // Need separate count call
-                codings.FirstOrDefault()?.CreatedAt
+                allCodings.Count,
+                allCodings.FirstOrDefault()?.CreatedAt
             ));
-        }
-
-        // Fix: get actual count for each doctor
-        foreach (var item in items)
-        {
-            var allCodings = await _client.From<SupabaseCoding>("anomaly_codings",
-                $"doctor_id=eq.{item.DoctorId}&select=anomaly_id");
-            items[items.IndexOf(item)] = item with { CodingCount = allCodings.Count };
         }
 
         return items.OrderByDescending(i => i.CodingCount).ToList();

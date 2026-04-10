@@ -84,19 +84,19 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Silvi su kəmərinin:"
+                "name": "Silvi su kəmərinin ageneziyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
+                "name": "Silvi su kəmərinin anomaliyası"
               },
               {
                 "id": 2,
-                "name": "·       anadangəlmə keçməməzliyi"
+                "name": "Silvi su kəmərinin anadangəlmə keçməməzliyi"
               },
               {
                 "id": 3,
-                "name": "·       stenozu"
+                "name": "Silvi su kəmərinin stenozu"
               }
             ]
           },
@@ -155,23 +155,20 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Beyin hissələrinin:"
+                "name": "Beyin hissələrinin olmaması"
               },
+              
               {
                 "id": 1,
-                "name": "·       olmaması"
+                "name": "Beyin hissələrinin ageneziyası"
               },
               {
                 "id": 2,
-                "name": "·       ageneziyası"
+                "name": "Beyin hissələrinin aplaziyası"
               },
               {
                 "id": 3,
-                "name": "·       aplaziyası"
-              },
-              {
-                "id": 4,
-                "name": "·       hipoplaziyası Aqiriya Hidranensefaliya Lizensefaliya Mikroqiriya Paxigiriya"
+                "name": "Beyin hissələrinin hipoplaziyası Aqiriya Hidranensefaliya Lizensefaliya Mikroqiriya Paxigiriya"
               }
             ]
           },
@@ -260,17 +257,14 @@
             "code": "Q05.6  Döş nahiyəsində hidrosefaliyasız spina bifida",
             "name": "Q05.6  Döş nahiyəsində hidrosefaliyasız spina bifida",
             "qeydlər": [
+             
               {
                 "id": 0,
-                "name": "Spina bifida:"
+                "name": "Spina bifida dorzal ƏGO"
               },
               {
                 "id": 1,
-                "name": "·       dorzal ƏGO"
-              },
-              {
-                "id": 2,
-                "name": "·       torakolümbal ƏGO"
+                "name": "Spina bifida torakolümbal ƏGO"
               }
             ]
           },
@@ -333,21 +327,18 @@
             "code": "Q06.9  Onurğa beynin  anadangəlmə dəqiqləşdirilməmiş inkişaf    Qüsuru",
             "name": "Q06.9  Onurğa beynin  anadangəlmə dəqiqləşdirilməmiş inkişaf    Qüsuru",
             "qeydlər": [
+            
               {
                 "id": 0,
-                "name": "Onurğa beyni və ya qişalarının ƏGO anadangəlmə:"
+                "name": "Onurğa beyni və ya qişalarının ƏGO anadangəlmə anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
+                "name": "Onurğa beyni və ya qişalarının ƏGO anadangəlmə deformasiyası"
               },
               {
                 "id": 2,
-                "name": "·       deformasiyası"
-              },
-              {
-                "id": 3,
-                "name": "·       xəstəliyi və ya zədələnməsi"
+                "name": "Onurğa beyni və ya qişalarının ƏGO anadangəlmə xəstəliyi və ya zədələnməsi"
               }
             ]
           }
@@ -363,90 +354,11 @@
             "code": "Q07.0  Arnold‐Kiari sindromu",
             "name": "Q07.0  Arnold‐Kiari sindromu",
             "qeydlər": []
-          },
-          {
-            "id": 1,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "Çıxarılıb: dodağın və damağın yarığı (Q35–Q37)"
-              }
-            ]
-          },
-          {
-            "id": 2,
-            "code": ".",
-            "name": ".",
-            "qeydlər": []
-          },
-          {
-            "id": 3,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "onurğa beyninin boyun şö’bəsinin (Q05.0, Q05.5, Q67.5, Q76.0–Q76.4) "
-              }
-            ]
-          },
-          {
-            "id": 4,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "qırtlağın (Q31.–)"
-              }
-            ]
-          },
-          {
-            "id": 5,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "dodağın BBTO (Q38.0)                                anadangəlmə anomaliyası "
-              }
-            ]
-          },
-          {
-            "id": 6,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "burnun (Q30.–)"
-              }
-            ]
-          },
-          {
-            "id": 7,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "qalxanabənzər ətraf vəzinin (Q89.2) "
-              }
-            ]
-          },
-          {
-            "id": 8,
-            "code": ".",
-            "name": ".",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "qalxanabənzər vəzinin (Q89.2)"
-              }
-            ]
           }
+          
+          
+          
+            
         ]
       }
     ]
@@ -496,17 +408,14 @@
             "code": "Q11.1  Anoftalmın digər növü",
             "name": "Q11.1  Anoftalmın digər növü",
             "qeydlər": [
+            
               {
                 "id": 0,
-                "name": "Gözün:"
+                "name": "Gözün ageneziyası"
               },
               {
                 "id": 1,
-                "name": "·       ageneziyası"
-              },
-              {
-                "id": 2,
-                "name": "·       aplaziyası"
+                "name": "Gözün aplaziyası"
               }
             ]
           },
@@ -578,17 +487,6 @@
             "code": "Q13.8  Gözün ön seqmentinin digər anadangəlmə anomaliyaları",
             "name": "Q13.8  Gözün ön seqmentinin digər anadangəlmə anomaliyaları",
             "qeydlər": []
-          },
-          {
-            "id": 4,
-            "code": ",",
-            "name": ",",
-            "qeydlər": [
-              {
-                "id": 0,
-                "name": "Riger anomaliyası"
-              }
-            ]
           }
         ]
       },
@@ -681,15 +579,11 @@
               },
               {
                 "id": 3,
-                "name": "Əlavə:"
+                "name": "Əlavə qulaq"
               },
               {
                 "id": 4,
-                "name": "·       qulaq"
-              },
-              {
-                "id": 5,
-                "name": "·       sırğalıq"
+                "name": "Əlavə sırğalıq"
               }
             ]
           },
@@ -769,20 +663,17 @@
             "code": "Q18.2  Qəlsəmə yarığının digər inkişaf qüsurla",
             "name": "Q18.2  Qəlsəmə yarığının digər inkişaf qüsurla",
             "qeydlər": [
+              
               {
                 "id": 0,
-                "name": "rı"
-              },
-              {
-                "id": 1,
                 "name": "Qəlsəmə yarığının ƏGO inkişaf anomaliyası "
               },
               {
-                "id": 2,
+                "id": 1,
                 "name": "Boyunda yerləşən qulaq seyvanı"
               },
               {
-                "id": 3,
+                "id": 2,
                 "name": "Otosefaliya"
               }
             ]
@@ -834,19 +725,15 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Üzün və boynun medial:"
+                "name": "Üzün və boynun medial kistası"
               },
               {
                 "id": 1,
-                "name": "·       kistası"
+                "name": "Üzün və boynun medial fistulu"
               },
               {
                 "id": 2,
-                "name": "·       fistulu"
-              },
-              {
-                "id": 3,
-                "name": "·       cibi"
+                "name": "Üzün və boynun medial cibi"
               }
             ]
           },
@@ -1010,19 +897,19 @@
               },
               {
                 "id": 1,
-                "name": "Bitişməmiş və ya qalıq:"
+                "name": "Bitişməmiş və ya qalıq oval dəlik"
               },
               {
                 "id": 2,
-                "name": "·       oval dəlik"
+                "name": "Bitişməmiş və ya qalıq oval birincili dəlik (I tip)"
               },
               {
                 "id": 3,
-                "name": "·       ikincili dəlik (II tip) "
+                "name": "Bitişməmiş və ya qalıq oval ikincili dəlik (II tip) "
               },
               {
                 "id": 4,
-                "name": "Venoz cibin qüsuru"
+                "name": "Bitişməmiş və ya qalıq oval Venoz cibin qüsuru"
               }
             ]
           },
@@ -1058,8 +945,8 @@
           },
           {
             "id": 5,
-            "code": "Q21.4     Aorta və ağciyər arteriyası arasındakı arakəsmənin defekti",
-            "name": "Q21.4     Aorta və ağciyər arteriyası arasındakı arakəsmənin defekti",
+            "code": "Q21.4  Aorta və ağciyər arteriyası arasındakı arakəsmənin defekti",
+            "name": "Q21.4  Aorta və ağciyər arteriyası arasındakı arakəsmənin defekti",
             "qeydlər": [
               {
                 "id": 0,
@@ -1083,18 +970,6 @@
               {
                 "id": 1,
                 "name": "Fallo pentadası "
-              },
-              {
-                "id": 2,
-                "name": "Çıxarılıb: Eyzenmenqer:"
-              },
-              {
-                "id": 3,
-                "name": "·     kompleksi (I27.8)"
-              },
-              {
-                "id": 4,
-                "name": "·      sindromu (I27.8)"
               }
             ]
           },
@@ -1199,23 +1074,19 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Aorta qapağının anadangəlmə:"
+                "name": "Aorta qapağının anadangəlmə atreziyası"
               },
               {
                 "id": 1,
-                "name": "·       atreziyası"
+                "name": "Aorta qapağının anadangəlmə stenozu"
               },
               {
                 "id": 2,
-                "name": "·       stenozu"
-              },
-              {
-                "id": 3,
                 "name": "Çıxarılıb: anadangəlmə subaortal stenoz (Q24.4)"
               },
               {
-                "id": 4,
-                "name": "ürəyin sol tərəfli hipoplaziya sindromunda stenoz (Q23.4)"
+                "id": 3,
+                "name": "Ürəyin sol tərəfli hipoplaziya sindromunda stenoz (Q23.4)"
               }
             ]
           },
@@ -1336,23 +1207,23 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə ürək qüsurları:"
               },
               {
                 "id": 1,
-                "name": "·       sol mədəciyin divertikulu"
+                "name": "Anadangəlmə sol mədəciyin divertikulu"
               },
               {
                 "id": 2,
-                "name": "·   miokardın                                   qüsuru"
+                "name": "Anadangəlmə miokardın qüsuru"
               },
               {
                 "id": 3,
-                "name": "·       perikardın"
+                "name": "Anadangəlmə perikardın qüsuru"
               },
               {
                 "id": 4,
-                "name": "Ürəyin qeyri-düzgün vəziyyəti Ulya xəstəliyi"
+                "name": "Anadangəlmə ürəyin qeyri-düzgün vəziyyəti Ulya xəstəliyi"
               }
             ]
           },
@@ -1363,19 +1234,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "u"
+                "name": "Ürəyin anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "Ürəyin anadangəlmə ƏGO:"
-              },
-              {
-                "id": 2,
-                "name": "·       anomaliyası"
-              },
-              {
-                "id": 3,
-                "name": "·       xəstəliyi"
+                "name": "Ürəyin anadangəlmə ƏGO xəstəliyi"
               }
             ]
           }
@@ -1420,27 +1283,27 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Aortanın:"
+                "name": "Aortanın ageneziyası"
               },
               {
                 "id": 1,
-                "name": "·       olmaması"
+                "name": "Aortanın olmaması"
               },
               {
                 "id": 2,
-                "name": "·       aplaziyası"
+                "name": "Aortanın aplaziyası"
               },
               {
                 "id": 3,
-                "name": "·       anadangəlmə:"
+                "name": "Aortanın anadangəlmə:"
               },
               {
                 "id": 4,
-                "name": "·       anevrizması"
+                "name": "Aortanın anevrizması"
               },
               {
                 "id": 5,
-                "name": "·       genişlənməsi"
+                "name": "Aortanın genişlənməsi"
               },
               {
                 "id": 6,
@@ -1456,7 +1319,7 @@
               },
               {
                 "id": 9,
-                "name": "Aorta qövsü burmalarının                         saxlanması"
+                "name": "Aorta qövsü burmalarının saxlanması"
               },
               {
                 "id": 10,
@@ -1492,23 +1355,23 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Aberrant ağciyər arteriyası Ağciyər arteriyasının:"
+                "name": "Ağciyər arteriyasının ageneziyası"
               },
               {
                 "id": 1,
-                "name": "·       ageneziyası"
+                "name": "Aberrant ağciyər arteriyası Ağciyər arteriyasının ageneziyası"
               },
               {
                 "id": 2,
-                "name": "·       anevrizması"
+                "name": "Aberrant ağciyər arteriyası Ağciyər arteriyasının anevrizması"
               },
               {
                 "id": 3,
-                "name": "·       anomaliyası"
+                "name": "Aberrant ağciyər arteriyası Ağciyər arteriyasının anomaliyası"
               },
               {
                 "id": 4,
-                "name": "·       hipoplaziyası"
+                "name": "Aberrant ağciyər arteriyası Ağciyər arteriyasının hipoplaziyası"
               },
               {
                 "id": 5,
@@ -1650,27 +1513,23 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların:"
+                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların olmaması"
               },
               {
                 "id": 1,
-                "name": "·       olmaması"
+                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların atreziyası Anadangəlmə:"
               },
               {
                 "id": 2,
-                "name": "·       atreziyası Anadangəlmə:"
+                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların anevrizması (periferik)"
               },
               {
                 "id": 3,
-                "name": "·       anevrizma (periferik)"
+                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların arteriyanın daralması"
               },
               {
                 "id": 4,
-                "name": "·       arteriyanın daralması"
-              },
-              {
-                "id": 5,
-                "name": "·       varikoz"
+                "name": "Aberrant körpücükaltı arteriya BBTO arteriya və venaların varikoz"
               }
             ]
           },
@@ -1786,15 +1645,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Burun keçəcəklərinin (ön hissəsinin) (arxa hissəsinin):"
+                "name": "Burun keçəcəklərinin (ön hissəsinin) (arxa hissəsinin) atreziyası"
               },
               {
                 "id": 1,
-                "name": "·       atreziyası"
-              },
-              {
-                "id": 2,
-                "name": "·       anadangəlmə stenozu"
+                "name": "Burun keçəcəklərinin (ön hissəsinin) (arxa hissəsinin) anadangəlmə stenozu"
               }
             ]
           },
@@ -1878,24 +1733,20 @@
                 "name": "Traxeya qığırdağının anomaliyası Traxeyanın atreziyası"
               },
               {
-                "id": 1,
-                "name": "Traxeyanın anadangəlmə:"
-              },
-              {
                 "id": 2,
-                "name": "·       genişlənməsi"
+                "name": "Traxeyanın anadangəlmə genişlənməsi"
               },
               {
                 "id": 3,
-                "name": "·       anomaliyası"
+                "name": "Traxeyanın anadangəlmə anomaliyası"
               },
               {
                 "id": 4,
-                "name": "·       stenozu"
+                "name": "Traxeyanın anadangəlmə stenozu"
               },
               {
                 "id": 5,
-                "name": "·       traxeoselesi"
+                "name": "Traxeyanın anadangəlmə traxeoselesi"
               }
             ]
           },
@@ -1918,27 +1769,23 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Bronxların:"
+                "name": "Bronxların olmaması"
               },
               {
                 "id": 1,
-                "name": "·       olmaması"
+                "name": "Bronxların ageneziyası"
               },
               {
                 "id": 2,
-                "name": "·       ageneziyası"
+                "name": "Bronxların atreziyası"
               },
               {
                 "id": 3,
-                "name": "·       atreziyası"
+                "name": "Bronxların anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 4,
-                "name": "·       anadangəlmə ƏGO anomaliyası"
-              },
-              {
-                "id": 5,
-                "name": "                 ·     divertikulu"
+                "name": "Bronxların divertikulu"
               }
             ]
           }
@@ -1956,26 +1803,22 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə hücrəli ağciyər"
               },
               {
                 "id": 1,
-                "name": "·       hücrəli ağciyər"
+                "name": "Anadangəlmə ağciyərin xəstəliyi"
               },
               {
                 "id": 2,
-                "name": "·       ağciyərin xəstəliyi"
+                "name": "Anadangəlmə kistozlu"
               },
               {
                 "id": 3,
-                "name": "·       kistozlu"
+                "name": "Anadangəlmə polikistozlu"
               },
               {
                 "id": 4,
-                "name": "·       polikistozlu"
-              },
-              {
-                "id": 5,
                 "name": "Çıxarılıb: ağciyərin qazanılma və ya dəqiqləşdirilməmiş kistoz xəstəliyi (J98.4)"
               }
             ]
@@ -2057,15 +1900,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Tənəffüs orqanlarının anadangəlmə:"
+                "name": "Tənəffüs orqanlarının anadangəlmə olmaması"
               },
               {
                 "id": 1,
-                "name": "·       olmaması"
-              },
-              {
-                "id": 2,
-                "name": "·       ƏGO anomaliyası"
+                "name": "Tənəffüs orqanlarının anadangəlmə ƏGO anomaliyası"
               }
             ]
           }
@@ -2189,10 +2028,6 @@
             "code": "Q37.4  Yumşaq və sərt damağın yarığı dodağın ikitərəfli yarığı il",
             "name": "Q37.4  Yumşaq və sərt damağın yarığı dodağın ikitərəfli yarığı il",
             "qeydlər": [
-              {
-                "id": 0,
-                "name": "ə"
-              }
             ]
           },
           {
@@ -2300,19 +2135,15 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə mədənin yerdəyişməsi"
               },
               {
                 "id": 1,
-                "name": "·       mədənin yerdəyişməsi"
+                "name": "Anadangəlmə mədənin divertikulu"
               },
               {
                 "id": 2,
-                "name": "·       mədənin divertikulu"
-              },
-              {
-                "id": 3,
-                "name": "·       qum saatına bənzər mədə Mədənin ikiləşməsi Meqaloqastriya Mikroqastirya"
+                "name": "Anadangəlmə qum saatına bənzər mədə Mədənin ikiləşməsi Meqaloqastriya Mikroqastirya"
               }
             ]
           },
@@ -2335,15 +2166,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Həzm traktının yuxarı hissəsinin anadagəlmə ƏGO:"
+                "name": "Həzm traktının yuxarı hissəsinin anadagəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
-              },
-              {
-                "id": 2,
-                "name": "·       deformasiyası"
+                "name": "Həzm traktının yuxarı hissəsinin anadagəlmə ƏGO deformasiyası"
               }
             ]
           }
@@ -2461,15 +2288,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Saxlanılmış:"
+                "name": "Saxlanılmış musariqə-göbək axarı"
               },
               {
                 "id": 1,
-                "name": "·       musariqə-göbək axarı"
-              },
-              {
-                "id": 2,
-                "name": "·       öd kanalı"
+                "name": "Saxlanılmış öd kanalı"
               }
             ]
           },
@@ -2506,30 +2329,26 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Piyliyin patoloji Peritonun       anadangəlmə bitişməsi"
+                "name": "Piyliyin patoloji Peritonun anadangəlmə bitişməsi"
               },
               {
                 "id": 1,
-                "name": "Cekson membranı"
+                "name": "Cekson membranı anadangəlmə bitişməsi"
               },
               {
                 "id": 2,
-                "name": "Çənbər bağırsağın qeyri-düzgün dönməsi Kor və çənbər bağırsağın:"
+                "name": "Çənbər bağırsağın qeyri-düzgün dönməsi Kor və çənbər bağırsağın Yetərsiz dönməsi"
               },
               {
                 "id": 3,
-                "name": "·    Yetərsiz    "
+                "name": "Çənbər bağırsağın qeyri-düzgün dönməsi Kor və çənbər bağırsağın qeyri-tam dönməsi"
               },
               {
                 "id": 4,
-                "name": "·       qeyri-tam                dönməsi"
+                "name": "Çənbər bağırsağın qeyri-düzgün dönməsi Kor və çənbər bağırsağın başa çatmayan dönməsi"
               },
               {
                 "id": 5,
-                "name": "·       başa çatmayan"
-              },
-              {
-                "id": 6,
                 "name": " Ümumi müşariqə"
               }
             ]
@@ -2551,18 +2370,7 @@
             "code": "Q43.6  Düz bağırsağın və anusun anadangəlmə fistulu",
             "name": "Q43.6  Düz bağırsağın və anusun anadangəlmə fistulu",
             "qeydlər": [
-              {
-                "id": 0,
-                "name": "Çıxarılıb: anadangəlmə fistul:"
-              },
-              {
-                "id": 1,
-                "name": "·       rektovaginal (Q52.2)"
-              },
-              {
-                "id": 2,
-                "name": "·       uretrorektal (Q64.7)"
-              },
+              
               {
                 "id": 3,
                 "name": "pilonidal fistul və ya sinus (L05.–)"
@@ -2591,35 +2399,31 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə kor bağırsaq sindromu"
               },
               {
                 "id": 1,
-                "name": "·       kor bağırsaq sindromu"
+                "name": "Anadangəlmə çənbər bağırsağın divertikuliti"
               },
               {
                 "id": 2,
-                "name": "·       çənbər bağırsağın divertikuliti"
+                "name": "Anadangəlmə bağırsağın divertikulu"
               },
               {
                 "id": 3,
-                "name": "     ·       bağırsağın divertikulu"
-              },
-              {
-                "id": 4,
                 "name": " Dolixokolon Meqaloappendiks Meqaloduodenum Mikrokolon"
               },
               {
+                "id": 4,
+                "name": "Appendiksin transpozisiyası"
+              },
+              {
                 "id": 5,
-                "name": "Appendiksin"
+                "name": "Çənbər bağırsağın transpozisiyası"
               },
               {
                 "id": 6,
-                "name": "Çənbər bağırsağın                transpozisiyası"
-              },
-              {
-                "id": 7,
-                "name": "                           Bağırsağın"
+                "name": "Bağırsağın transpozisiyası"
               }
             ]
           },
@@ -2687,15 +2491,11 @@
               },
               {
                 "id": 1,
-                "name": "Ümumi öd axacağının anadangəlmə qüsuru ƏGO İkiləşməsi:"
+                "name": "Ümumi öd axacağının anadangəlmə qüsuru ƏGO İkiləşməsi öd axacağının"
               },
               {
                 "id": 2,
-                "name": "·       ümumi öd axacağının"
-              },
-              {
-                "id": 3,
-                "name": "·       öd kisəsi axacağının"
+                "name": "Ümumi öd axacağının anadangəlmə qüsuru ƏGO İkiləşməsi öd kisəsi axacağının"
               }
             ]
           },
@@ -2717,19 +2517,19 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Əlavə qaraciyər Alacill sindromu Anadangəlmə:"
+                "name": ":"
               },
               {
                 "id": 1,
-                "name": "·       qaraciyərin olmaması"
+                "name": "Əlavə qaraciyər Alacill sindromu Anadangəlmə qaraciyərin olmaması"
               },
               {
                 "id": 2,
-                "name": "·       hepatomeqaliya"
+                "name": "Əlavə qaraciyər Alacill sindromu Anadangəlmə hepatomeqaliya"
               },
               {
                 "id": 3,
-                "name": "·       qaraciyərin ƏGO anomaliyası"
+                "name": "Əlavə qaraciyər Alacill sindromu Anadangəlmə qaraciyərin ƏGO anomaliyası"
               }
             ]
           }
@@ -2759,15 +2559,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Həzm traktının ƏGO (tam) (hissəvi) olmaması Həzm orqanlarının ƏGO:"
+                "name": "Həzm traktının ƏGO (tam) (hissəvi) olmaması Həzm orqanlarının ƏGO ikiləşməsi"
               },
               {
                 "id": 1,
-                "name": "·       ikiləşməsi"
-              },
-              {
-                "id": 2,
-                "name": "·       anadangəlmə qeyri-düzgün yerləşməsi"
+                "name": "Həzm traktının ƏGO (tam) (hissəvi) olmaması Həzm orqanlarının ƏGO anadangəlmə qeyri-düzgün yerləşməsi"
               }
             ]
           },
@@ -2778,15 +2574,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Həzm orqanlarının anadangəlmə ƏGO:"
+                "name": "Həzm orqanlarının anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
-              },
-              {
-                "id": 2,
-                "name": "·       deformasiyası"
+                "name": "Həzm orqanlarının anadangəlmə deformasiya"
               }
             ]
           }
@@ -2887,15 +2679,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Hipospadiya:"
+                "name": "Hipospadiya koronal"
               },
               {
                 "id": 1,
-                "name": "·       koronal"
-              },
-              {
-                "id": 2,
-                "name": "·       qlandulyar"
+                "name": "Hipospadiya qlandulyar"
               }
             ]
           },
@@ -2961,18 +2749,14 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Kişi cinsiyyət orqanlarının anadangəlmə ƏGO:"
+                "name": "Kişi cinsiyyət orqanlarının anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
+                "name": "Kişi cinsiyyət orqanlarının anadangəlmə deformasiya"
               },
               {
                 "id": 2,
-                "name": "·       deformasiyası"
-              },
-              {
-                "id": 3,
                 "name": "Cinsiyyət orqanlarının qeyri-müəyyənliyi"
               }
             ]
@@ -2999,42 +2783,61 @@
         "diaqnozlar": [
           {
             "id": 0,
+            "code": "böyrəyin atrofiyası",
+            "name": "böyrəyin atrofiyası",
+            "qeydlər": [
+              {
+                "id": 0,
+                "name": "AnadanGəlmə"
+              },
+              {
+                "id": 1,
+                "name": "infantil"
+              },
+              {
+                "id": 2,
+                "name": "Böyrəyin anadangəlmə olmaması"
+              }
+            ]
+          },
+          {
+            "id": 1,
             "code": "Q60.0  Böyrəyin birtərəfli ageneziyası",
             "name": "Q60.0  Böyrəyin birtərəfli ageneziyası",
             "qeydlər": []
           },
           {
-            "id": 1,
+            "id": 2,
             "code": "Q60.1  Böyrəyin ikitərəfli ageneziyası",
             "name": "Q60.1  Böyrəyin ikitərəfli ageneziyası",
             "qeydlər": []
           },
           {
-            "id": 2,
+            "id": 3,
             "code": "Q60.2  Böyrəyin dəqiqləşdirilməmiş ageneziyası",
             "name": "Q60.2  Böyrəyin dəqiqləşdirilməmiş ageneziyası",
             "qeydlər": []
           },
           {
-            "id": 3,
+            "id": 4,
             "code": "Q60.3  Böyrəyin birtərəfli hipoplaziyası",
             "name": "Q60.3  Böyrəyin birtərəfli hipoplaziyası",
             "qeydlər": []
           },
           {
-            "id": 4,
+            "id": 5,
             "code": "Q60.4  Böyrəyin ikitərəfli hipoplaziyası",
             "name": "Q60.4  Böyrəyin ikitərəfli hipoplaziyası",
             "qeydlər": []
           },
           {
-            "id": 5,
+            "id": 6,
             "code": "Q60.5 Böyrəyin dəqiqləşdirilməmiş hipoplaziyası",
             "name": "Q60.5 Böyrəyin dəqiqləşdirilməmiş hipoplaziyası",
             "qeydlər": []
           },
           {
-            "id": 6,
+            "id": 7,
             "code": "Q60.6  Potter sindromu",
             "name": "Q60.6  Potter sindromu",
             "qeydlər": []
@@ -3092,26 +2895,22 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Multisist:"
+                "name": "Multisist displastik böyrək"
               },
               {
                 "id": 1,
-                "name": "·       displastik böyrək"
+                "name": "Multisist böyrək (inkişaf edən)"
               },
               {
                 "id": 2,
-                "name": "·       böyrək (inkişaf edən)"
+                "name": "Multisist böyrək xəstəliyi"
               },
               {
                 "id": 3,
-                "name": "·       böyrək xəstəliyi"
+                "name": "Multisist böyrək displaziyası"
               },
               {
                 "id": 4,
-                "name": "·       böyrək displaziyası"
-              },
-              {
-                "id": 5,
                 "name": "Çıxarılıb: polikistoz böyrək xəstəliyi (Q61.1–Q61.3)"
               }
             ]
@@ -3134,15 +2933,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Fibrosistoz:"
+                "name": "Fibrosistoz böyrəyin"
               },
               {
                 "id": 1,
-                "name": "·       böyrəyin"
-              },
-              {
-                "id": 2,
-                "name": "·       böyrəyin degenerasiyası və ya xəstəliyi"
+                "name": "Fibrosistoz böyrəyin degenerasiyası və ya xəstəliyi"
               }
             ]
           },
@@ -3177,19 +2972,15 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə okklyuziya:"
+                "name": "Anadangəlmə okklyuziya sidik axarının"
               },
               {
                 "id": 1,
-                "name": "·       sidik axarının"
+                "name": "Anadangəlmə okklyuziya ləyən-sidik axarı birləşməsinin"
               },
               {
                 "id": 2,
-                "name": "·       ləyən-sidik axarı birləşməsinin"
-              },
-              {
-                "id": 3,
-                "name": "     ·       sidik axarı-sidik kisəsi dəliyinin Sidik axarı keçməməzliyi"
+                "name": "Anadangəlmə okklyuziya sidik axarı-sidik kisəsi dəliyinin Sidik axarı keçməməzliyi"
               }
             ]
           },
@@ -3222,11 +3013,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Əlavə                   sidik axarı"
+                "name": "Əlavə sidik axarı"
               },
               {
                 "id": 1,
-                "name": "                          İkiləşmiş"
+                "name": "İkiləşmiş sidik axarı"
               }
             ]
           },
@@ -3237,19 +3028,15 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Sidik axarının və ya sidik axarı dəliyinin:"
+                "name": "Sidik axarının və ya sidik axarı dəliyinin normadan kənaraçıxması"
               },
               {
                 "id": 1,
-                "name": "·       normadan kənaraçıxması"
+                "name": "Sidik axarının və ya sidik axarı dəliyinin yerdəyişməsi"
               },
               {
                 "id": 2,
-                "name": "·       yerdəyişməsi"
-              },
-              {
-                "id": 3,
-                "name": "·       anomal implantasiyası"
+                "name": "Sidik axarının və ya sidik axarı dəliyinin anomal implantasiyası"
               }
             ]
           },
@@ -3348,44 +3135,34 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə sidik kisəsi boynunun keçməməzliyi:"
               },
               {
                 "id": 1,
-                "name": "·       sidik kisəsi boynunun keçməməzliyi:"
+                "name": "Anadangəlmə obstruksiyası:"
               },
               {
                 "id": 2,
-                "name": "·       obstruksiyası:"
+                "name": "Anadangəlmə sidik axarının"
               },
               {
                 "id": 3,
-                "name": "·       sidik axarının"
+                "name": "Anadangəlmə sidik kanalı xarici dəliyinin"
               },
               {
                 "id": 4,
-                "name": "·       sidik kanalı xarici dəliyinin"
-              },
-              {
-                "id": 5,
-                "name": "·       sidik kisəsi-sidik kanalı dəliyinin Sidik kanalının keçməməzliyi"
+                "name": "Anadangəlmə sidik kisəsi-sidik kanalı dəliyinin Sidik kanalının keçməməzliyi"
               }
             ]
           },
           {
             "id": 3,
-            "code": "Q64.4",
-            "name": "Q64.4",
+            "code": "Q64.4 Sidik axarının sisti Açıq qalmış sidik axarı Sidik axarının düşməsi",
+            "name": "Q64.4 Sidik axarının sisti Açıq qalmış sidik axarı Sidik axarının düşməsi",
             "qeydlər": []
           },
           {
             "id": 4,
-            "code": "Sidik axarının sisti Açıq qalmış sidik axarı Sidik axarının düşməsi",
-            "name": "Sidik axarının sisti Açıq qalmış sidik axarı Sidik axarının düşməsi",
-            "qeydlər": []
-          },
-          {
-            "id": 5,
             "code": "Q64.5  Sidik axarının [uraxusun] anomaliyası",
             "name": "Q64.5  Sidik axarının [uraxusun] anomaliyası",
             "qeydlər": [
@@ -3396,92 +3173,80 @@
             ]
           },
           {
-            "id": 6,
+            "id": 5,
             "code": "Q64.6  Sidik kisəsinin anadangəlmə divertikulu",
             "name": "Q64.6  Sidik kisəsinin anadangəlmə divertikulu",
             "qeydlər": []
           },
           {
-            "id": 7,
+            "id": 6,
             "code": "Q64.7  Sidik kisəsinin və sidik kanalının digər anadangəlmə anomaliyaları",
             "name": "Q64.7  Sidik kisəsinin və sidik kanalının digər anadangəlmə anomaliyaları",
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Əlavə:"
+                "name": "Əlavə sidik kisəsi"
               },
               {
                 "id": 1,
-                "name": "·       sidik kisəsi"
+                "name": "Əlavə sidik kanalı Anadangəlmə:"
               },
               {
                 "id": 2,
-                "name": "·       sidik kanalı Anadangəlmə:"
+                "name": "Əlavə sidik kisəsi yırtığı"
               },
               {
                 "id": 3,
-                "name": "·       sidik kisəsi yırtığı"
+                "name": "Əlavə sidik kisəsinin və sidik kanalının ƏGO qüsuru"
               },
               {
                 "id": 4,
-                "name": "·       sidik kisəsinin və sidik kanalının ƏGO qüsuru"
+                "name": "Əlavə düşməsi:"
               },
               {
                 "id": 5,
-                "name": "·       düşməsi:"
+                "name": "Əlavə sidik kisəsinin (selikli qişanın)"
               },
               {
                 "id": 6,
-                "name": "·       sidik kisəsinin (selikli qişanın)"
+                "name": "Əlavə uretranın"
               },
               {
                 "id": 7,
-                "name": "·       uretranın"
+                "name": "Əlavə sidik kanalının xarici dəliyinin"
               },
               {
                 "id": 8,
-                "name": "·       sidik kanalının xarici dəliyinin"
+                "name": "Əlavə uretrorektal fistul"
               },
               {
                 "id": 9,
-                "name": "·       uretrorektal fistul"
+                "name": "sidik kanalının İkiləşməsi"
               },
               {
                 "id": 10,
-                "name": "İkiləşməsi:"
-              },
-              {
-                "id": 11,
-                "name": "·       sidik kanalının"
-              },
-              {
-                "id": 12,
-                "name": "·       sidik kanalının xarici dəliyinin"
+                "name": "sidik kanalının xarici dəliyinin İkiləşməsi"
               }
             ]
           },
           {
-            "id": 8,
+            "id": 7,
             "code": "Q64.8  Sidik sisteminin digər dəqiqləşdirilmiş anadangəlmə anomaliyaları",
             "name": "Q64.8  Sidik sisteminin digər dəqiqləşdirilmiş anadangəlmə anomaliyaları",
             "qeydlər": []
           },
           {
-            "id": 9,
+            "id": 8,
             "code": "Q64.9  Sidik sisteminin dəqiqləşdirilməmiş anadangəlmə anomaliyası",
             "name": "Q64.9  Sidik sisteminin dəqiqləşdirilməmiş anadangəlmə anomaliyası",
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Sidik ifrazı sisteminin anadangəlmə ƏGO:"
+                "name": "Sidik ifrazı sisteminin anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·       anomaliyası"
-              },
-              {
-                "id": 2,
-                "name": "·       deformasiyası"
+                "name": "Sidik ifrazı sisteminin anadangəlmə ƏGO deformasiyası"
               }
             ]
           }
@@ -3496,8 +3261,8 @@
     "bashliqlar": [
       {
         "id": 0,
-        "code": "Q66     Pəncənin anadangəlmə deformasiyaları",
-        "name": "Q66     Pəncənin anadangəlmə deformasiyaları",
+        "code": "Q66 Pəncənin anadangəlmə deformasiyaları",
+        "name": "Q66 Pəncənin anadangəlmə deformasiyaları",
         "diaqnozlar": [
           {
             "id": 0,
@@ -3567,22 +3332,18 @@
               },
               {
                 "id": 1,
-                "name": "Anadangəlmə çəkiçəbənzər pəncə barmaqları Eybəcər pəncə:"
+                "name": "Anadangəlmə çəkiçəbənzər pəncə barmaqları Eybəcər pəncə-ƏGO"
               },
               {
                 "id": 2,
-                "name": "·       ƏGO"
+                "name": "Anadangəlmə çəkiçəbənzər pəncə barmaqları Eybəcər pəncə-asimmetrik"
               },
               {
                 "id": 3,
-                "name": "·       asimmetrik"
-              },
-              {
-                "id": 4,
                 "name": "Ayaqdarağı sümüklərinin bitişməsi"
               },
               {
-                "id": 5,
+                "id": 4,
                 "name": "Şaquli aşıq sümüyü"
               }
             ]
@@ -3685,22 +3446,18 @@
               },
               {
                 "id": 2,
-                "name": "Eybəcər pəncə:"
+                "name": "Eybəcər pəncə ƏGO"
               },
               {
                 "id": 3,
-                "name": "·       ƏGO"
+                "name": "Eybəcər pəncə asimmetrik"
               },
               {
                 "id": 4,
-                "name": "·       asimmetrik"
-              },
-              {
-                "id": 5,
                 "name": "Ayaqdarağı sümüklərinin bitişməsi"
               },
               {
-                "id": 6,
+                "id": 5,
                 "name": "Şaquli aşıq sümüyü"
               }
             ]
@@ -3780,23 +3537,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə skolioz:"
+                "name": "Anadangəlmə skolioz ƏGO"
               },
               {
                 "id": 1,
-                "name": "·       ƏGO"
-              },
-              {
-                "id": 2,
-                "name": "·       duruş"
-              },
-              {
-                "id": 3,
-                "name": "Çıxarılıb: idiopatik uşaq skoliozu (M41.0)"
-              },
-              {
-                "id": 4,
-                "name": "sümük toxumasının inkişaf qüsuru nəticəsində əmələ gələn skolioz (Q76.3)"
+                "name": "Anadangəlmə skolioz duruş"
               }
             ]
           },
@@ -3842,12 +3587,6 @@
         "diaqnozlar": [
           {
             "id": 0,
-            "code": "Çıxarılıb: ətrafları qısaldan deformasiyalar (Q71–Q73)",
-            "name": "Çıxarılıb: ətrafları qısaldan deformasiyalar (Q71–Q73)",
-            "qeydlər": []
-          },
-          {
-            "id": 1,
             "code": "Q68.1  Əlin anadangəlmə deformasiyası",
             "name": "Q68.1  Əlin anadangəlmə deformasiyası",
             "qeydlər": [
@@ -3858,26 +3597,22 @@
             ]
           },
           {
-            "id": 2,
+            "id": 1,
             "code": "Q68.2  Dizin anadangəlmə deformasiyası",
             "name": "Q68.2  Dizin anadangəlmə deformasiyası",
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə dizin çıxığı"
               },
               {
                 "id": 1,
-                "name": "·       dizin çıxığı"
-              },
-              {
-                "id": 2,
-                "name": "·       genu recurvafum"
+                "name": "Anadangəlmə genu recurvafum"
               }
             ]
           },
           {
-            "id": 3,
+            "id": 2,
             "code": "Q68.3  Budun anadangəlmə əyriliyi",
             "name": "Q68.3  Budun anadangəlmə əyriliyi",
             "qeydlər": [
@@ -3888,57 +3623,45 @@
             ]
           },
           {
-            "id": 4,
+            "id": 3,
             "code": "Q68.4  Qamış və incik sümüklərinin anadangəlmə əyriliyi",
             "name": "Q68.4  Qamış və incik sümüklərinin anadangəlmə əyriliyi",
             "qeydlər": []
           },
           {
-            "id": 5,
+            "id": 4,
             "code": "Q68.5  Baldırın uzun sümüklərinin dəqiqləşdirilməmiş anadangəlmə əyriliyi",
             "name": "Q68.5  Baldırın uzun sümüklərinin dəqiqləşdirilməmiş anadangəlmə əyriliyi",
             "qeydlər": []
           },
           {
-            "id": 6,
+            "id": 5,
             "code": "Q68.8  Dəqiqləşdirilmiş digər anadangəlmə sümük-əzələ deformasiyaları",
             "name": "Q68.8  Dəqiqləşdirilmiş digər anadangəlmə sümük-əzələ deformasiyaları",
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə deformasiya körpücüyün"
               },
               {
                 "id": 1,
-                "name": "·       deformasiya:"
+                "name": "Anadangəlmə deformasiya dirsəyin"
               },
               {
                 "id": 2,
-                "name": "·       körpücüyün"
+                "name": "Anadangəlmə deformasiya saidin"
               },
               {
                 "id": 3,
-                "name": "·       dirsəyin"
+                "name": "Anadangəlmə deformasiya kürəyin"
               },
               {
                 "id": 4,
-                "name": "·       saidin"
+                "name": "Anadangəlmə çıxıq dirsəyin"
               },
               {
                 "id": 5,
-                "name": "·       kürəyin"
-              },
-              {
-                "id": 6,
-                "name": "·       çıxıq:"
-              },
-              {
-                "id": 7,
-                "name": "·       dirsəyin"
-              },
-              {
-                "id": 8,
-                "name": "·       bazunun"
+                "name": "Anadangəlmə çıxıq bazunun"
               }
             ]
           }
@@ -4243,19 +3966,15 @@
               },
               {
                 "id": 1,
-                "name": "ƏGO ətrafın (ətrafların):"
+                "name": "ƏGO ətrafın (ətrafların) ektromeliyası"
               },
               {
                 "id": 2,
-                "name": "·       ƏGO ektromeliyası"
+                "name": "ƏGO ətrafın (ətrafların) hemimeliyası"
               },
               {
                 "id": 3,
-                "name": "·       ƏGO hemimeliyası"
-              },
-              {
-                "id": 4,
-                "name": "·       reduksiya defekti"
+                "name": "·ƏGO ətrafın (ətrafların) reduksiya defekti"
               }
             ]
           }
@@ -4373,15 +4092,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə qüsur:"
+                "name": "Anadangəlmə qüsur: ƏGO üz sümüklərinin"
               },
               {
                 "id": 1,
-                "name": "·        ƏGO üz sümüklərinin"
-              },
-              {
-                "id": 2,
-                "name": "·        ƏGO kəllənin"
+                "name": "Anadangəlmə qüsur: ƏGO kəllənin"
               }
             ]
           }
@@ -4397,14 +4112,6 @@
             "code": "Q76.0  Spina bifida occulta",
             "name": "Q76.0  Spina bifida occulta",
             "qeydlər": [
-              {
-                "id": 0,
-                "name": "Çıxarılıb: meninqosele (spinal) (Q05.–)"
-              },
-              {
-                "id": 1,
-                "name": "spina bifida (aperta) (cystica) (Q05.–)"
-              }
             ]
           },
           {
@@ -4440,43 +4147,43 @@
               },
               {
                 "id": 1,
-                "name": "·        anadangəlmə:"
+                "name": "·        :"
               },
               {
                 "id": 2,
-                "name": "·        onurğanın olmaması"
+                "name": "anadangəlmə onurğanın olmaması"
               },
               {
                 "id": 3,
-                "name": "·        onurğa sütunun bitişməsi"
+                "name": "anadangəlmə onurğa sütunun bitişməsi"
               },
               {
                 "id": 4,
-                "name": "·        kifoz"
+                "name": "anadangəlmə kifoz"
               },
               {
                 "id": 5,
-                "name": "·        lordoz"
+                "name": "anadangəlmə lordoz"
               },
               {
                 "id": 6,
-                "name": "·        bel-oma birləşməsinin anomaliyası"
+                "name": "anadangəlmə bel-oma birləşməsinin anomaliyası"
               },
               {
                 "id": 7,
-                "name": "·        hemivertebra"
+                "name": "hemivertebra"
               },
               {
                 "id": 8,
-                "name": "·        onurğa sütunun anomaliyası"
+                "name": "onurğa sütunun anomaliyası"
               },
               {
                 "id": 9,
-                "name": "·        platispondilez"
+                "name": "platispondilez"
               },
               {
                 "id": 10,
-                "name": "·        əlavə fəqərə"
+                "name": "əlavə fəqərə"
               }
             ]
           },
@@ -4498,23 +4205,19 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Əlavə qabırğa Anadangəlmə:"
+                "name": ":"
               },
               {
                 "id": 1,
-                "name": "·        qabırğanın olmaması"
+                "name": "Əlavə qabırğa Anadangəlmə qabırğanın olmaması"
               },
               {
                 "id": 2,
-                "name": "·        qabırğanın bitişməsi"
+                "name": "Əlavə qabırğa Anadangəlmə qabırğanın bitişməsi"
               },
               {
                 "id": 3,
-                "name": "·        qabırğaların ƏGO anomaliyası"
-              },
-              {
-                "id": 4,
-                "name": "Çıxarılıb: qısa qabırğa sindromu (Q77.2)"
+                "name": "Əlavə qabırğa Anadangəlmə qabırğaların ƏGO anomaliyası"
               }
             ]
           },
@@ -4693,27 +4396,19 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Olmaması:"
+                "name": "Əzələnin Olmaması"
               },
               {
                 "id": 1,
-                "name": "·        əzələnin"
+                "name": "Vətərin Olmaması"
               },
               {
                 "id": 2,
-                "name": "·        vətərin"
+                "name": "Əlavə əzələ Anadangəlmə amiotrofiya Anadangəlmə dartıcı bitişmələr"
               },
               {
                 "id": 3,
-                "name": "Əlavə əzələ Anadangəlmə amiotrofiya Anadangəlmə:"
-              },
-              {
-                "id": 4,
-                "name": "·        dartıcı bitişmələr"
-              },
-              {
-                "id": 5,
-                "name": "·        vətərin qısalması Poland sindromu"
+                "name": "Əlavə əzələ Anadangəlmə amiotrofiya Anadangəlmə vətərin qısalması Poland sindromu"
               }
             ]
           },
@@ -4724,15 +4419,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Sümük ələzə sisteminin anadangəlmə:"
+                "name": "Sümük-əzələ sisteminin anadangəlmə ƏGO anomaliyası"
               },
               {
                 "id": 1,
-                "name": "·        ƏGO anomaliyası"
-              },
-              {
-                "id": 2,
-                "name": "·        ƏGO deformasiyası"
+                "name": "Sümük-əzələ sisteminin anadangəlmə ƏGO deformasiyası"
               }
             ]
           }
@@ -4863,19 +4554,19 @@
               },
               {
                 "id": 3,
-                "name": "Siklopiya"
+                "name": "Siklopiya sindromu"
               },
               {
                 "id": 4,
-                "name": "Qoldenxar"
+                "name": "Qoldenxar sindromu"
               },
               {
                 "id": 5,
-                "name": "Mebius                                          sindromu"
+                "name": "Mebius sindromu"
               },
               {
                 "id": 6,
-                "name": "Oro-fasial-digital Roben"
+                "name": "Oro-fasial-digital Roben sindromu"
               },
               {
                 "id": 7,
@@ -4890,35 +4581,35 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Arskoq "
+                "name": "Arskoq sindromu"
               },
               {
                 "id": 1,
-                "name": "Kokkeyn "
+                "name": "Kokkeyn sindromu"
               },
               {
                 "id": 2,
-                "name": "De Lanqe "
+                "name": "De Lanqe sindromu"
               },
               {
                 "id": 3,
-                "name": "Dubovis                                          sindromu"
+                "name": "Dubovis sindromu"
               },
               {
                 "id": 4,
-                "name": "Nunan"
+                "name": "Nunan sindromu "
               },
               {
                 "id": 5,
-                "name": "Prader–Villi Robinov– "
+                "name": "Prader–Villi Robinov–sindromu"
               },
               {
                 "id": 6,
-                "name": "Silverman–Smit Rassel– "
+                "name": "Silverman–Smit Rassel– sindromu"
               },
               {
                 "id": 7,
-                "name": "Silver Smit–Lemli–Opisa"
+                "name": "Silver Smit–Lemli–Opisa sindromu"
               },
               {
                 "id": 8,
@@ -4965,26 +4656,18 @@
               },
               {
                 "id": 1,
-                "name": "Qulaqcıqların lokalizasiya olunmuş inversiya ilə əks olunmuş yerləşməsi Orqanların əks olunmuş və ya köndələn yerləşməsi:"
+                "name": "Qulaqcıqların lokalizasiya olunmuş inversiya ilə əks olunmuş yerləşməsi Orqanların əks olunmuş və ya köndələn yerləşməsi: qarın boşluğu orqanlarının"
               },
               {
                 "id": 2,
-                "name": "·        qarın boşluğu orqanlarının"
+                "name": "Qulaqcıqların lokalizasiya olunmuş inversiya ilə əks olunmuş yerləşməsi Orqanların əks olunmuş və ya köndələn yerləşməsi: döş qəfəsi orqanlarının Daxili orqanların transpozisiyası:"
               },
               {
                 "id": 3,
-                "name": "·        döş qəfəsi orqanlarının Daxili orqanların transpozisiyası:"
+                "name": "Qulaqcıqların lokalizasiya olunmuş inversiya ilə əks olunmuş yerləşməsi Orqanların əks olunmuş və ya köndələn yerləşməsi:döş qəfəsi orqanlarının"
               },
               {
                 "id": 4,
-                "name": "·        qarın boşluğu orqanlarının"
-              },
-              {
-                "id": 5,
-                "name": "·        döş qəfəsi orqanlarının"
-              },
-              {
-                "id": 6,
                 "name": "Çıxarılıb: ƏGO dekstrokardiya (Q24.0) levokardiya (Q24.1)"
               }
             ]
@@ -5007,18 +4690,14 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "ƏGO monstr Anadangəlmə çoxsaylı:"
+                "name": "ƏGO monstr Anadangəlmə çoxsaylı ƏGO qüsurlar"
               },
               {
                 "id": 1,
-                "name": "·        ƏGO qüsurlar"
+                "name": "ƏGO monstr Anadangəlmə çoxsaylı ƏGO deformasiyalar"
               },
               {
                 "id": 2,
-                "name": "·        ƏGO deformasiyalar"
-              },
-              {
-                "id": 3,
                 "name": "Çıxarılıb: bir neçə sistemi əhatə edən anadangəlmə inkişaf qüsuru sindromları (Q87.–)"
               }
             ]
@@ -5036,15 +4715,11 @@
             "qeydlər": [
               {
                 "id": 0,
-                "name": "Anadangəlmə:"
+                "name": "Anadangəlmə ƏGO inkişaf qüsuru"
               },
               {
                 "id": 1,
-                "name": "·        ƏGO inkişaf qüsuru"
-              },
-              {
-                "id": 2,
-                "name": "·        ƏGO deformasiya"
+                "name": "Anadangəlmə ƏGO deformasiya"
               }
             ]
           }

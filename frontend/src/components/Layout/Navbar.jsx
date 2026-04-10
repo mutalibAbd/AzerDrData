@@ -1,6 +1,7 @@
 import { useNavigate, useLocation } from 'react-router-dom';
 import { LogOut, LayoutDashboard, Shield } from 'lucide-react';
 import useAuthStore from '../../stores/authStore';
+import logo from '../../assets/logo.jpeg';
 
 export default function Navbar() {
   const { user, logout } = useAuthStore();
@@ -17,7 +18,10 @@ export default function Navbar() {
   return (
     <nav className="bg-white border-b border-gray-200 px-6 py-3 flex items-center justify-between">
       <div className="flex items-center gap-6">
-        <h1 className="text-xl font-bold text-blue-700">AzerDr</h1>
+        <div className="flex items-center gap-2 cursor-pointer" onClick={() => navigate('/')}>
+          <img src={logo} alt="RadVision" className="h-8 w-8 rounded object-cover" />
+          <h1 className="text-xl font-bold text-blue-700">RadVision</h1>
+        </div>
         <button
           onClick={() => navigate('/')}
           className={`flex items-center gap-1 px-3 py-1.5 rounded text-sm ${isActive('/') ? 'bg-blue-50 text-blue-700' : 'text-gray-600 hover:bg-gray-50'}`}

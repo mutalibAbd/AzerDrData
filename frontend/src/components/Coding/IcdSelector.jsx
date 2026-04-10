@@ -11,6 +11,7 @@ export default function IcdSelector({ value, onChange }) {
   const [selectedBashliq, setSelectedBashliq] = useState(null);
   const [selectedDiaqnoz, setSelectedDiaqnoz] = useState(null);
   const [selectedQeyd, setSelectedQeyd] = useState(null);
+  const [selectedAltSecim, setSelectedAltSecim] = useState(null);
 
   useEffect(() => {
     api.get('/icd/rubrikas').then(({ data }) => setRubrikas(data));
@@ -25,6 +26,7 @@ export default function IcdSelector({ value, onChange }) {
         setSelectedDiaqnoz(null);
         setQeydler([]);
         setSelectedQeyd(null);
+        setSelectedAltSecim(null);
       });
     } else {
       setBashliqlar([]);
@@ -33,6 +35,7 @@ export default function IcdSelector({ value, onChange }) {
       setSelectedDiaqnoz(null);
       setQeydler([]);
       setSelectedQeyd(null);
+      setSelectedAltSecim(null);
     }
   }, [selectedRubrika]);
 
@@ -43,12 +46,14 @@ export default function IcdSelector({ value, onChange }) {
         setSelectedDiaqnoz(null);
         setQeydler([]);
         setSelectedQeyd(null);
+        setSelectedAltSecim(null);
       });
     } else {
       setDiaqnozlar([]);
       setSelectedDiaqnoz(null);
       setQeydler([]);
       setSelectedQeyd(null);
+      setSelectedAltSecim(null);
     }
   }, [selectedBashliq]);
 
@@ -57,12 +62,30 @@ export default function IcdSelector({ value, onChange }) {
       api.get(`/icd/diaqnozlar/${selectedDiaqnoz.id}/qeydler`).then(({ data }) => {
         setQeydler(data);
         setSelectedQeyd(null);
+        setSelectedAltSecim(null);
       });
     } else {
       setQeydler([]);
       setSelectedQeyd(null);
+      setSelectedAltSecim(null);
     }
   }, [selectedDiaqnoz]);
+
+  // When qeyd changes, reset alt secim
+  useEffect(() => {
+    setSelectedAltSecim(null);
+  }, [selectedQeyd]);
+
+  // Build the final icdQeydName from parent + child
+  const buildQeydName = () => {
+    if (!selectedQeyd) return null;
+    if (selectedAltSecim) {
+      // Remove trailing ":" from parent and combine
+      const parentName = selectedQeyd.name.replace(/:$/, '').trim();
+      return `${parentName} ${selectedAltSecim.name}`;
+    }
+    return selectedQeyd.name;
+  };
 
   useEffect(() => {
     onChange({
@@ -72,9 +95,9 @@ export default function IcdSelector({ value, onChange }) {
       bashliqName: selectedBashliq?.name || '',
       diaqnozCode: selectedDiaqnoz?.code || '',
       diaqnozName: selectedDiaqnoz?.name || '',
-      icdQeydName: selectedQeyd?.name || null,
+      icdQeydName: buildQeydName(),
     });
-  }, [selectedRubrika, selectedBashliq, selectedDiaqnoz, selectedQeyd]);
+  }, [selectedRubrika, selectedBashliq, selectedDiaqnoz, selectedQeyd, selectedAltSecim]);
 
   // Reset when value is cleared externally
   useEffect(() => {
@@ -83,8 +106,11 @@ export default function IcdSelector({ value, onChange }) {
       setSelectedBashliq(null);
       setSelectedDiaqnoz(null);
       setSelectedQeyd(null);
+      setSelectedAltSecim(null);
     }
   }, [value?.rubrikaCode]);
+
+  const hasChildren = selectedQeyd?.children?.length > 0;
 
   return (
     <div className="bg-white border rounded-lg p-5 space-y-4">
@@ -126,7 +152,7 @@ export default function IcdSelector({ value, onChange }) {
         >
           <option value="">-- Başlıq seçin --</option>
           {bashliqlar.map((b) => (
-            <option key={b.id} value={b.id}>{b.code} - {b.name}</option>
+            <option key={b.id} value={b.id}>{b.name}</option>
           ))}
         </select>
       </div>
@@ -147,16 +173,16 @@ export default function IcdSelector({ value, onChange }) {
         >
           <option value="">-- Diaqnoz seçin --</option>
           {diaqnozlar.map((d) => (
-            <option key={d.id} value={d.id}>{d.code} - {d.name}</option>
+            <option key={d.id} value={d.id}>{d.name}</option>
           ))}
         </select>
       </div>
 
-      {/* Qeydlər - 4th level dropdown (only shown when diaqnoz has sub-notes) */}
+      {/* Qeydlər - 4th level (parent notes) */}
       {selectedDiaqnoz && qeydler.length > 0 && (
         <div>
           <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            4. Alt başlıq (Qeyd)
+            4. Qeyd
           </label>
           <select
             className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
@@ -166,7 +192,7 @@ export default function IcdSelector({ value, onChange }) {
               setSelectedQeyd(q || null);
             }}
           >
-            <option value="">-- Alt başlıq seçin (ixtiyari) --</option>
+            <option value="">-- Qeyd seçin (ixtiyari) --</option>
             {qeydler.map((q) => (
               <option key={q.id} value={q.id}>{q.name}</option>
             ))}
@@ -174,11 +200,33 @@ export default function IcdSelector({ value, onChange }) {
         </div>
       )}
 
+      {/* Alt seçimlər - 5th level (children of selected qeyd) */}
+      {hasChildren && (
+        <div>
+          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+            5. Alt seçim
+          </label>
+          <select
+            className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
+            value={selectedAltSecim?.id || ''}
+            onChange={(e) => {
+              const a = selectedQeyd.children.find((x) => x.id === Number(e.target.value));
+              setSelectedAltSecim(a || null);
+            }}
+          >
+            <option value="">-- Alt seçim seçin --</option>
+            {selectedQeyd.children.map((c) => (
+              <option key={c.id} value={c.id}>{c.name}</option>
+            ))}
+          </select>
+        </div>
+      )}
+
       {selectedDiaqnoz && (
         <div className="bg-green-50 border border-green-200 rounded p-3 text-sm">
-          <strong>Seçildi:</strong> {selectedDiaqnoz.code} - {selectedDiaqnoz.name}
+          <strong>Seçildi:</strong> {selectedDiaqnoz.name}
           {selectedQeyd && (
-            <span className="text-green-700 ml-1">→ {selectedQeyd.name}</span>
+            <span className="text-green-700 ml-1">→ {buildQeydName()}</span>
           )}
         </div>
       )}
