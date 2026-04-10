@@ -38,13 +38,14 @@ public record SaveCodingRequest(
     string? Qeyd
 );
 
-public record ErrorReportRequest(
-    string ErrorType,       // "spelling" or "logic"
-    string? FieldName,      // required for spelling
-    string? CorrectedText,  // required for spelling
-    string? Description,    // required for logic
-    string? Note
-);
+public class ErrorReportRequest
+{
+    public string ErrorType { get; set; } = "spelling"; // "spelling" or "logic"
+    public string? FieldName { get; set; }      // required for spelling
+    public string? CorrectedText { get; set; }  // required for spelling
+    public string? Description { get; set; }    // required for logic
+    public string? Note { get; set; }
+}
 
 // ICD
 public record IcdRubrikaDto(int Id, string Code, string Name);
