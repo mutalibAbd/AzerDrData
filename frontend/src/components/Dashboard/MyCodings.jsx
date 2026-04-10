@@ -13,7 +13,7 @@ export default function MyCodings() {
   const loadCodings = async () => {
     setLoading(true);
     try {
-      const { data } = await api.get(`/dashboard/my-codings?page=${page}&size=10`);
+      const { data } = await api.get(`/dashboard/my-codings?page=${page}&size=5`);
       setCodings(data);
     } catch {
       // handled by interceptor
@@ -57,7 +57,7 @@ export default function MyCodings() {
         <span className="text-xs text-gray-400">Səhifə {page}</span>
         <button
           onClick={() => setPage((p) => p + 1)}
-          disabled={codings.length < 10}
+          disabled={codings.length < 5}
           className="text-sm text-blue-600 disabled:text-gray-300"
         >
           Sonra →
