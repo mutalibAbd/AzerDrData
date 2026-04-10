@@ -97,11 +97,11 @@ export default function PatientInfo({ anomaly }) {
         </div>
 
         <div>
-          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Həkimin Rəyi (Diaqnoz)</label>
+          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Rəy (Diaqnoz)</label>
           <div className="mt-1 p-3 bg-blue-50 border border-blue-200 rounded text-gray-800">
             {anomaly.diagnosis || <span className="text-gray-400 italic">Boş</span>}
           </div>
-          <SpellingCheck fieldName="diagnosis" fieldLabel="Həkimin Rəyi" anomalyId={anomaly.id} />
+          <SpellingCheck fieldName="diagnosis" fieldLabel="Rəy (Diaqnoz)" anomalyId={anomaly.id} />
         </div>
 
         <div>
