@@ -11,9 +11,14 @@ public class ErrorReport
     public Guid DoctorId { get; set; }
 
     [Required, MaxLength(20)]
-    public string FieldName { get; set; } = string.Empty; // "diagnosis" or "explanation"
+    public string ErrorType { get; set; } = "spelling"; // "spelling" or "logic"
 
-    public string CorrectedText { get; set; } = string.Empty;
+    [MaxLength(20)]
+    public string? FieldName { get; set; } // "diagnosis" or "explanation" (for spelling errors)
+
+    public string? CorrectedText { get; set; } // for spelling errors
+
+    public string? Description { get; set; } // for logic errors
 
     public string? Note { get; set; }
 

@@ -111,9 +111,12 @@ public class AdminService : IAdminService
                 e.AnomalyId,
                 e.Anomaly.PatientId,
                 e.Doctor.FullName,
+                e.ErrorType,
                 e.FieldName,
-                e.FieldName == "diagnosis" ? e.Anomaly.Diagnosis : e.Anomaly.Explanation,
+                e.FieldName == "diagnosis" ? e.Anomaly.Diagnosis :
+                e.FieldName == "explanation" ? e.Anomaly.Explanation : null,
                 e.CorrectedText,
+                e.Description,
                 e.Note,
                 e.Status,
                 e.CreatedAt

@@ -163,8 +163,10 @@ public class AnomalyService : IAnomalyService
         {
             AnomalyId = anomalyId,
             DoctorId = doctorId,
+            ErrorType = request.ErrorType,
             FieldName = request.FieldName,
             CorrectedText = request.CorrectedText,
+            Description = request.Description,
             Note = request.Note
         });
 

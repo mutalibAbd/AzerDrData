@@ -39,8 +39,10 @@ public record SaveCodingRequest(
 );
 
 public record ErrorReportRequest(
-    string FieldName,
-    string CorrectedText,
+    string ErrorType,       // "spelling" or "logic"
+    string? FieldName,      // required for spelling
+    string? CorrectedText,  // required for spelling
+    string? Description,    // required for logic
     string? Note
 );
 
@@ -77,9 +79,11 @@ public record ErrorReportItem(
     int AnomalyId,
     string PatientId,
     string DoctorName,
-    string FieldName,
-    string OriginalText,
-    string CorrectedText,
+    string ErrorType,
+    string? FieldName,
+    string? OriginalText,
+    string? CorrectedText,
+    string? Description,
     string? Note,
     string Status,
     DateTime CreatedAt

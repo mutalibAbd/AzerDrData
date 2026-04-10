@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { CheckCircle, XCircle } from 'lucide-react';
+import { CheckCircle, XCircle, SpellCheck, GitBranch } from 'lucide-react';
 import toast from 'react-hot-toast';
 import api from '../../services/api';
 
@@ -38,12 +38,19 @@ export default function ErrorReports() {
         {reports.map((r) => (
           <div key={r.id} className="p-4 space-y-2">
             <div className="flex items-center justify-between">
-              <div>
+              <div className="flex items-center flex-wrap gap-2">
                 <span className="text-sm font-medium text-gray-800">Hasta: {r.patientId}</span>
-                <span className="text-xs text-gray-400 ml-2">Həkim: {r.doctorName}</span>
-                <span className="text-xs bg-gray-100 px-2 py-0.5 rounded ml-2">
-                  {r.fieldName === 'diagnosis' ? 'Diaqnoz' : 'Açıqlama'}
-                </span>
+                <span className="text-xs text-gray-400">Həkim: {r.doctorName}</span>
+                {r.errorType === 'logic' ? (
+                  <span className="text-xs bg-purple-100 text-purple-700 px-2 py-0.5 rounded flex items-center gap-1">
+                    <GitBranch size={12} /> Məntiq / ICD
+                  </span>
+                ) : (
+                  <span className="text-xs bg-amber-100 text-amber-700 px-2 py-0.5 rounded flex items-center gap-1">
+                    <SpellCheck size={12} />
+                    {r.fieldName === 'diagnosis' ? 'Diaqnoz' : 'Açıqlama'}
+                  </span>
+                )}
               </div>
               {filter === 'pending' && (
                 <div className="flex gap-2">
@@ -64,16 +71,25 @@ export default function ErrorReports() {
                 </div>
               )}
             </div>
-            <div className="grid grid-cols-2 gap-3 text-sm">
-              <div>
-                <span className="text-xs text-gray-500">Orijinal:</span>
-                <p className="bg-red-50 border border-red-100 rounded p-2 mt-1">{r.originalText}</p>
+
+            {r.errorType === 'spelling' ? (
+              <div className="grid grid-cols-2 gap-3 text-sm">
+                <div>
+                  <span className="text-xs text-gray-500">Orijinal:</span>
+                  <p className="bg-red-50 border border-red-100 rounded p-2 mt-1">{r.originalText}</p>
+                </div>
+                <div>
+                  <span className="text-xs text-gray-500">Düzəldilmiş:</span>
+                  <p className="bg-green-50 border border-green-100 rounded p-2 mt-1">{r.correctedText}</p>
+                </div>
               </div>
-              <div>
-                <span className="text-xs text-gray-500">Düzəldilmiş:</span>
-                <p className="bg-green-50 border border-green-100 rounded p-2 mt-1">{r.correctedText}</p>
+            ) : (
+              <div className="text-sm">
+                <span className="text-xs text-gray-500">Problemin təsviri:</span>
+                <p className="bg-purple-50 border border-purple-100 rounded p-2 mt-1">{r.description}</p>
               </div>
-            </div>
+            )}
+
             {r.note && <p className="text-xs text-gray-500">Qeyd: {r.note}</p>}
           </div>
         ))}

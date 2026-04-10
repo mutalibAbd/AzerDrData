@@ -121,11 +121,17 @@ internal class SupabaseErrorReport
     [JsonPropertyName("doctor_id")]
     public Guid DoctorId { get; set; }
 
+    [JsonPropertyName("error_type")]
+    public string ErrorType { get; set; } = "spelling";
+
     [JsonPropertyName("field_name")]
-    public string FieldName { get; set; } = "";
+    public string? FieldName { get; set; }
 
     [JsonPropertyName("corrected_text")]
-    public string CorrectedText { get; set; } = "";
+    public string? CorrectedText { get; set; }
+
+    [JsonPropertyName("description")]
+    public string? Description { get; set; }
 
     [JsonPropertyName("note")]
     public string? Note { get; set; }
@@ -295,8 +301,10 @@ public class SupabaseAnomalyService : IAnomalyService
         {
             anomaly_id = anomalyId,
             doctor_id = doctorId,
+            error_type = request.ErrorType,
             field_name = request.FieldName,
             corrected_text = request.CorrectedText,
+            description = request.Description,
             note = request.Note
         });
         return true;
@@ -438,11 +446,10 @@ public class SupabaseAdminService : IAdminService
 
     public async Task<List<ErrorReportItem>> GetErrorReportsAsync(string? status = null)
     {
-        var filter = "select=id,anomaly_id,doctor_id,field_name,corrected_text,note,status,created_at,anomalies(patient_id,diagnosis,explanation),users!error_reports_doctor_id_fkey(full_name)&order=created_at.desc";
+        var filter = "select=id,anomaly_id,doctor_id,error_type,field_name,corrected_text,description,note,status,created_at,anomalies(patient_id,diagnosis,explanation),users!error_reports_doctor_id_fkey(full_name)&order=created_at.desc";
         if (status != null)
             filter += $"&status=eq.{Uri.EscapeDataString(status)}";
 
-        // Simplified: use separate queries due to PostgREST join complexity
         var reports = await _client.From<SupabaseErrorReport>("error_reports",
             status != null ? $"status=eq.{Uri.EscapeDataString(status)}&order=created_at.desc" : "order=created_at.desc");
 
@@ -454,14 +461,17 @@ public class SupabaseAdminService : IAdminService
             var anomaly = anomalies.FirstOrDefault();
             var doctor = doctors.FirstOrDefault();
 
-            var originalText = r.FieldName == "diagnosis" ? anomaly?.Diagnosis : anomaly?.Explanation;
+            string? originalText = r.FieldName == "diagnosis" ? anomaly?.Diagnosis :
+                                   r.FieldName == "explanation" ? anomaly?.Explanation : null;
 
             items.Add(new ErrorReportItem(
                 r.Id, r.AnomalyId,
                 anomaly?.PatientId ?? "",
                 doctor?.FullName ?? "",
-                r.FieldName, originalText ?? "",
-                r.CorrectedText, r.Note, r.Status, r.CreatedAt
+                r.ErrorType,
+                r.FieldName, originalText,
+                r.CorrectedText, r.Description,
+                r.Note, r.Status, r.CreatedAt
             ));
         }
         return items;
