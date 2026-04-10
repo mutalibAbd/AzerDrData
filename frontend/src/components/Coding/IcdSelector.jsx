@@ -140,8 +140,8 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
   }, [value?.rubrikaCode]);
 
   return (
-    <div className="border-2 border-blue-300 rounded-lg overflow-hidden">
-      <div className="bg-gradient-to-r from-slate-50 to-sky-50 px-5 py-3 border-b border-blue-200 flex items-center justify-between">
+    <div className="border-2 border-sky-300 rounded-lg overflow-hidden">
+      <div className="bg-gradient-to-r from-sky-50 to-cyan-50 px-5 py-3 border-b border-sky-200 flex items-center justify-between">
         <h3 className="font-semibold text-gray-800">ICD-10 Kodlama</h3>
         {onReportIcdError && (
           <button
@@ -154,7 +154,7 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
         )}
       </div>
 
-      <div className="bg-gradient-to-b from-sky-50/40 to-white px-5 py-4 space-y-4">
+      <div className="bg-gradient-to-b from-sky-50/50 to-white px-5 py-4 space-y-4">
         {/* Rubrika */}
         <div>
           <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
