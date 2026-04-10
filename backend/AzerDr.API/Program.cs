@@ -9,6 +9,10 @@ using Microsoft.IdentityModel.Tokens;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// Railway sets PORT env variable — use it if available
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5000";
+builder.WebHost.UseUrls($"http://+:{port}");
+
 // Environment variable overrides for production secrets
 // Convention: Jwt__Key, Supabase__Url, Supabase__ServiceRoleKey, etc.
 // ASP.NET Core automatically maps SECTION__KEY env vars to Configuration["Section:Key"]
@@ -120,6 +124,9 @@ app.UseCors("AllowFrontend");
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
+
+// Health check endpoint
+app.MapGet("/api/health", () => Results.Ok(new { status = "healthy" }));
 
 app.Run();
 
