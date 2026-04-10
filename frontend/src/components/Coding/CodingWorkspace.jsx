@@ -80,7 +80,7 @@ export default function CodingWorkspace() {
 
   return (
     <div className="space-y-4">
-      <PatientInfo anomaly={currentAnomaly} />
+      <PatientInfo anomaly={currentAnomaly} onReportError={() => setShowErrorModal(true)} />
       <IcdSelector value={icdData} onChange={setIcdData} />
 
       {/* Note */}
@@ -103,12 +103,6 @@ export default function CodingWorkspace() {
             className="flex items-center gap-1 px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
           >
             <ArrowLeft size={16} /> Ana Səhifəyə Qayıt
-          </button>
-          <button
-            onClick={() => setShowErrorModal(true)}
-            className="flex items-center gap-1 text-sm text-amber-600 hover:text-amber-800"
-          >
-            <AlertTriangle size={16} /> Yazım xətası bildir
           </button>
         </div>
         <div className="flex gap-3">
