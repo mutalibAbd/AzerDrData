@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { BookOpen, Search, X } from 'lucide-react';
+import toast from 'react-hot-toast';
 import useCodingStore from '../stores/codingStore';
 import Navbar from '../components/Layout/Navbar';
 import CodingWorkspace from '../components/Coding/CodingWorkspace';
@@ -19,9 +20,13 @@ export default function CodingPage() {
     if (!icdData) {
       try {
         const res = await fetch('/ICD10.json');
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
         const data = await res.json();
         setIcdData(data);
-      } catch { /* ignore */ }
+      } catch {
+        toast.error('ICD referans cədvəli yüklənmədi');
+        return;
+      }
     }
     setShowIcdRef((v) => !v);
   };

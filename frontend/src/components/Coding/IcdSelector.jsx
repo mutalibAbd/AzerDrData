@@ -1,5 +1,6 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback, useMemo } from 'react';
 import { AlertTriangle } from 'lucide-react';
+import toast from 'react-hot-toast';
 import api from '../../services/api';
 
 export default function IcdSelector({ value, onChange, onReportIcdError }) {
@@ -11,23 +12,27 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
   const [selectedRubrika, setSelectedRubrika] = useState(null);
   const [selectedBashliq, setSelectedBashliq] = useState(null);
   const [selectedDiaqnoz, setSelectedDiaqnoz] = useState(null);
-  // Multi-select: { parentId: { parent, children: [child, ...] } }
   const [checkedQeydler, setCheckedQeydler] = useState({});
 
   useEffect(() => {
-    api.get('/icd/rubrikas').then(({ data }) => setRubrikas(data));
+    api.get('/icd/rubrikas').then(({ data }) => setRubrikas(data))
+      .catch(() => toast.error('Rubrikalar yüklənmədi'));
   }, []);
 
   useEffect(() => {
     if (selectedRubrika) {
-      api.get(`/icd/rubrikas/${selectedRubrika.id}/bashliqlar`).then(({ data }) => {
-        setBashliqlar(data);
-        setSelectedBashliq(null);
-        setDiaqnozlar([]);
-        setSelectedDiaqnoz(null);
-        setQeydler([]);
-        setCheckedQeydler({});
-      });
+      const controller = new AbortController();
+      api.get(`/icd/rubrikas/${selectedRubrika.id}/bashliqlar`, { signal: controller.signal })
+        .then(({ data }) => {
+          setBashliqlar(data);
+          setSelectedBashliq(null);
+          setDiaqnozlar([]);
+          setSelectedDiaqnoz(null);
+          setQeydler([]);
+          setCheckedQeydler({});
+        })
+        .catch((e) => { if (e.name !== 'CanceledError') toast.error('Başlıqlar yüklənmədi'); });
+      return () => controller.abort();
     } else {
       setBashliqlar([]);
       setSelectedBashliq(null);
@@ -40,12 +45,16 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
 
   useEffect(() => {
     if (selectedBashliq) {
-      api.get(`/icd/bashliqlar/${selectedBashliq.id}/diaqnozlar`).then(({ data }) => {
-        setDiaqnozlar(data);
-        setSelectedDiaqnoz(null);
-        setQeydler([]);
-        setCheckedQeydler({});
-      });
+      const controller = new AbortController();
+      api.get(`/icd/bashliqlar/${selectedBashliq.id}/diaqnozlar`, { signal: controller.signal })
+        .then(({ data }) => {
+          setDiaqnozlar(data);
+          setSelectedDiaqnoz(null);
+          setQeydler([]);
+          setCheckedQeydler({});
+        })
+        .catch((e) => { if (e.name !== 'CanceledError') toast.error('Diaqnozlar yüklənmədi'); });
+      return () => controller.abort();
     } else {
       setDiaqnozlar([]);
       setSelectedDiaqnoz(null);
@@ -56,10 +65,14 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
 
   useEffect(() => {
     if (selectedDiaqnoz) {
-      api.get(`/icd/diaqnozlar/${selectedDiaqnoz.id}/qeydler`).then(({ data }) => {
-        setQeydler(data);
-        setCheckedQeydler({});
-      });
+      const controller = new AbortController();
+      api.get(`/icd/diaqnozlar/${selectedDiaqnoz.id}/qeydler`, { signal: controller.signal })
+        .then(({ data }) => {
+          setQeydler(data);
+          setCheckedQeydler({});
+        })
+        .catch((e) => { if (e.name !== 'CanceledError') toast.error('Qeydlər yüklənmədi'); });
+      return () => controller.abort();
     } else {
       setQeydler([]);
       setCheckedQeydler({});
@@ -157,10 +170,11 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
       <div className="bg-gradient-to-b from-sky-50/50 to-white px-5 py-4 space-y-4">
         {/* Rubrika */}
         <div>
-          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            1. Rubrika (Kod aralığı)
+          <label htmlFor="icd-rubrika" className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+            1. Rubrika (Kod aralığı) <span className="text-red-500">*</span>
           </label>
           <select
+            id="icd-rubrika"
             className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none"
             value={selectedRubrika?.id || ''}
             onChange={(e) => {
@@ -177,10 +191,11 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
 
         {/* Bashliq */}
         <div>
-          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            2. Başlıq
+          <label htmlFor="icd-bashliq" className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+            2. Başlıq <span className="text-red-500">*</span>
           </label>
           <select
+            id="icd-bashliq"
             className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100"
             disabled={!selectedRubrika}
             value={selectedBashliq?.id || ''}
@@ -198,10 +213,11 @@ export default function IcdSelector({ value, onChange, onReportIcdError }) {
 
         {/* Diaqnoz */}
         <div>
-          <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">
-            3. Diaqnoz
+          <label htmlFor="icd-diaqnoz" className="text-xs font-medium text-gray-500 uppercase tracking-wide">
+            3. Diaqnoz <span className="text-gray-400 text-[10px] normal-case">(opsiyonel)</span>
           </label>
           <select
+            id="icd-diaqnoz"
             className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2 focus:ring-2 focus:ring-blue-500 focus:outline-none disabled:bg-gray-100"
             disabled={!selectedBashliq}
             value={selectedDiaqnoz?.id || ''}

@@ -3,9 +3,12 @@ import api from '../../services/api';
 
 export default function ProgressOverview() {
   const [progress, setProgress] = useState([]);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
-    api.get('/admin/progress').then(({ data }) => setProgress(data));
+    api.get('/admin/progress')
+      .then(({ data }) => { setProgress(data); setError(null); })
+      .catch(() => setError('İrəliləyiş yüklənmədi'));
   }, []);
 
   return (
@@ -13,6 +16,9 @@ export default function ProgressOverview() {
       <div className="px-4 py-3 border-b">
         <h3 className="font-semibold text-gray-800">İrəliləyiş (Həkim bazında)</h3>
       </div>
+      {error ? (
+        <div className="p-6 text-center text-red-400 text-sm">{error}</div>
+      ) : (
       <div className="divide-y">
         {progress.map((p, i) => (
           <div key={p.doctorId} className="px-4 py-3 flex items-center justify-between">
@@ -35,6 +41,7 @@ export default function ProgressOverview() {
           <div className="p-6 text-center text-gray-400">Hələ heç bir kodlama yoxdur</div>
         )}
       </div>
+      )}
     </div>
   );
 }

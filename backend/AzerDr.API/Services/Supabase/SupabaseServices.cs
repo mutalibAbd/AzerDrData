@@ -5,6 +5,7 @@ using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using AzerDr.API.DTOs;
 using AzerDr.API.Services.Interfaces;
+using Microsoft.Extensions.Caching.Memory;
 using Microsoft.IdentityModel.Tokens;
 
 namespace AzerDr.API.Services.Supabase;
@@ -272,7 +273,7 @@ public class SupabaseAnomalyService : IAnomalyService
             p_rubrika_name = request.RubrikaName,
             p_bashliq_code = ExtractIcdCode(request.BashliqCode),
             p_bashliq_name = request.BashliqName,
-            p_diaqnoz_code = ExtractIcdCode(request.DiaqnozCode),
+            p_diaqnoz_code = string.IsNullOrEmpty(request.DiaqnozCode) ? (string?)null : ExtractIcdCode(request.DiaqnozCode),
             p_diaqnoz_name = request.DiaqnozName,
             p_icd_qeyd_name = request.IcdQeydName,
             p_qeyd = request.Qeyd
@@ -337,44 +338,69 @@ public class SupabaseAnomalyService : IAnomalyService
 public class SupabaseIcdService : IIcdService
 {
     private readonly SupabaseRestClient _client;
+    private readonly IMemoryCache _cache;
+    private static readonly TimeSpan CacheDuration = TimeSpan.FromHours(24);
 
-    public SupabaseIcdService(SupabaseRestClient client) => _client = client;
+    public SupabaseIcdService(SupabaseRestClient client, IMemoryCache cache)
+    {
+        _client = client;
+        _cache = cache;
+    }
 
     public async Task<List<IcdRubrikaDto>> GetRubrikasAsync()
     {
-        var items = await _client.From<SupabaseIcdItem>("icd_rubrikas", "order=id.asc");
-        return items.Select(i => new IcdRubrikaDto(i.Id, i.Code, i.Name)).ToList();
+        return await _cache.GetOrCreateAsync("icd_rubrikas", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+            var items = await _client.From<SupabaseIcdItem>("icd_rubrikas", "order=id.asc");
+            return items.Select(i => new IcdRubrikaDto(i.Id, i.Code, i.Name)).ToList();
+        }) ?? [];
     }
 
     public async Task<List<IcdBashliqDto>> GetBashliqlarAsync(int rubrikaId)
     {
-        var items = await _client.From<SupabaseIcdItem>("icd_bashliqlar",
-            $"rubrika_id=eq.{rubrikaId}&order=id.asc");
-        return items.Select(i => new IcdBashliqDto(i.Id, i.Code, i.Name)).ToList();
+        return await _cache.GetOrCreateAsync($"icd_bashliqlar_{rubrikaId}", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+            var items = await _client.From<SupabaseIcdItem>("icd_bashliqlar",
+                $"rubrika_id=eq.{rubrikaId}&order=id.asc");
+            return items.Select(i => new IcdBashliqDto(i.Id, i.Code, i.Name)).ToList();
+        }) ?? [];
     }
 
     public async Task<List<IcdDiaqnozDto>> GetDiaqnozlarAsync(int bashliqId)
     {
-        var items = await _client.From<SupabaseIcdItem>("icd_diaqnozlar",
-            $"bashliq_id=eq.{bashliqId}&order=id.asc");
-        return items.Select(i => new IcdDiaqnozDto(i.Id, i.Code, i.Name)).ToList();
+        return await _cache.GetOrCreateAsync($"icd_diaqnozlar_{bashliqId}", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+            var items = await _client.From<SupabaseIcdItem>("icd_diaqnozlar",
+                $"bashliq_id=eq.{bashliqId}&order=id.asc");
+            return items.Select(i => new IcdDiaqnozDto(i.Id, i.Code, i.Name)).ToList();
+        }) ?? [];
     }
 
     public async Task<List<IcdQeydDto>> GetQeydlerAsync(int diaqnozId)
     {
-        var items = await _client.From<SupabaseQeyd>("icd_qeydler",
-            $"diaqnoz_id=eq.{diaqnozId}&order=id.asc");
+        return await _cache.GetOrCreateAsync($"icd_qeydler_{diaqnozId}", async entry =>
+        {
+            entry.AbsoluteExpirationRelativeToNow = CacheDuration;
+            var items = await _client.From<SupabaseQeyd>("icd_qeydler",
+                $"diaqnoz_id=eq.{diaqnozId}&order=id.asc");
 
-        var parents = items.Where(i => i.ParentId == null).ToList();
-        var children = items.Where(i => i.ParentId != null).ToList();
+            var parents = items.Where(i => i.ParentId == null).ToList();
+            var childrenByParent = items
+                .Where(i => i.ParentId != null)
+                .GroupBy(i => i.ParentId!.Value)
+                .ToDictionary(g => g.Key, g => g.ToList());
 
-        return parents.Select(p => new IcdQeydDto(
-            p.Id,
-            p.Name,
-            children.Where(c => c.ParentId == p.Id)
+            return parents.Select(p => new IcdQeydDto(
+                p.Id,
+                p.Name,
+                childrenByParent.GetValueOrDefault(p.Id, [])
                     .Select(c => new IcdQeydChildDto(c.Id, c.Name))
                     .ToList()
-        )).ToList();
+            )).ToList();
+        }) ?? [];
     }
 }
 
@@ -389,15 +415,12 @@ public class SupabaseAdminService : IAdminService
         var users = await _client.From<SupabaseUser>("users",
             "order=created_at.asc");
 
-        // Exclude the current admin viewing the list? No, show all users
-        var doctorIds = users.Select(u => u.Id).ToList();
-        var codingCounts = new Dictionary<Guid, int>();
-        foreach (var uid in doctorIds)
-        {
-            var codings = await _client.From<SupabaseCoding>("anomaly_codings",
-                $"doctor_id=eq.{uid}&select=anomaly_id");
-            codingCounts[uid] = codings.Count;
-        }
+        // Batch: fetch all codings at once instead of per-doctor
+        var allCodings = await _client.From<SupabaseCoding>("anomaly_codings",
+            "select=doctor_id");
+        var codingCounts = allCodings
+            .GroupBy(c => c.DoctorId)
+            .ToDictionary(g => g.Key, g => g.Count());
 
         return users.Select(u => new DoctorListItem(
             u.Id, u.Username, u.FullName, u.Role, u.IsActive,
@@ -451,18 +474,22 @@ public class SupabaseAdminService : IAdminService
         var doctors = await _client.From<SupabaseUser>("users",
             "role=eq.doctor&is_active=eq.true");
 
-        var items = new List<ProgressItem>();
-        foreach (var d in doctors)
-        {
-            var allCodings = await _client.From<SupabaseCoding>("anomaly_codings",
-                $"doctor_id=eq.{d.Id}&select=anomaly_id,created_at&order=created_at.desc");
+        // Batch: fetch all codings at once instead of per-doctor
+        var allCodings = await _client.From<SupabaseCoding>("anomaly_codings",
+            "select=doctor_id,created_at&order=created_at.desc");
+        var codingsByDoctor = allCodings
+            .GroupBy(c => c.DoctorId)
+            .ToDictionary(g => g.Key, g => g.ToList());
 
-            items.Add(new ProgressItem(
+        var items = doctors.Select(d =>
+        {
+            var doctorCodings = codingsByDoctor.GetValueOrDefault(d.Id, []);
+            return new ProgressItem(
                 d.Id, d.FullName,
-                allCodings.Count,
-                allCodings.FirstOrDefault()?.CreatedAt
-            ));
-        }
+                doctorCodings.Count,
+                doctorCodings.FirstOrDefault()?.CreatedAt
+            );
+        }).ToList();
 
         return items.OrderByDescending(i => i.CodingCount).ToList();
     }
@@ -476,18 +503,31 @@ public class SupabaseAdminService : IAdminService
         var reports = await _client.From<SupabaseErrorReport>("error_reports",
             status != null ? $"status=eq.{Uri.EscapeDataString(status)}&order=created_at.desc" : "order=created_at.desc");
 
-        var items = new List<ErrorReportItem>();
-        foreach (var r in reports)
+        // Batch: fetch all related anomalies and doctors at once
+        var anomalyIds = reports.Select(r => r.AnomalyId).Distinct().ToList();
+        var doctorIds = reports.Select(r => r.DoctorId).Distinct().ToList();
+
+        var allAnomalies = anomalyIds.Count > 0
+            ? await _client.From<SupabaseAnomaly>("anomalies",
+                $"id=in.({string.Join(",", anomalyIds)})")
+            : [];
+        var anomalyMap = allAnomalies.ToDictionary(a => a.Id);
+
+        var allDoctors = doctorIds.Count > 0
+            ? await _client.From<SupabaseUser>("users",
+                $"id=in.({string.Join(",", doctorIds.Select(id => $"\"{id}\""))})")
+            : [];
+        var doctorMap = allDoctors.ToDictionary(d => d.Id);
+
+        return reports.Select(r =>
         {
-            var anomalies = await _client.From<SupabaseAnomaly>("anomalies", $"id=eq.{r.AnomalyId}&limit=1");
-            var doctors = await _client.From<SupabaseUser>("users", $"id=eq.{r.DoctorId}&limit=1");
-            var anomaly = anomalies.FirstOrDefault();
-            var doctor = doctors.FirstOrDefault();
+            anomalyMap.TryGetValue(r.AnomalyId, out var anomaly);
+            doctorMap.TryGetValue(r.DoctorId, out var doctor);
 
             string? originalText = r.FieldName == "diagnosis" ? anomaly?.Diagnosis :
                                    r.FieldName == "explanation" ? anomaly?.Explanation : null;
 
-            items.Add(new ErrorReportItem(
+            return new ErrorReportItem(
                 r.Id, r.AnomalyId,
                 anomaly?.PatientId ?? "",
                 doctor?.FullName ?? "",
@@ -495,9 +535,8 @@ public class SupabaseAdminService : IAdminService
                 r.FieldName, originalText,
                 r.CorrectedText, r.Description,
                 r.Note, r.Status, r.CreatedAt
-            ));
-        }
-        return items;
+            );
+        }).ToList();
     }
 
     public async Task<bool> ReviewErrorReportAsync(int id, string status)

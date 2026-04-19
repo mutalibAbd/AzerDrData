@@ -1,6 +1,7 @@
+import { memo } from 'react';
 import { Activity, CheckCircle, Clock, User } from 'lucide-react';
 
-export default function StatsCards({ stats }) {
+export default memo(function StatsCards({ stats }) {
   if (!stats) return null;
 
   const cards = [
@@ -48,4 +49,4 @@ export default function StatsCards({ stats }) {
       </div>
     </div>
   );
-}
+});

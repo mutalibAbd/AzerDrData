@@ -1,7 +1,12 @@
+using System.ComponentModel.DataAnnotations;
+
 namespace AzerDr.API.DTOs;
 
 // Auth
-public record LoginRequest(string Username, string Password);
+public record LoginRequest(
+    [Required, StringLength(50)] string Username,
+    [Required, StringLength(100)] string Password
+);
 public record LoginResponse(string Token, string Username, string FullName, string Role);
 
 // Dashboard
@@ -28,22 +33,31 @@ public record AnomalyResponse(
 );
 
 public record SaveCodingRequest(
-    string RubrikaCode,
-    string RubrikaName,
-    string BashliqCode,
-    string BashliqName,
-    string DiaqnozCode,
-    string DiaqnozName,
-    string? IcdQeydName,
-    string? Qeyd
+    [Required, StringLength(200)] string RubrikaCode,
+    [Required, StringLength(500)] string RubrikaName,
+    [Required, StringLength(200)] string BashliqCode,
+    [Required, StringLength(500)] string BashliqName,
+    [StringLength(200)] string? DiaqnozCode,
+    [StringLength(500)] string? DiaqnozName,
+    [StringLength(2000)] string? IcdQeydName,
+    [StringLength(2000)] string? Qeyd
 );
 
 public class ErrorReportRequest
 {
-    public string ErrorType { get; set; } = "spelling"; // "spelling" or "logic"
-    public string? FieldName { get; set; }      // required for spelling
-    public string? CorrectedText { get; set; }  // required for spelling
-    public string? Description { get; set; }    // required for logic
+    [Required, RegularExpression("^(spelling|logic)$", ErrorMessage = "ErrorType must be 'spelling' or 'logic'")]
+    public string ErrorType { get; set; } = "spelling";
+
+    [StringLength(100)]
+    public string? FieldName { get; set; }
+
+    [StringLength(2000)]
+    public string? CorrectedText { get; set; }
+
+    [StringLength(2000)]
+    public string? Description { get; set; }
+
+    [StringLength(2000)]
     public string? Note { get; set; }
 }
 
@@ -58,8 +72,19 @@ public record IcdQeydChildDto(int Id, string Name);
 public record LeaderboardItem(string DoctorName, int CodingCount, int Rank);
 
 // Admin
-public record CreateDoctorRequest(string Username, string Password, string FullName, string? Role = "doctor");
-public record UpdateDoctorRequest(string? FullName, string? Password, bool? IsActive, string? Role);
+public record CreateDoctorRequest(
+    [Required, StringLength(50)] string Username,
+    [Required, StringLength(100)] string Password,
+    [Required, StringLength(100)] string FullName,
+    [RegularExpression("^(doctor|admin)$", ErrorMessage = "Role must be 'doctor' or 'admin'")]
+    string? Role = "doctor"
+);
+public record UpdateDoctorRequest(
+    [StringLength(100)] string? FullName,
+    [StringLength(100)] string? Password,
+    bool? IsActive,
+    [RegularExpression("^(doctor|admin)$")] string? Role
+);
 
 public record DoctorListItem(
     Guid Id,
@@ -93,4 +118,7 @@ public record ErrorReportItem(
     DateTime CreatedAt
 );
 
-public record ReviewErrorRequest(string Status); // accepted or rejected
+public record ReviewErrorRequest(
+    [Required, RegularExpression("^(accepted|rejected)$", ErrorMessage = "Status must be 'accepted' or 'rejected'")]
+    string Status
+);

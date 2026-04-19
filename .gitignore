@@ -2,6 +2,15 @@
 backend/AzerDr.API/bin/
 backend/AzerDr.API/obj/
 
+# Secrets & Environment
+backend/AzerDr.API/appsettings.json
+backend/AzerDr.API/appsettings.Staging.json
+backend/AzerDr.API/appsettings.*.json
+!backend/AzerDr.API/appsettings.Example.json
+.env
+.env.*
+!.env.example
+
 # Node
 frontend/node_modules/
 frontend/dist/

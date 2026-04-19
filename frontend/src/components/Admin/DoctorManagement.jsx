@@ -14,8 +14,12 @@ export default function DoctorManagement() {
   useEffect(() => { loadDoctors(); }, []);
 
   const loadDoctors = async () => {
-    const { data } = await api.get('/admin/doctors');
-    setDoctors(data);
+    try {
+      const { data } = await api.get('/admin/doctors');
+      setDoctors(data);
+    } catch {
+      toast.error('İstifadəçilər yüklənmədi');
+    }
   };
 
   const handleCreate = async (e) => {
@@ -34,16 +38,26 @@ export default function DoctorManagement() {
   };
 
   const handleToggle = async (id, isActive) => {
-    await api.put(`/admin/doctors/${id}`, { isActive: !isActive });
-    toast.success(isActive ? 'Deaktiv edildi' : 'Aktiv edildi');
-    loadDoctors();
+    if (!window.confirm(isActive ? 'Bu istifadəçini deaktiv etmək istəyirsiniz?' : 'Bu istifadəçini aktiv etmək istəyirsiniz?')) return;
+    try {
+      await api.put(`/admin/doctors/${id}`, { isActive: !isActive });
+      toast.success(isActive ? 'Deaktiv edildi' : 'Aktiv edildi');
+      loadDoctors();
+    } catch {
+      toast.error('Əməliyyat uğursuz oldu');
+    }
   };
 
   const handleResetPassword = async (id) => {
     const newPass = prompt('Yeni şifrəni daxil edin:');
     if (!newPass) return;
-    await api.put(`/admin/doctors/${id}`, { password: newPass });
-    toast.success('Şifrə yeniləndi');
+    if (!window.confirm('Şifrəni yeniləmək istədiyinizə əminsiniz?')) return;
+    try {
+      await api.put(`/admin/doctors/${id}`, { password: newPass });
+      toast.success('Şifrə yeniləndi');
+    } catch {
+      toast.error('Şifrə yenilənmədi');
+    }
   };
 
   const handleEditName = async (id) => {
@@ -80,6 +94,7 @@ export default function DoctorManagement() {
               onChange={(e) => setForm({ ...form, username: e.target.value })}
               className="border rounded px-3 py-2 text-sm"
               required
+              aria-label="İstifadəçi adı"
             />
             <input
               placeholder="Şifrə"
@@ -88,6 +103,7 @@ export default function DoctorManagement() {
               onChange={(e) => setForm({ ...form, password: e.target.value })}
               className="border rounded px-3 py-2 text-sm"
               required
+              aria-label="Şifrə"
             />
             <input
               placeholder="Ad Soyad"
@@ -95,11 +111,13 @@ export default function DoctorManagement() {
               onChange={(e) => setForm({ ...form, fullName: e.target.value })}
               className="border rounded px-3 py-2 text-sm"
               required
+              aria-label="Ad Soyad"
             />
             <select
               value={form.role}
               onChange={(e) => setForm({ ...form, role: e.target.value })}
               className="border rounded px-3 py-2 text-sm bg-white"
+              aria-label="Rol"
             >
               <option value="doctor">Həkim</option>
               <option value="admin">Admin</option>
@@ -158,10 +176,10 @@ export default function DoctorManagement() {
             </div>
             <div className="flex items-center gap-3">
               <span className="text-sm text-blue-600 font-medium">{d.codingCount} kodlama</span>
-              <button onClick={() => handleResetPassword(d.id)} className="text-gray-400 hover:text-gray-600" title="Şifrə yenilə">
+              <button onClick={() => handleResetPassword(d.id)} className="text-gray-400 hover:text-gray-600" title="Şifrə yenilə" aria-label={`${d.fullName} şifrəsini yenilə`}>
                 <RefreshCw size={14} />
               </button>
-              <button onClick={() => handleToggle(d.id, d.isActive)} className="text-gray-400 hover:text-red-600" title={d.isActive ? 'Deaktiv et' : 'Aktiv et'}>
+              <button onClick={() => handleToggle(d.id, d.isActive)} className="text-gray-400 hover:text-red-600" title={d.isActive ? 'Deaktiv et' : 'Aktiv et'} aria-label={`${d.fullName} ${d.isActive ? 'deaktiv' : 'aktiv'} et`}>
                 <UserX size={14} />
               </button>
             </div>

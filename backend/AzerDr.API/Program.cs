@@ -1,4 +1,5 @@
 using System.Text;
+using System.Threading.RateLimiting;
 using AzerDr.API.Data;
 using AzerDr.API.Services;
 using AzerDr.API.Services.Interfaces;
@@ -17,8 +18,17 @@ Console.WriteLine($"[Config] Database provider: {dbProvider}");
 
 if (dbProvider == "supabase")
 {
+    // Validate required configuration
+    var requiredKeys = new[] { "Supabase:Url", "Supabase:ServiceRoleKey", "Jwt:Key", "Jwt:Issuer", "Jwt:Audience" };
+    var missing = requiredKeys.Where(k => string.IsNullOrEmpty(builder.Configuration[k])).ToList();
+    if (missing.Count > 0)
+        throw new InvalidOperationException($"Missing required configuration: {string.Join(", ", missing)}");
+
     // Supabase mode: use REST API (HTTPS, works without direct PostgreSQL/IPv4)
-    builder.Services.AddSingleton<SupabaseRestClient>();
+    builder.Services.AddHttpClient<SupabaseRestClient>(client =>
+    {
+        client.Timeout = TimeSpan.FromSeconds(30);
+    });
     builder.Services.AddScoped<IAuthService, SupabaseAuthService>();
     builder.Services.AddScoped<IAnomalyService, SupabaseAnomalyService>();
     builder.Services.AddScoped<IIcdService, SupabaseIcdService>();
@@ -54,6 +64,31 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 builder.Services.AddAuthorization();
 builder.Services.AddControllers();
+builder.Services.AddMemoryCache();
+
+// Rate Limiting
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.AddPolicy("login", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 5,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0
+            }));
+    options.AddPolicy("api", context =>
+        RateLimitPartition.GetFixedWindowLimiter(
+            context.User?.Identity?.Name ?? context.Connection.RemoteIpAddress?.ToString() ?? "unknown",
+            _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 100,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 2
+            }));
+});
 
 // CORS
 var corsOrigins = builder.Configuration.GetSection("Cors:Origins").Get<string[]>() ?? ["http://localhost:5173"];
@@ -68,7 +103,7 @@ builder.Services.AddCors(options =>
     {
         policy.WithOrigins(corsOrigins)
             .AllowAnyHeader()
-            .AllowAnyMethod();
+            .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     });
 });
 
@@ -107,9 +142,15 @@ if (!app.Environment.IsDevelopment())
     {
         errorApp.Run(async context =>
         {
+            var logger = context.RequestServices.GetRequiredService<ILogger<Program>>();
+            var correlationId = context.TraceIdentifier;
+            var exception = context.Features.Get<Microsoft.AspNetCore.Diagnostics.IExceptionHandlerPathFeature>()?.Error;
+
+            logger.LogError(exception, "Unhandled exception (CorrelationId: {CorrelationId})", correlationId);
+
             context.Response.StatusCode = StatusCodes.Status500InternalServerError;
             context.Response.ContentType = "application/json";
-            await context.Response.WriteAsJsonAsync(new { message = "Serverdə xəta baş verdi" });
+            await context.Response.WriteAsJsonAsync(new { message = "Serverdə xəta baş verdi", correlationId });
         });
     });
     app.UseHsts();
@@ -117,6 +158,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowFrontend");
+app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();

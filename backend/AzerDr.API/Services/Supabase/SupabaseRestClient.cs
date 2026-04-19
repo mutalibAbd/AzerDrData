@@ -15,13 +15,13 @@ public class SupabaseRestClient
     private readonly string _baseUrl;
     private readonly JsonSerializerOptions _jsonOptions;
 
-    public SupabaseRestClient(IConfiguration config)
+    public SupabaseRestClient(HttpClient http, IConfiguration config)
     {
         _baseUrl = config["Supabase:Url"]?.TrimEnd('/') ?? throw new ArgumentException("Supabase:Url not configured");
         var apiKey = config["Supabase:ServiceRoleKey"] ?? config["Supabase:AnonKey"]
             ?? throw new ArgumentException("Supabase:ServiceRoleKey or Supabase:AnonKey not configured");
 
-        _http = new HttpClient();
+        _http = http;
         _http.DefaultRequestHeaders.Add("apikey", apiKey);
         _http.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", apiKey);
         // NOTE: Do NOT set Prefer as default - it breaks RPC calls. Set per-request instead.

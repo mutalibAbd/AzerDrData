@@ -118,8 +118,8 @@ public class AnomalyService : IAnomalyService
             RubrikaName = request.RubrikaName,
             BashliqCode = request.BashliqCode,
             BashliqName = request.BashliqName,
-            DiaqnozCode = request.DiaqnozCode,
-            DiaqnozName = request.DiaqnozName,
+            DiaqnozCode = request.DiaqnozCode ?? "",
+            DiaqnozName = request.DiaqnozName ?? "",
             IcdQeydName = request.IcdQeydName,
             Qeyd = request.Qeyd
         });

@@ -7,15 +7,17 @@ const rankColors = ['text-yellow-500', 'text-gray-400', 'text-amber-600'];
 export default function Leaderboard({ compact = false }) {
   const [items, setItems] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     api.get('/dashboard/leaderboard')
-      .then(({ data }) => setItems(data))
-      .catch(() => {})
+      .then(({ data }) => { setItems(data); setError(null); })
+      .catch(() => setError('Sıralama yüklənmədi'))
       .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <div className="text-center py-4 text-gray-400 text-sm">Yüklənir...</div>;
+  if (error) return <div className="text-center py-4 text-red-400 text-sm">{error}</div>;
   if (items.length === 0) return null;
 
   const displayed = compact ? items.slice(0, 5) : items;

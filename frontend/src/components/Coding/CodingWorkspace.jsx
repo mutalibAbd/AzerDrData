@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Save, SkipForward, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
 import toast from 'react-hot-toast';
@@ -27,9 +27,9 @@ export default function CodingWorkspace() {
     }
   }, []);
 
-  const handleSave = async () => {
-    if (!icdData.diaqnozCode) {
-      toast.error('Zəhmət olmasa ICD diaqnoz seçin');
+  const handleSave = useCallback(async () => {
+    if (!icdData.bashliqCode) {
+      toast.error('Zəhmət olmasa Rubrika və Başlıq seçin');
       return;
     }
     setSaving(true);
@@ -38,18 +38,17 @@ export default function CodingWorkspace() {
       toast.success('Kodlama saxlanıldı!');
       setQeyd('');
       setIcdData({});
-      // Auto-fetch next
       const next = await fetchNext();
       if (!next) toast.success('Bütün anomaliyalar kodlandı! 🎉');
     } catch {
       toast.error('Xəta baş verdi');
     }
     setSaving(false);
-  };
+  }, [icdData, qeyd, currentAnomaly, saveCoding, fetchNext]);
 
-  const handleSaveAndFinish = async () => {
-    if (!icdData.diaqnozCode) {
-      toast.error('Zəhmət olmasa ICD diaqnoz seçin');
+  const handleSaveAndFinish = useCallback(async () => {
+    if (!icdData.bashliqCode) {
+      toast.error('Zəhmət olmasa Rubrika və Başlıq seçin');
       return;
     }
     setSaving(true);
@@ -61,15 +60,18 @@ export default function CodingWorkspace() {
       toast.error('Xəta baş verdi');
     }
     setSaving(false);
-  };
+  }, [icdData, qeyd, currentAnomaly, saveCoding, navigate]);
 
-  const handleSkip = async () => {
+  const handleSkip = useCallback(async () => {
     await skipAnomaly(currentAnomaly.id);
     setQeyd('');
     setIcdData({});
     const next = await fetchNext();
     if (!next) toast('Kodlanmamış anomaliya qalmayıb');
-  };
+  }, [currentAnomaly, skipAnomaly, fetchNext]);
+
+  const handleOpenIcdError = useCallback(() => setShowIcdErrorModal(true), []);
+  const handleCloseIcdError = useCallback(() => setShowIcdErrorModal(false), []);
 
   if (!currentAnomaly) {
     return (
@@ -97,7 +99,7 @@ export default function CodingWorkspace() {
   return (
     <div className="space-y-4">
       <PatientInfo anomaly={currentAnomaly} />
-      <IcdSelector value={icdData} onChange={setIcdData} onReportIcdError={() => setShowIcdErrorModal(true)} />
+      <IcdSelector value={icdData} onChange={setIcdData} onReportIcdError={handleOpenIcdError} />
 
       {/* Note */}
       <div className="bg-white border rounded-lg p-5">
@@ -130,14 +132,14 @@ export default function CodingWorkspace() {
           </button>
           <button
             onClick={handleSaveAndFinish}
-            disabled={saving || !icdData.diaqnozCode}
+            disabled={saving || !icdData.bashliqCode}
             className="flex items-center gap-1 px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
           >
             <CheckCircle size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Bitir'}
           </button>
           <button
             onClick={handleSave}
-            disabled={saving || !icdData.diaqnozCode}
+            disabled={saving || !icdData.bashliqCode}
             className="flex items-center gap-1 px-6 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
           >
             <Save size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Növbəti'}
@@ -146,7 +148,7 @@ export default function CodingWorkspace() {
       </div>
 
       {showIcdErrorModal && (
-        <ErrorReportModal anomalyId={currentAnomaly.id} onClose={() => setShowIcdErrorModal(false)} />
+        <ErrorReportModal anomalyId={currentAnomaly.id} onClose={handleCloseIcdError} />
       )}
     </div>
   );
