@@ -38,6 +38,16 @@ public class AnomalyController : ControllerBase
         return Ok(new { message = "Kodlama uğurla saxlanıldı" });
     }
 
+    [HttpPost("{id}/save-icd11")]
+    public async Task<IActionResult> SaveIcd11(int id, [FromBody] SaveIcd11CodingRequest request)
+    {
+        var success = await _anomaly.SaveCodingIcd11Async(id, GetUserId(), request);
+        if (!success)
+            return BadRequest(new { message = "Anomaliya tapılmadı və ya sizə təyin edilməyib" });
+
+        return Ok(new { message = "ICD-11 kodlama uğurla saxlanıldı" });
+    }
+
     [HttpPost("{id}/skip")]
     public async Task<IActionResult> Skip(int id)
     {

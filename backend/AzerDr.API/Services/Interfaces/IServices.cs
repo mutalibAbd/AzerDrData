@@ -13,6 +13,7 @@ public interface IAnomalyService
     Task<List<MyCodingItem>> GetMyCodingsAsync(Guid doctorId, int page, int size);
     Task<AnomalyResponse?> GetNextAsync(Guid doctorId);
     Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request);
+    Task<bool> SaveCodingIcd11Async(int anomalyId, Guid doctorId, SaveIcd11CodingRequest request);
     Task<bool> SkipAsync(int anomalyId, Guid doctorId);
     Task<bool> ReportErrorAsync(int anomalyId, Guid doctorId, ErrorReportRequest request);
     Task<List<LeaderboardItem>> GetLeaderboardAsync();

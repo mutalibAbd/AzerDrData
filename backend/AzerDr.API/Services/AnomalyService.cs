@@ -26,21 +26,31 @@ public class AnomalyService : IAnomalyService
 
     public async Task<List<MyCodingItem>> GetMyCodingsAsync(Guid doctorId, int page, int size)
     {
-        return await _db.AnomalyCodings
+        var raw = await _db.AnomalyCodings
             .Where(c => c.DoctorId == doctorId)
             .OrderByDescending(c => c.CreatedAt)
             .Skip((page - 1) * size)
             .Take(size)
-            .Select(c => new MyCodingItem(
+            .Select(c => new
+            {
                 c.AnomalyId,
                 c.Anomaly.PatientId,
-                c.Anomaly.Date.ToString("yyyy-MM-dd"),
+                Date = c.Anomaly.Date.ToString("yyyy-MM-dd"),
                 c.DiaqnozCode,
                 c.DiaqnozName,
                 c.Qeyd,
                 c.CreatedAt
-            ))
+            })
             .ToListAsync();
+
+        return raw.Select(c => new MyCodingItem(
+            c.AnomalyId,
+            c.PatientId,
+            c.Date,
+            string.IsNullOrEmpty(c.DiaqnozCode) ? [] : [new Icd11CodeEntry(c.DiaqnozCode, c.DiaqnozName ?? "", null, "tree")],
+            c.Qeyd,
+            c.CreatedAt
+        )).ToList();
     }
 
     /// <summary>
@@ -127,6 +137,9 @@ public class AnomalyService : IAnomalyService
         await _db.SaveChangesAsync();
         return true;
     }
+
+    public Task<bool> SaveCodingIcd11Async(int anomalyId, Guid doctorId, SaveIcd11CodingRequest request)
+        => Task.FromResult(false); // EF Core mode does not support ICD-11 coding
 
     public async Task<bool> SkipAsync(int anomalyId, Guid doctorId)
     {

@@ -33,6 +33,17 @@ if (dbProvider == "supabase")
     builder.Services.AddScoped<IAnomalyService, SupabaseAnomalyService>();
     builder.Services.AddScoped<IIcdService, SupabaseIcdService>();
     builder.Services.AddScoped<IAdminService, SupabaseAdminService>();
+
+    // WHO ICD-11 API
+    builder.Services.AddScoped<IIcd11Service, Icd11Service>();
+    builder.Services.AddHttpClient("icd11_auth", client =>
+    {
+        client.Timeout = TimeSpan.FromSeconds(15);
+    });
+    builder.Services.AddHttpClient("icd11_api", client =>
+    {
+        client.Timeout = TimeSpan.FromSeconds(10);
+    });
 }
 else
 {

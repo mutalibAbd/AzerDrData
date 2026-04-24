@@ -39,8 +39,20 @@ export default function MyCodings() {
                 <span className="text-xs text-gray-400 ml-2">{c.date}</span>
               </div>
               <div className="text-right">
-                <span className="text-sm font-medium text-blue-600">{c.diaqnozCode}</span>
-                <p className="text-xs text-gray-500">{c.diaqnozName}</p>
+                <div className="flex flex-wrap gap-1 justify-end max-w-[200px]">
+                  {(c.codes ?? []).map((code, i) => (
+                    <span
+                      key={i}
+                      className="text-xs bg-blue-100 text-blue-700 font-mono px-1.5 py-0.5 rounded"
+                      title={code.icd11Title}
+                    >
+                      {code.icd11Code}
+                    </span>
+                  ))}
+                  {(!c.codes || c.codes.length === 0) && (
+                    <span className="text-xs text-gray-400">—</span>
+                  )}
+                </div>
               </div>
             </div>
           ))}

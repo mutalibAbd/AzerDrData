@@ -34,6 +34,11 @@ const useCodingStore = create((set) => ({
     set({ currentAnomaly: null });
   },
 
+  saveCodingIcd11: async (anomalyId, coding) => {
+    await api.post(`/anomaly/${anomalyId}/save-icd11`, coding);
+    set({ currentAnomaly: null });
+  },
+
   skipAnomaly: async (anomalyId) => {
     await api.post(`/anomaly/${anomalyId}/skip`);
     set({ currentAnomaly: null });

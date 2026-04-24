@@ -12,12 +12,46 @@ public record LoginResponse(string Token, string Username, string FullName, stri
 // Dashboard
 public record DashboardStats(int Total, int Coded, int Pending, int InProgress, int MyCodings);
 
+// ICD-11
+public record Icd11CodeEntry(
+    [Required, StringLength(50)]  string Icd11Code,
+    [Required, StringLength(500)] string Icd11Title,
+    [StringLength(100)]           string? EntityId,
+    [Required, RegularExpression("^(tree|search)$")] string Source
+);
+
+public record SaveIcd11CodingRequest(
+    [Required, MinLength(1)] List<Icd11CodeEntry> Codes,
+    [StringLength(2000)]     string? Qeyd
+);
+
+public record Icd11SearchResult(
+    string  Code,
+    string  Title,
+    string? EntityId,
+    bool    HasPostcoordination = false
+);
+
+public record PostcoordAxis(
+    string       AxisName,
+    bool         Required,
+    List<string> AllowedValues
+);
+
+public record Icd11EntityDetails(
+    string             Title,
+    string?            Description,
+    List<string>       Exclusions,
+    List<string>       CodedElsewhere,
+    List<PostcoordAxis> RequiredAxes,
+    List<PostcoordAxis> OptionalAxes
+);
+
 public record MyCodingItem(
     int AnomalyId,
     string PatientId,
     string Date,
-    string DiaqnozCode,
-    string DiaqnozName,
+    List<Icd11CodeEntry> Codes,
     string? Qeyd,
     DateTime CodedAt
 );

@@ -1,6 +1,7 @@
 using System.IdentityModel.Tokens.Jwt;
 using System.Security.Claims;
 using System.Text;
+using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.RegularExpressions;
 using AzerDr.API.DTOs;
@@ -85,6 +86,33 @@ internal class SupabaseCodingWithAnomaly : SupabaseCoding
 {
     [JsonPropertyName("anomalies")]
     public SupabaseAnomaly? Anomaly { get; set; }
+}
+
+internal class SupabaseIcd11Session
+{
+    [JsonPropertyName("anomaly_id")]
+    public int AnomalyId { get; set; }
+
+    [JsonPropertyName("doctor_id")]
+    public Guid DoctorId { get; set; }
+
+    [JsonPropertyName("patient_id")]
+    public string PatientId { get; set; } = "";
+
+    [JsonPropertyName("report_id")]
+    public string ReportId { get; set; } = "";
+
+    [JsonPropertyName("date")]
+    public string Date { get; set; } = "";
+
+    [JsonPropertyName("codes")]
+    public JsonElement Codes { get; set; }
+
+    [JsonPropertyName("qeyd")]
+    public string? Qeyd { get; set; }
+
+    [JsonPropertyName("created_at")]
+    public DateTime CreatedAt { get; set; }
 }
 
 internal class SupabaseIcdItem
@@ -231,18 +259,31 @@ public class SupabaseAnomalyService : IAnomalyService
     public async Task<List<MyCodingItem>> GetMyCodingsAsync(Guid doctorId, int page, int size)
     {
         var offset = (page - 1) * size;
-        var codings = await _client.From<SupabaseCodingWithAnomaly>("anomaly_codings",
-            $"doctor_id=eq.{doctorId}&select=anomaly_id,diaqnoz_code,diaqnoz_name,qeyd,created_at,anomalies(patient_id,date)&order=created_at.desc&offset={offset}&limit={size}");
+        var sessions = await _client.Rpc<SupabaseIcd11Session>("get_my_codings_icd11", new
+        {
+            p_doctor_id = doctorId,
+            p_offset    = offset,
+            p_limit     = size
+        });
 
-        return codings.Select(c => new MyCodingItem(
-            c.AnomalyId,
-            c.Anomaly?.PatientId ?? "",
-            c.Anomaly?.Date ?? "",
-            c.DiaqnozCode,
-            c.DiaqnozName,
-            c.Qeyd,
-            c.CreatedAt
-        )).ToList();
+        var parseOptions = new JsonSerializerOptions
+        {
+            PropertyNamingPolicy = JsonNamingPolicy.SnakeCaseLower,
+            PropertyNameCaseInsensitive = true
+        };
+
+        return sessions.Select(s =>
+        {
+            List<Icd11CodeEntry> codes = [];
+            try
+            {
+                codes = JsonSerializer.Deserialize<List<Icd11CodeEntry>>(
+                    s.Codes.GetRawText(), parseOptions) ?? [];
+            }
+            catch { /* return empty list if JSONB parse fails */ }
+
+            return new MyCodingItem(s.AnomalyId, s.PatientId, s.Date, codes, s.Qeyd, s.CreatedAt);
+        }).ToList();
     }
 
     public async Task<AnomalyResponse?> GetNextAsync(Guid doctorId)
@@ -281,6 +322,18 @@ public class SupabaseAnomalyService : IAnomalyService
         return result ?? false;
     }
 
+    public async Task<bool> SaveCodingIcd11Async(int anomalyId, Guid doctorId, SaveIcd11CodingRequest request)
+    {
+        var result = await _client.RpcSingle<bool>("save_coding_icd11", new
+        {
+            p_anomaly_id = anomalyId,
+            p_doctor_id  = doctorId,
+            p_codes      = request.Codes,
+            p_qeyd       = request.Qeyd
+        });
+        return result ?? false;
+    }
+
     public async Task<bool> SkipAsync(int anomalyId, Guid doctorId)
     {
         var result = await _client.RpcSingle<bool>("skip_anomaly", new
@@ -313,11 +366,11 @@ public class SupabaseAnomalyService : IAnomalyService
 
     public async Task<List<LeaderboardItem>> GetLeaderboardAsync()
     {
-        var codings = await _client.From<SupabaseCoding>("anomaly_codings",
+        var sessions = await _client.From<SupabaseIcd11Session>("icd11_coding_sessions",
             "select=doctor_id");
 
-        var grouped = codings
-            .GroupBy(c => c.DoctorId)
+        var grouped = sessions
+            .GroupBy(s => s.DoctorId)
             .Select(g => new { DoctorId = g.Key, Count = g.Count() })
             .OrderByDescending(x => x.Count)
             .Take(20)

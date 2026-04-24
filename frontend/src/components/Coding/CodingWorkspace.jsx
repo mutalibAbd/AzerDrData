@@ -4,12 +4,12 @@ import { Save, SkipForward, ArrowLeft, Loader, CheckCircle } from 'lucide-react'
 import toast from 'react-hot-toast';
 import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
-import IcdSelector from './IcdSelector';
+import Icd11Selector from './Icd11Selector';
 import ErrorReportModal from './ErrorReportModal';
 
 export default function CodingWorkspace() {
-  const { currentAnomaly, loading, fetchNext, saveCoding, skipAnomaly } = useCodingStore();
-  const [icdData, setIcdData] = useState({});
+  const { currentAnomaly, loading, fetchNext, saveCodingIcd11, skipAnomaly } = useCodingStore();
+  const [selectedCodes, setSelectedCodes] = useState([]);
   const [qeyd, setQeyd] = useState('');
   const [showIcdErrorModal, setShowIcdErrorModal] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -28,44 +28,44 @@ export default function CodingWorkspace() {
   }, []);
 
   const handleSave = useCallback(async () => {
-    if (!icdData.bashliqCode) {
-      toast.error('Zəhmət olmasa Rubrika və Başlıq seçin');
+    if (selectedCodes.length === 0) {
+      toast.error('Zəhmət olmasa ən az bir ICD-11 kodu seçin');
       return;
     }
     setSaving(true);
     try {
-      await saveCoding(currentAnomaly.id, { ...icdData, qeyd: qeyd || null });
+      await saveCodingIcd11(currentAnomaly.id, { codes: selectedCodes, qeyd: qeyd || null });
       toast.success('Kodlama saxlanıldı!');
       setQeyd('');
-      setIcdData({});
+      setSelectedCodes([]);
       const next = await fetchNext();
       if (!next) toast.success('Bütün anomaliyalar kodlandı! 🎉');
     } catch {
       toast.error('Xəta baş verdi');
     }
     setSaving(false);
-  }, [icdData, qeyd, currentAnomaly, saveCoding, fetchNext]);
+  }, [selectedCodes, qeyd, currentAnomaly, saveCodingIcd11, fetchNext]);
 
   const handleSaveAndFinish = useCallback(async () => {
-    if (!icdData.bashliqCode) {
-      toast.error('Zəhmət olmasa Rubrika və Başlıq seçin');
+    if (selectedCodes.length === 0) {
+      toast.error('Zəhmət olmasa ən az bir ICD-11 kodu seçin');
       return;
     }
     setSaving(true);
     try {
-      await saveCoding(currentAnomaly.id, { ...icdData, qeyd: qeyd || null });
+      await saveCodingIcd11(currentAnomaly.id, { codes: selectedCodes, qeyd: qeyd || null });
       toast.success('Kodlama saxlanıldı!');
       navigate('/');
     } catch {
       toast.error('Xəta baş verdi');
     }
     setSaving(false);
-  }, [icdData, qeyd, currentAnomaly, saveCoding, navigate]);
+  }, [selectedCodes, qeyd, currentAnomaly, saveCodingIcd11, navigate]);
 
   const handleSkip = useCallback(async () => {
     await skipAnomaly(currentAnomaly.id);
     setQeyd('');
-    setIcdData({});
+    setSelectedCodes([]);
     const next = await fetchNext();
     if (!next) toast('Kodlanmamış anomaliya qalmayıb');
   }, [currentAnomaly, skipAnomaly, fetchNext]);
@@ -99,7 +99,11 @@ export default function CodingWorkspace() {
   return (
     <div className="space-y-4">
       <PatientInfo anomaly={currentAnomaly} />
-      <IcdSelector value={icdData} onChange={setIcdData} onReportIcdError={handleOpenIcdError} />
+      <Icd11Selector
+        value={selectedCodes}
+        onChange={setSelectedCodes}
+        onReportIcdError={handleOpenIcdError}
+      />
 
       {/* Note */}
       <div className="bg-white border rounded-lg p-5">
@@ -132,14 +136,14 @@ export default function CodingWorkspace() {
           </button>
           <button
             onClick={handleSaveAndFinish}
-            disabled={saving || !icdData.bashliqCode}
+            disabled={saving || selectedCodes.length === 0}
             className="flex items-center gap-1 px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
           >
             <CheckCircle size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Bitir'}
           </button>
           <button
             onClick={handleSave}
-            disabled={saving || !icdData.bashliqCode}
+            disabled={saving || selectedCodes.length === 0}
             className="flex items-center gap-1 px-6 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
           >
             <Save size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Növbəti'}
