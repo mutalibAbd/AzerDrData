@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from 'react';
-import { Search, ChevronRight, ChevronDown, X, Loader, AlertCircle, Info } from 'lucide-react';
+import { Search, ChevronRight, ChevronDown, X, Loader, AlertCircle, Info, AlertTriangle } from 'lucide-react';
 import api from '../../services/api';
 import Icd11DetailsModal from './Icd11DetailsModal';
 
@@ -30,7 +30,7 @@ function TreeNode({ node, onAdd, selectedCodes }) {
         }`}
         onClick={() => {
           if (!isLeaf) setOpen((o) => !o);
-          if (node.Code) onAdd(node);
+          if (isLeaf && node.Code) onAdd(node);
         }}
       >
         {!isLeaf ? (
@@ -108,13 +108,23 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
     }, 300);
   }, [searchQuery]);
 
+  // WHO entity IDs are always numeric strings; reject placeholders like "other"/"unspecified"
+  const toValidEntityId = (id) => (id && /^\d+$/.test(String(id)) ? String(id) : null);
+
   const addCode = useCallback((entry) => {
     if (!entry.Code) return; // category nodes without a code
     const already = value.some((c) => c.icd11Code === entry.Code);
     if (already) return;
     onChange([
       ...value,
-      { icd11Code: entry.Code, icd11Title: entry.Title, entityId: entry.Id ?? null, source: 'tree' },
+      {
+        icd11Code: entry.Code,
+        icd11Title: entry.Title,
+        entityId: toValidEntityId(entry.Id),
+        source: 'tree',
+        postcoordination: [],
+        hasUnfilledRequired: false,
+      },
     ]);
   }, [value, onChange]);
 
@@ -123,9 +133,26 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
     if (already) return;
     onChange([
       ...value,
-      { icd11Code: result.code, icd11Title: result.title, entityId: result.entityId ?? null, source: 'search' },
+      {
+        icd11Code: result.code,
+        icd11Title: result.title,
+        entityId: toValidEntityId(result.entityId),
+        source: 'search',
+        postcoordination: [],
+        hasUnfilledRequired: result.hasPostcoordination ?? false,
+      },
     ]);
   }, [value, onChange]);
+
+  const handleSavePostcoord = useCallback((postcoordArray, hasUnfilledRequired) => {
+    if (!detailItem?.isInList) return;
+    onChange(value.map(c =>
+      c.icd11Code === detailItem.code
+        ? { ...c, postcoordination: postcoordArray, hasUnfilledRequired }
+        : c
+    ));
+    setDetailItem(null);
+  }, [value, onChange, detailItem]);
 
   const removeCode = useCallback((code) => {
     onChange(value.filter((c) => c.icd11Code !== code));
@@ -151,24 +178,63 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
 
       {/* Selected codes */}
       {value.length > 0 && (
-        <div className="flex flex-wrap gap-2">
+        <div className="space-y-1.5">
           {value.map((c) => (
-            <span
+            <div
               key={c.icd11Code}
-              className="flex items-center gap-1 bg-blue-100 text-blue-800 text-xs px-2.5 py-1 rounded-full"
+              className={`rounded-lg border px-3 py-2 ${
+                c.hasUnfilledRequired
+                  ? 'border-red-200 bg-red-50/40'
+                  : 'border-blue-100 bg-blue-50/40'
+              }`}
             >
-              <span className="font-mono font-semibold">{c.icd11Code}</span>
-              <span className="text-blue-600 max-w-[180px] truncate" title={c.icd11Title}>
-                {c.icd11Title}
-              </span>
-              <button
-                onClick={() => removeCode(c.icd11Code)}
-                className="ml-0.5 text-blue-400 hover:text-red-500 transition-colors"
-                aria-label={`${c.icd11Code} kodunu sil`}
-              >
-                <X size={12} />
-              </button>
-            </span>
+              <div className="flex items-center gap-1.5">
+                <span className="font-mono text-xs text-blue-700 font-semibold shrink-0">{c.icd11Code}</span>
+                <span
+                  className="text-blue-700 text-xs leading-snug flex-1 truncate"
+                  title={c.icd11Title}
+                >
+                  {c.icd11Title}
+                </span>
+                {c.hasUnfilledRequired && (
+                  <AlertTriangle
+                    size={12}
+                    className="text-red-500 shrink-0"
+                    title="Məcburi postkoordinasiya əlavə edilməyib"
+                  />
+                )}
+                {c.entityId && (
+                  <button
+                    onClick={() => setDetailItem({ code: c.icd11Code, title: c.icd11Title, entityId: c.entityId, isInList: true })}
+                    className="p-0.5 text-gray-400 hover:text-blue-600 rounded transition-colors shrink-0"
+                    title="Postkoordinasiya əlavə et / redaktə et"
+                    aria-label={`${c.icd11Code} postkoordinasiyası`}
+                  >
+                    <Info size={12} />
+                  </button>
+                )}
+                <button
+                  onClick={() => removeCode(c.icd11Code)}
+                  className="p-0.5 text-blue-400 hover:text-red-500 transition-colors shrink-0"
+                  aria-label={`${c.icd11Code} kodunu sil`}
+                >
+                  <X size={12} />
+                </button>
+              </div>
+              {c.postcoordination?.length > 0 && (
+                <div className="mt-1.5 space-y-0.5 pl-1 border-l-2 border-blue-200 ml-1">
+                  {c.postcoordination.map((pc, i) => (
+                    <div key={i} className="flex items-center gap-1.5 text-xs text-gray-500">
+                      <span className={`text-[10px] font-semibold ${pc.required ? 'text-red-500' : 'text-yellow-600'}`}>
+                        {pc.axisName}:
+                      </span>
+                      <span className="font-mono text-blue-700">{pc.icd11Code}</span>
+                      <span className="text-gray-600 truncate">{pc.icd11Title}</span>
+                    </div>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
       )}
@@ -304,6 +370,12 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
         code={detailItem.code}
         title={detailItem.title}
         onClose={() => setDetailItem(null)}
+        currentPostcoord={
+          detailItem.isInList
+            ? (value.find(c => c.icd11Code === detailItem.code)?.postcoordination ?? [])
+            : []
+        }
+        onSavePostcoord={detailItem.isInList ? handleSavePostcoord : undefined}
       />
     )}
   </>

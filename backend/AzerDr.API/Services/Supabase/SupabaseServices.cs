@@ -366,7 +366,7 @@ public class SupabaseAnomalyService : IAnomalyService
 
     public async Task<List<LeaderboardItem>> GetLeaderboardAsync()
     {
-        var sessions = await _client.From<SupabaseIcd11Session>("icd11_coding_sessions",
+        var sessions = await _client.From<SupabaseIcd11Session>("icd11_sessions",
             "select=doctor_id");
 
         var grouped = sessions

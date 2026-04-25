@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Text.Json;
 
 namespace AzerDr.API.DTOs;
 
@@ -13,11 +14,14 @@ public record LoginResponse(string Token, string Username, string FullName, stri
 public record DashboardStats(int Total, int Coded, int Pending, int InProgress, int MyCodings);
 
 // ICD-11
+// PostCoordination is stored as a raw JsonElement (camelCase from frontend) and
+// passed through to the DB without transformation, preserving original key casing.
 public record Icd11CodeEntry(
     [Required, StringLength(50)]  string Icd11Code,
     [Required, StringLength(500)] string Icd11Title,
     [StringLength(100)]           string? EntityId,
-    [Required, RegularExpression("^(tree|search)$")] string Source
+    [Required, RegularExpression("^(tree|search)$")] string Source,
+    JsonElement?                  PostCoordination = null
 );
 
 public record SaveIcd11CodingRequest(
