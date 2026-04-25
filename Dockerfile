@@ -8,7 +8,7 @@ RUN dotnet publish -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:10.0-preview
 WORKDIR /app
 
-RUN addgroup --system appgroup && adduser --system --ingroup appgroup appuser
+RUN groupadd --system appgroup && useradd --system --gid appgroup --no-create-home appuser
 
 COPY --from=build /app/publish .
 RUN chown -R appuser:appgroup /app
