@@ -6,6 +6,7 @@ import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
 import Icd11Selector from './Icd11Selector';
 import ErrorReportModal from './ErrorReportModal';
+import Leaderboard from '../Dashboard/Leaderboard';
 
 export default function CodingWorkspace() {
   const { currentAnomaly, loading, fetchNext, skipAnomaly } = useCodingStore();
@@ -69,14 +70,23 @@ export default function CodingWorkspace() {
 
   return (
     <div className="space-y-4">
-      <PatientInfo anomaly={currentAnomaly} />
+      {/* Main two-column layout: patient info left, ECT right */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 items-start">
+        {/* Left column: patient info + leaderboard */}
+        <div className="space-y-4">
+          <PatientInfo anomaly={currentAnomaly} />
+          <Leaderboard compact />
+        </div>
 
-      {/* ECT-based ICD-11 selector — saves automatically on selection */}
-      <Icd11Selector
-        anomalyId={currentAnomaly.id}
-        onSaved={setSavedDiagnosis}
-        onReportIcdError={handleOpenIcdError}
-      />
+        {/* Right column: ICD-11 ECT coding widget */}
+        <div>
+          <Icd11Selector
+            anomalyId={currentAnomaly.id}
+            onSaved={setSavedDiagnosis}
+            onReportIcdError={handleOpenIcdError}
+          />
+        </div>
+      </div>
 
       {/* Actions */}
       <div className="flex items-center justify-between">

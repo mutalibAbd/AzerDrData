@@ -3,8 +3,9 @@ import api from '../../services/api';
 import toast from 'react-hot-toast';
 import { CheckCircle, Loader } from 'lucide-react';
 
-// ECT loaded via <script src="/icd11ect.js"> in index.html → window.ECT
-const getECT = () => window.ECT;
+// ECT loaded via <script src="/icd11ect.js"> in index.html
+// window.ECT = { Settings, Handler } — static methods are on Handler
+const getHandler = () => window.ECT?.Handler;
 
 const ECT_INO = '1'; // Single ECT instance
 
@@ -57,13 +58,13 @@ export default function EctSelector({ anomalyId, onSaved }) {
           toast.error('Saxlama xətası baş verdi');
         } finally {
           setSaving(false);
-          getECT()?.clear(ECT_INO);
+          getHandler()?.clear(ECT_INO);
         }
       },
     };
 
-    getECT().configure(settings, callbacks);
-    getECT().bind(ECT_INO);
+    getHandler().configure(settings, callbacks);
+    getHandler().bind(ECT_INO);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
   return (
@@ -84,8 +85,17 @@ export default function EctSelector({ anomalyId, onSaved }) {
         </div>
       )}
 
-      {/* WHO ECT widget container */}
-      <div className="ctw-window overflow-x-auto" data-ctw-ino={ECT_INO} />
+      {/* WHO ECT search input */}
+      <input
+        type="text"
+        className="ctw-input w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-400 focus:outline-none"
+        autoComplete="off"
+        data-ctw-ino={ECT_INO}
+        placeholder="ICD-11 diaqnoz axtar..."
+      />
+
+      {/* WHO ECT results window */}
+      <div className="ctw-window" data-ctw-ino={ECT_INO} />
     </div>
   );
 }
