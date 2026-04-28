@@ -7,3 +7,9 @@
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
+
+/* WHO ECT widget — prevent squishing by enforcing minimum width */
+.ectComponent,
+#ctwFlexContainer {
+  min-width: 900px !important;
+}

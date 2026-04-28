@@ -67,10 +67,24 @@ export default function EctSelector({ onSelected, onCleared }) {
 
     getHandler().configure(settings, callbacks);
     getHandler().bind(ECT_INO);
+
+    // Widget internal DOM-u fix et: WHO widget-inin öz daxili wrapper div-i
+    // overflow:auto + fixed px genişliklə sıxır — JS ilə override edirik
+    setTimeout(() => {
+      const ctwWindow = document.querySelector(`.ctw-window[data-ctw-ino="${ECT_INO}"]`);
+      if (!ctwWindow) return;
+      ctwWindow.style.overflowX = 'auto';
+      const inner = ctwWindow.parentElement;
+      if (inner) {
+        inner.style.width = '100%';
+        inner.style.maxWidth = '100%';
+        inner.style.overflowX = 'auto';
+      }
+    }, 500);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
   return (
-    <div className="space-y-2">
+    <div className="space-y-2 w-full min-w-0">
       {/* Locally selected code banner (not yet saved to DB) */}
       {selectedCode && (
         <div className="flex items-center gap-2 px-3 py-2 bg-amber-50 border border-amber-300 rounded-lg text-sm">
@@ -88,17 +102,17 @@ export default function EctSelector({ onSelected, onCleared }) {
         </div>
       )}
 
-      {/* WHO ECT search input */}
-      <input
-        type="text"
-        className="ctw-input w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-400 focus:outline-none"
-        autoComplete="off"
-        data-ctw-ino={ECT_INO}
-        placeholder="ICD-11 diaqnoz axtar..."
-      />
-
-      {/* WHO ECT results window */}
-      <div className="ctw-window overflow-x-auto" data-ctw-ino={ECT_INO} />
+      {/* WHO ECT widget — overflow-x-auto enables scroll on narrow screens */}
+      <div style={{ overflowX: 'auto', width: '100%' }}>
+        <input
+          type="text"
+          className="ctw-input w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-400 focus:outline-none"
+          autoComplete="off"
+          data-ctw-ino={ECT_INO}
+          placeholder="ICD-11 diaqnoz axtar..."
+        />
+        <div className="ctw-window" data-ctw-ino={ECT_INO} />
+      </div>
 
       {/* Confirm: select code */}
       {pendingEntity && (
