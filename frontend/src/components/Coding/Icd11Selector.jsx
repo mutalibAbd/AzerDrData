@@ -2,7 +2,7 @@ import { useCallback } from 'react';
 import { AlertCircle } from 'lucide-react';
 import EctSelector from './EctSelector';
 
-export default function Icd11Selector({ onReportIcdError, anomalyId, onSaved }) {
+export default function Icd11Selector({ onReportIcdError, onSelected, onCleared }) {
   const handleReportError = useCallback(() => {
     if (onReportIcdError) onReportIcdError();
   }, [onReportIcdError]);
@@ -24,7 +24,7 @@ export default function Icd11Selector({ onReportIcdError, anomalyId, onSaved }) 
         )}
       </div>
 
-      <EctSelector anomalyId={anomalyId} onSaved={onSaved} />
+      <EctSelector onSelected={onSelected} onCleared={onCleared} />
     </div>
   );
 }
