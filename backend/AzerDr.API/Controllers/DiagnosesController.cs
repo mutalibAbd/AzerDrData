@@ -42,4 +42,18 @@ public class DiagnosesController : ControllerBase
         var result = await _diagnoses.GetByAnomalyIdAsync(anomalyId);
         return result == null ? NoContent() : Ok(result);
     }
+
+    /// <summary>
+    /// Get paginated list of diagnoses coded by the current doctor.
+    /// </summary>
+    [HttpGet("my")]
+    [EnableRateLimiting("api")]
+    public async Task<IActionResult> GetMyDiagnoses(int page = 1, int size = 10)
+    {
+        var doctorIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!Guid.TryParse(doctorIdStr, out var doctorId)) return Unauthorized();
+
+        var result = await _diagnoses.GetMyDiagnosesAsync(doctorId, page, size);
+        return Ok(result);
+    }
 }

@@ -5,7 +5,8 @@
 -- 1. Create diagnoses table
 CREATE TABLE IF NOT EXISTS diagnoses (
   id                   UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  anomaly_id           INT NOT NULL UNIQUE REFERENCES anomalies(id) ON DELETE CASCADE,
+  anomaly_id           INT  NOT NULL UNIQUE REFERENCES anomalies(id) ON DELETE CASCADE,
+  doctor_id            UUID NOT NULL,
   icd11_foundation_uri VARCHAR(255) NOT NULL DEFAULT '',
   icd11_mms_code       VARCHAR(50)  NOT NULL,
   diagnosis_title      VARCHAR(500) NOT NULL,
@@ -16,7 +17,8 @@ CREATE TABLE IF NOT EXISTS diagnoses (
 
 -- 2. Indexes
 CREATE UNIQUE INDEX IF NOT EXISTS idx_diagnoses_anomaly_id ON diagnoses(anomaly_id);
-CREATE INDEX IF NOT EXISTS idx_diagnoses_mms_code ON diagnoses(icd11_mms_code);
+CREATE INDEX IF NOT EXISTS idx_diagnoses_doctor_id   ON diagnoses(doctor_id);
+CREATE INDEX IF NOT EXISTS idx_diagnoses_mms_code    ON diagnoses(icd11_mms_code);
 
 -- 3. Permissions
 GRANT ALL ON TABLE diagnoses TO anon, authenticated;

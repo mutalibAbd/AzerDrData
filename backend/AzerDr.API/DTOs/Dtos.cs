@@ -181,3 +181,13 @@ public record DiagnosisResponse(
     string?  ClusterDetailsJson,
     DateTime CreatedAt
 );
+
+public record MyDiagnosisItem(
+    int      AnomalyId,
+    string   PatientId,
+    string   Date,
+    string   Icd11MmsCode,
+    string   DiagnosisTitle,
+    bool     IsPostcoordinated,
+    DateTime CodedAt
+);
