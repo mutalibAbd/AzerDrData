@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
-import ECT from '@whoicd/icd11ect';
-import '@whoicd/icd11ect/style.css';
 import api from '../../services/api';
 import toast from 'react-hot-toast';
 import { CheckCircle, Loader } from 'lucide-react';
+
+// ECT loaded via <script src="/icd11ect.js"> in index.html → window.ECT
+const getECT = () => window.ECT;
 
 const ECT_INO = '1'; // Single ECT instance
 
@@ -56,13 +57,13 @@ export default function EctSelector({ anomalyId, onSaved }) {
           toast.error('Saxlama xətası baş verdi');
         } finally {
           setSaving(false);
-          ECT.clear(ECT_INO);
+          getECT()?.clear(ECT_INO);
         }
       },
     };
 
-    ECT.configure(settings, callbacks);
-    ECT.bind(ECT_INO);
+    getECT().configure(settings, callbacks);
+    getECT().bind(ECT_INO);
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
   return (
