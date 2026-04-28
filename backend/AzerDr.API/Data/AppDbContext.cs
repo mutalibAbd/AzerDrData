@@ -16,6 +16,7 @@ public class AppDbContext : DbContext
     public DbSet<IcdDiaqnoz> IcdDiaqnozlar => Set<IcdDiaqnoz>();
     public DbSet<IcdQeyd> IcdQeydler => Set<IcdQeyd>();
     public DbSet<DoctorSkip> DoctorSkips => Set<DoctorSkip>();
+    public DbSet<Diagnosis> Diagnoses => Set<Diagnosis>();
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
@@ -132,6 +133,18 @@ public class AppDbContext : DbContext
             e.HasOne(ds => ds.Anomaly)
                 .WithMany()
                 .HasForeignKey(ds => ds.AnomalyId)
+                .OnDelete(DeleteBehavior.Cascade);
+        });
+
+        // Diagnosis (ECT-based, one per anomaly)
+        modelBuilder.Entity<Diagnosis>(e =>
+        {
+            e.ToTable("diagnoses");
+            e.HasIndex(d => d.AnomalyId).IsUnique();
+
+            e.HasOne(d => d.Anomaly)
+                .WithMany()
+                .HasForeignKey(d => d.AnomalyId)
                 .OnDelete(DeleteBehavior.Cascade);
         });
     }

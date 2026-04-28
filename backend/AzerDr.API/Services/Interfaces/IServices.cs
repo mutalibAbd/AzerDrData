@@ -27,6 +27,8 @@ public interface IIcdService
     Task<List<IcdQeydDto>> GetQeydlerAsync(int diaqnozId);
 }
 
+// IDiagnosisService is defined in IDiagnosisService.cs
+
 public interface IAdminService
 {
     Task<List<DoctorListItem>> GetDoctorsAsync();

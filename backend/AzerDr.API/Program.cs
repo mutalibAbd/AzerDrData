@@ -33,6 +33,7 @@ if (dbProvider == "supabase")
     builder.Services.AddScoped<IAnomalyService, SupabaseAnomalyService>();
     builder.Services.AddScoped<IIcdService, SupabaseIcdService>();
     builder.Services.AddScoped<IAdminService, SupabaseAdminService>();
+    builder.Services.AddScoped<IDiagnosisService, SupabaseDiagnosisService>();
 
     // WHO ICD-11 API
     builder.Services.AddScoped<IIcd11Service, Icd11Service>();

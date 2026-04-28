@@ -160,3 +160,24 @@ public record ReviewErrorRequest(
     [Required, RegularExpression("^(accepted|rejected)$", ErrorMessage = "Status must be 'accepted' or 'rejected'")]
     string Status
 );
+
+// Diagnoses (ECT-based)
+public record SaveDiagnosisRequest(
+    [Required] int AnomalyId,
+    [Required, StringLength(255)] string Icd11FoundationUri,
+    [Required, StringLength(50)]  string Icd11MmsCode,
+    [Required, StringLength(500)] string DiagnosisTitle,
+    bool IsPostcoordinated = false,
+    [StringLength(10000)] string? ClusterDetailsJson = null
+);
+
+public record DiagnosisResponse(
+    Guid     Id,
+    int      AnomalyId,
+    string   Icd11FoundationUri,
+    string   Icd11MmsCode,
+    string   DiagnosisTitle,
+    bool     IsPostcoordinated,
+    string?  ClusterDetailsJson,
+    DateTime CreatedAt
+);

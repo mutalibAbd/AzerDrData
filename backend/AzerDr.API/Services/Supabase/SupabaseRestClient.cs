@@ -102,6 +102,26 @@ public class SupabaseRestClient
         return list?.Count ?? 0;
     }
 
+    // ── Upsert (INSERT ... ON CONFLICT DO UPDATE) ──────────
+
+    /// <summary>
+    /// UPSERT a row. <paramref name="conflictColumn"/> is the column used for ON CONFLICT resolution.
+    /// Returns the upserted row.
+    /// </summary>
+    public async Task<T?> Upsert<T>(string table, string conflictColumn, object data) where T : class
+    {
+        var url = $"{_baseUrl}/rest/v1/{table}?on_conflict={conflictColumn}";
+        var json = JsonSerializer.Serialize(data, _jsonOptions);
+        var content = new StringContent(json, Encoding.UTF8, "application/json");
+        using var request = new HttpRequestMessage(HttpMethod.Post, url) { Content = content };
+        request.Headers.Add("Prefer", "resolution=merge-duplicates,return=representation");
+        var response = await _http.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        var responseJson = await response.Content.ReadAsStringAsync();
+        var list = JsonSerializer.Deserialize<List<T>>(responseJson, _jsonOptions);
+        return list?.FirstOrDefault();
+    }
+
     // ── RPC (stored procedures) ────────────────────────────
 
     public async Task<List<T>> Rpc<T>(string functionName, object? parameters = null)

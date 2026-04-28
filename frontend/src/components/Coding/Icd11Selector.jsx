@@ -1,7 +1,9 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
-import { Search, ChevronRight, ChevronDown, X, Loader, AlertCircle, Info, AlertTriangle } from 'lucide-react';
-import api from '../../services/api';
-import Icd11DetailsModal from './Icd11DetailsModal';
+import { useState, useEffect, useCallback } from 'react';
+import { ChevronRight, ChevronDown, AlertCircle } from 'lucide-react';
+import EctSelector from './EctSelector';
+
+// Set to false to hide the local JSON tree browse tab
+const BROWSE_ENABLED = false;
 
 // Module-level cache — loaded once per session
 let icd11TreeCache = null;
@@ -16,7 +18,7 @@ async function loadIcd11Tree() {
   return icd11TreeLoading;
 }
 
-// Recursive tree node
+// Recursive tree node (used only when BROWSE_ENABLED)
 function TreeNode({ node, onAdd, selectedCodes }) {
   const [open, setOpen] = useState(false);
   const isLeaf = !node.Children || node.Children.length === 0;
@@ -68,102 +70,39 @@ function TreeNode({ node, onAdd, selectedCodes }) {
   );
 }
 
-export default function Icd11Selector({ value = [], onChange, onReportIcdError }) {
-  const [tab, setTab] = useState('browse');
+export default function Icd11Selector({ value = [], onChange, onReportIcdError, anomalyId, onSaved }) {
+  // Start on search tab (ECT); browse tab only if BROWSE_ENABLED
+  const [tab, setTab] = useState(BROWSE_ENABLED ? 'browse' : 'search');
   const [tree, setTree] = useState(null);
   const [treeError, setTreeError] = useState(false);
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const [searching, setSearching] = useState(false);
-  const [searchError, setSearchError] = useState(false);
-  const [detailItem, setDetailItem] = useState(null);
-  const debounceRef = useRef(null);
 
-  // Load local tree on mount
+  // Load tree only when browse is enabled
   useEffect(() => {
+    if (!BROWSE_ENABLED) return;
     loadIcd11Tree()
       .then(setTree)
       .catch(() => setTreeError(true));
   }, []);
 
-  // Debounced WHO API search
-  useEffect(() => {
-    clearTimeout(debounceRef.current);
-    if (!searchQuery || searchQuery.trim().length < 2) {
-      setSearchResults([]);
-      return;
-    }
-    setSearching(true);
-    setSearchError(false);
-    debounceRef.current = setTimeout(async () => {
-      try {
-        const { data } = await api.get(`/icd11/search?q=${encodeURIComponent(searchQuery.trim())}`);
-        setSearchResults(data ?? []);
-      } catch {
-        setSearchError(true);
-        setSearchResults([]);
-      } finally {
-        setSearching(false);
-      }
-    }, 300);
-  }, [searchQuery]);
-
-  // WHO entity IDs are always numeric strings; reject placeholders like "other"/"unspecified"
-  const toValidEntityId = (id) => (id && /^\d+$/.test(String(id)) ? String(id) : null);
-
   const addCode = useCallback((entry) => {
-    if (!entry.Code) return; // category nodes without a code
+    if (!entry.Code || !onChange) return;
     const already = value.some((c) => c.icd11Code === entry.Code);
     if (already) return;
-    onChange([
-      ...value,
-      {
-        icd11Code: entry.Code,
-        icd11Title: entry.Title,
-        entityId: toValidEntityId(entry.Id),
-        source: 'tree',
-        postcoordination: [],
-        hasUnfilledRequired: false,
-      },
-    ]);
-  }, [value, onChange]);
-
-  const addSearchResult = useCallback((result) => {
-    const already = value.some((c) => c.icd11Code === result.code);
-    if (already) return;
-    onChange([
-      ...value,
-      {
-        icd11Code: result.code,
-        icd11Title: result.title,
-        entityId: toValidEntityId(result.entityId),
-        source: 'search',
-        postcoordination: [],
-        hasUnfilledRequired: result.hasPostcoordination ?? false,
-      },
-    ]);
-  }, [value, onChange]);
-
-  const handleSavePostcoord = useCallback((postcoordArray, hasUnfilledRequired) => {
-    if (!detailItem?.isInList) return;
-    onChange(value.map(c =>
-      c.icd11Code === detailItem.code
-        ? { ...c, postcoordination: postcoordArray, hasUnfilledRequired }
-        : c
-    ));
-    setDetailItem(null);
-  }, [value, onChange, detailItem]);
-
-  const removeCode = useCallback((code) => {
-    onChange(value.filter((c) => c.icd11Code !== code));
+    onChange([...value, {
+      icd11Code: entry.Code,
+      icd11Title: entry.Title,
+      entityId: (entry.Id && /^\d+$/.test(String(entry.Id))) ? String(entry.Id) : null,
+      source: 'tree',
+      postcoordination: [],
+      hasUnfilledRequired: false,
+    }]);
   }, [value, onChange]);
 
   return (
-    <>
     <div className="bg-white border rounded-lg p-5 space-y-3">
       <div className="flex items-center justify-between">
         <h3 className="font-semibold text-gray-800">
-          ICD-11 Kodları <span className="text-red-500">*</span>
+          ICD-11 Diaqnozu <span className="text-red-500">*</span>
         </h3>
         {onReportIcdError && (
           <button
@@ -176,81 +115,20 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
         )}
       </div>
 
-      {/* Selected codes */}
-      {value.length > 0 && (
-        <div className="space-y-1.5">
-          {value.map((c) => (
-            <div
-              key={c.icd11Code}
-              className={`rounded-lg border px-3 py-2 ${
-                c.hasUnfilledRequired
-                  ? 'border-red-200 bg-red-50/40'
-                  : 'border-blue-100 bg-blue-50/40'
-              }`}
-            >
-              <div className="flex items-center gap-1.5">
-                <span className="font-mono text-xs text-blue-700 font-semibold shrink-0">{c.icd11Code}</span>
-                <span
-                  className="text-blue-700 text-xs leading-snug flex-1 truncate"
-                  title={c.icd11Title}
-                >
-                  {c.icd11Title}
-                </span>
-                {c.hasUnfilledRequired && (
-                  <AlertTriangle
-                    size={12}
-                    className="text-red-500 shrink-0"
-                    title="Məcburi postkoordinasiya əlavə edilməyib"
-                  />
-                )}
-                {c.entityId && (
-                  <button
-                    onClick={() => setDetailItem({ code: c.icd11Code, title: c.icd11Title, entityId: c.entityId, isInList: true })}
-                    className="p-0.5 text-gray-400 hover:text-blue-600 rounded transition-colors shrink-0"
-                    title="Postkoordinasiya əlavə et / redaktə et"
-                    aria-label={`${c.icd11Code} postkoordinasiyası`}
-                  >
-                    <Info size={12} />
-                  </button>
-                )}
-                <button
-                  onClick={() => removeCode(c.icd11Code)}
-                  className="p-0.5 text-blue-400 hover:text-red-500 transition-colors shrink-0"
-                  aria-label={`${c.icd11Code} kodunu sil`}
-                >
-                  <X size={12} />
-                </button>
-              </div>
-              {c.postcoordination?.length > 0 && (
-                <div className="mt-1.5 space-y-0.5 pl-1 border-l-2 border-blue-200 ml-1">
-                  {c.postcoordination.map((pc, i) => (
-                    <div key={i} className="flex items-center gap-1.5 text-xs text-gray-500">
-                      <span className={`text-[10px] font-semibold ${pc.required ? 'text-red-500' : 'text-yellow-600'}`}>
-                        {pc.axisName}:
-                      </span>
-                      <span className="font-mono text-blue-700">{pc.icd11Code}</span>
-                      <span className="text-gray-600 truncate">{pc.icd11Title}</span>
-                    </div>
-                  ))}
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-      )}
-
-      {/* Tabs */}
+      {/* Tabs — browse tab only rendered when BROWSE_ENABLED */}
       <div className="flex border-b">
-        <button
-          className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
-            tab === 'browse'
-              ? 'border-blue-600 text-blue-600'
-              : 'border-transparent text-gray-500 hover:text-gray-700'
-          }`}
-          onClick={() => setTab('browse')}
-        >
-          Bax (Ch.18 / Ch.20)
-        </button>
+        {BROWSE_ENABLED && (
+          <button
+            className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
+              tab === 'browse'
+                ? 'border-blue-600 text-blue-600'
+                : 'border-transparent text-gray-500 hover:text-gray-700'
+            }`}
+            onClick={() => setTab('browse')}
+          >
+            Bax (Ch.18 / Ch.20)
+          </button>
+        )}
         <button
           className={`px-4 py-2 text-sm font-medium border-b-2 transition-colors ${
             tab === 'search'
@@ -259,20 +137,18 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
           }`}
           onClick={() => setTab('search')}
         >
-          <span className="flex items-center gap-1">
-            <Search size={13} /> Axtar (WHO API)
-          </span>
+          ICD-11 Axtarış
         </button>
       </div>
 
-      {/* Browse tab */}
-      {tab === 'browse' && (
+      {/* Browse tab — only shown when BROWSE_ENABLED */}
+      {BROWSE_ENABLED && tab === 'browse' && (
         <div className="max-h-72 overflow-y-auto border rounded">
           {treeError ? (
             <p className="text-center text-red-500 py-6 text-sm">ICD-11 verilənləri yüklənmədi</p>
           ) : !tree ? (
             <div className="flex justify-center py-6">
-              <Loader size={20} className="animate-spin text-blue-400" />
+              <div className="animate-spin rounded-full h-5 w-5 border-t-2 border-blue-400" />
             </div>
           ) : (
             <div className="p-1">
@@ -289,95 +165,10 @@ export default function Icd11Selector({ value = [], onChange, onReportIcdError }
         </div>
       )}
 
-      {/* Search tab */}
+      {/* Search tab — WHO ECT widget */}
       {tab === 'search' && (
-        <div className="space-y-2">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            placeholder="Minimum 2 hərf daxil edin..."
-            className="w-full border border-gray-300 rounded-md px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-300"
-            autoFocus
-          />
-          <div className="max-h-64 overflow-y-auto border rounded">
-            {searching ? (
-              <div className="flex justify-center py-6">
-                <Loader size={20} className="animate-spin text-blue-400" />
-              </div>
-            ) : searchError ? (
-              <p className="text-center text-red-500 py-4 text-sm">Axtarış xətası. Yenidən cəhd edin.</p>
-            ) : searchResults.length === 0 && searchQuery.trim().length >= 2 ? (
-              <p className="text-center text-gray-400 py-4 text-sm">Nəticə tapılmadı</p>
-            ) : (
-              <div className="divide-y">
-                {searchResults.map((r, i) => {
-                  const isSelected = value.some((c) => c.icd11Code === r.code);
-                  return (
-                    <div
-                      key={r.code ?? i}
-                      className={`px-3 py-2 text-sm flex items-start gap-2 ${
-                        isSelected ? 'bg-green-50' : 'hover:bg-gray-50'
-                      }`}
-                    >
-                      <span className="font-mono text-xs text-blue-700 shrink-0 mt-0.5">{r.code}</span>
-                      <span className="text-gray-700 leading-snug flex-1">{r.title}</span>
-                      <div className="flex items-center gap-1 shrink-0 ml-1">
-                        {r.entityId && /^\d+$/.test(r.entityId) && (
-                          <button
-                            onClick={() => setDetailItem(r)}
-                            className={`p-1 rounded transition-colors ${
-                              r.hasPostcoordination
-                                ? 'text-orange-500 hover:text-orange-700 hover:bg-orange-50'
-                                : 'text-gray-400 hover:text-blue-600 hover:bg-blue-50'
-                            }`}
-                            title={
-                              r.hasPostcoordination
-                                ? 'Postkoordinasiya tələb olunur — ətraflı məlumat'
-                                : 'Ətraflı məlumat'
-                            }
-                            aria-label={`${r.code} kodu haqqında ətraflı`}
-                          >
-                            <Info size={14} />
-                          </button>
-                        )}
-                        <button
-                          onClick={() => addSearchResult(r)}
-                          disabled={isSelected}
-                          className={`text-xs px-2 py-0.5 rounded font-medium transition-colors ${
-                            isSelected
-                              ? 'text-green-600 cursor-default'
-                              : 'bg-blue-600 text-white hover:bg-blue-700'
-                          }`}
-                          aria-label={isSelected ? 'Artıq seçilib' : `${r.code} kodunu əlavə et`}
-                        >
-                          {isSelected ? '✓' : '+'}
-                        </button>
-                      </div>
-                    </div>
-                  );
-                })}
-              </div>
-            )}
-          </div>
-        </div>
+        <EctSelector anomalyId={anomalyId} onSaved={onSaved} />
       )}
     </div>
-
-    {detailItem && (
-      <Icd11DetailsModal
-        entityId={detailItem.entityId}
-        code={detailItem.code}
-        title={detailItem.title}
-        onClose={() => setDetailItem(null)}
-        currentPostcoord={
-          detailItem.isInList
-            ? (value.find(c => c.icd11Code === detailItem.code)?.postcoordination ?? [])
-            : []
-        }
-        onSavePostcoord={detailItem.isInList ? handleSavePostcoord : undefined}
-      />
-    )}
-  </>
   );
 }

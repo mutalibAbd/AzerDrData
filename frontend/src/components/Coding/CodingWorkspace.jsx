@@ -1,6 +1,6 @@
 import { useState, useEffect, useCallback } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Save, SkipForward, ArrowLeft, Loader, CheckCircle } from 'lucide-react';
+import { SkipForward, ArrowLeft, Loader, ChevronRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 import useCodingStore from '../../stores/codingStore';
 import PatientInfo from './PatientInfo';
@@ -8,11 +8,9 @@ import Icd11Selector from './Icd11Selector';
 import ErrorReportModal from './ErrorReportModal';
 
 export default function CodingWorkspace() {
-  const { currentAnomaly, loading, fetchNext, saveCodingIcd11, skipAnomaly } = useCodingStore();
-  const [selectedCodes, setSelectedCodes] = useState([]);
-  const [qeyd, setQeyd] = useState('');
+  const { currentAnomaly, loading, fetchNext, skipAnomaly } = useCodingStore();
+  const [savedDiagnosis, setSavedDiagnosis] = useState(null);
   const [showIcdErrorModal, setShowIcdErrorModal] = useState(false);
-  const [saving, setSaving] = useState(false);
   const [initialLoad, setInitialLoad] = useState(true);
   const navigate = useNavigate();
 
@@ -27,45 +25,18 @@ export default function CodingWorkspace() {
     }
   }, []);
 
-  const handleSave = useCallback(async () => {
-    if (selectedCodes.length === 0) {
-      toast.error('Zəhmət olmasa ən az bir ICD-11 kodu seçin');
-      return;
-    }
-    setSaving(true);
-    try {
-      await saveCodingIcd11(currentAnomaly.id, { codes: selectedCodes, qeyd: qeyd || null });
-      toast.success('Kodlama saxlanıldı!');
-      setQeyd('');
-      setSelectedCodes([]);
-      const next = await fetchNext();
-      if (!next) toast.success('Bütün anomaliyalar kodlandı! 🎉');
-    } catch {
-      toast.error('Xəta baş verdi');
-    }
-    setSaving(false);
-  }, [selectedCodes, qeyd, currentAnomaly, saveCodingIcd11, fetchNext]);
+  // Reset saved diagnosis state when anomaly changes
+  useEffect(() => {
+    setSavedDiagnosis(null);
+  }, [currentAnomaly?.id]);
 
-  const handleSaveAndFinish = useCallback(async () => {
-    if (selectedCodes.length === 0) {
-      toast.error('Zəhmət olmasa ən az bir ICD-11 kodu seçin');
-      return;
-    }
-    setSaving(true);
-    try {
-      await saveCodingIcd11(currentAnomaly.id, { codes: selectedCodes, qeyd: qeyd || null });
-      toast.success('Kodlama saxlanıldı!');
-      navigate('/');
-    } catch {
-      toast.error('Xəta baş verdi');
-    }
-    setSaving(false);
-  }, [selectedCodes, qeyd, currentAnomaly, saveCodingIcd11, navigate]);
+  const handleNext = useCallback(async () => {
+    const next = await fetchNext();
+    if (!next) toast.success('Bütün anomaliyalar kodlandı! 🎉');
+  }, [fetchNext]);
 
   const handleSkip = useCallback(async () => {
     await skipAnomaly(currentAnomaly.id);
-    setQeyd('');
-    setSelectedCodes([]);
     const next = await fetchNext();
     if (!next) toast('Kodlanmamış anomaliya qalmayıb');
   }, [currentAnomaly, skipAnomaly, fetchNext]);
@@ -99,34 +70,23 @@ export default function CodingWorkspace() {
   return (
     <div className="space-y-4">
       <PatientInfo anomaly={currentAnomaly} />
+
+      {/* ECT-based ICD-11 selector — saves automatically on selection */}
       <Icd11Selector
-        value={selectedCodes}
-        onChange={setSelectedCodes}
+        anomalyId={currentAnomaly.id}
+        onSaved={setSavedDiagnosis}
         onReportIcdError={handleOpenIcdError}
       />
 
-      {/* Note */}
-      <div className="bg-white border rounded-lg p-5">
-        <label className="text-xs font-medium text-gray-500 uppercase tracking-wide">Qeyd (ixtiyari)</label>
-        <textarea
-          value={qeyd}
-          onChange={(e) => setQeyd(e.target.value)}
-          rows={2}
-          className="mt-1 w-full border border-gray-300 rounded-md px-3 py-2"
-          placeholder="Əlavə qeyd yaza bilərsiniz..."
-        />
-      </div>
-
       {/* Actions */}
       <div className="flex items-center justify-between">
-        <div className="flex items-center gap-3">
-          <button
-            onClick={() => navigate('/')}
-            className="flex items-center gap-1 px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
-          >
-            <ArrowLeft size={16} /> Ana Səhifəyə Qayıt
-          </button>
-        </div>
+        <button
+          onClick={() => navigate('/')}
+          className="flex items-center gap-1 px-3 py-2 text-sm text-blue-600 border border-blue-200 rounded hover:bg-blue-50"
+        >
+          <ArrowLeft size={16} /> Ana Səhifəyə Qayıt
+        </button>
+
         <div className="flex gap-3">
           <button
             onClick={handleSkip}
@@ -135,18 +95,12 @@ export default function CodingWorkspace() {
             <SkipForward size={16} /> Keç
           </button>
           <button
-            onClick={handleSaveAndFinish}
-            disabled={saving || selectedCodes.length === 0}
-            className="flex items-center gap-1 px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 disabled:opacity-50"
-          >
-            <CheckCircle size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Bitir'}
-          </button>
-          <button
-            onClick={handleSave}
-            disabled={saving || selectedCodes.length === 0}
+            onClick={handleNext}
+            disabled={!savedDiagnosis}
             className="flex items-center gap-1 px-6 py-2 text-sm bg-green-600 text-white rounded hover:bg-green-700 disabled:opacity-50"
+            title={savedDiagnosis ? 'Növbəti anomaliyaya keç' : 'Əvvəlcə diaqnoz seçin'}
           >
-            <Save size={16} /> {saving ? 'Saxlanılır...' : 'Saxla & Növbəti'}
+            Növbəti <ChevronRight size={16} />
           </button>
         </div>
       </div>
