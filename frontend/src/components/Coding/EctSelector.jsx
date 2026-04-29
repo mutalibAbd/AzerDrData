@@ -14,7 +14,7 @@ const ECT_INO = '1'; // Single ECT instance
  * Selection is LOCAL ONLY — no DB save here.
  * Parent (CodingWorkspace) saves to DB when doctor clicks "Növbəti".
  */
-export default function EctSelector({ onSelected, onCleared }) {
+export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   const [selectedCode, setSelectedCode] = useState(null); // { code, title }
   const [pendingEntity, setPendingEntity] = useState(null); // waiting for confirm
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
@@ -40,6 +40,12 @@ export default function EctSelector({ onSelected, onCleared }) {
     setPendingEntity(null);
     setShowDeleteConfirm(false);
   };
+
+  // Reset local state when anomaly changes (new report loaded)
+  useEffect(() => {
+    clearSelection();
+    getHandler()?.clear(ECT_INO);
+  }, [anomalyId]);
 
   // Expose clearSelection for parent via ref — but simpler: just watch anomalyId reset from parent
   useEffect(() => {
