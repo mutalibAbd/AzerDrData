@@ -18,6 +18,15 @@ public class AnomalyController : ControllerBase
     private Guid GetUserId() =>
         Guid.Parse(User.FindFirstValue(ClaimTypes.NameIdentifier)!);
 
+    [HttpGet("{id}")]
+    public async Task<IActionResult> GetById(int id)
+    {
+        var result = await _anomaly.GetByIdAsync(id, GetUserId());
+        if (result == null)
+            return NotFound(new { message = "Anomaliya tapılmadı" });
+        return Ok(result);
+    }
+
     [HttpPost("next")]
     public async Task<IActionResult> GetNext()
     {

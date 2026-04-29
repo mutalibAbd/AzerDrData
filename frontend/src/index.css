@@ -1,9 +1,15 @@
 @import 'tailwindcss';
 
 @keyframes slide-up {
-  from { transform: translateY(100%); }
-  to { transform: translateY(0); }
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
 }
+
 .animate-slide-up {
   animation: slide-up 0.3s ease-out;
 }
@@ -12,4 +18,41 @@
 .ectComponent,
 #ctwFlexContainer {
   min-width: 900px !important;
+}
+
+
+/*gemini tovsiyesi deneme */
+/* ECT penceresinin içindeki listelerin sol boşluklarını geri veriyoruz */
+.ctw-window ul {
+  padding-left: 20px !important;
+}
+
+/* Liste elemanlarının sola yapışıp kesilmesini engelliyoruz */
+.ctw-window li {
+  padding-left: 10px !important;
+}
+
+/* "9B10.Z" gibi kodların başının kesilmesini engellemek için */
+.ctw-window .entityTheCode {
+  padding-left: 15px !important;
+  overflow: visible !important;
+  /* Sıkışıp kesilmesine engel olur */
+}
+
+/* Gerekirse pencerenin geneline soldan nefes aldırır */
+.ctw-window {
+  padding-left: 15px !important;
+  overflow-x: auto !important;
+}
+
+/* Word listesi elemanlarını sola çeken gizli negatif margin'i sıfırlıyoruz */
+.ctw-window .ctwFlexItem25 ul,
+.ctw-window .ctwFlexItem25 li,
+.ctw-window .ctwFlexItem25 div {
+  margin-left: 0 !important;
+}
+
+/* Sadece sol sütuna (Word list sütununa) özel ekstra bir itme payı */
+.ctw-window .ctwFlexItem25 {
+  padding-left: 5px !important;
 }

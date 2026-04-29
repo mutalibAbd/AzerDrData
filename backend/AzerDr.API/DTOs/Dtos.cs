@@ -112,7 +112,7 @@ public record LeaderboardItem(string DoctorName, int CodingCount, int Rank);
 // Admin
 public record CreateDoctorRequest(
     [Required, StringLength(50)] string Username,
-    [Required, StringLength(100)] string Password,
+    [Required, StringLength(100), MinLength(8)] string Password,
     [Required, StringLength(100)] string FullName,
     [RegularExpression("^(doctor|admin)$", ErrorMessage = "Role must be 'doctor' or 'admin'")]
     string? Role = "doctor"
@@ -168,7 +168,8 @@ public record SaveDiagnosisRequest(
     [Required, StringLength(50)]  string Icd11MmsCode,
     [Required, StringLength(500)] string DiagnosisTitle,
     bool IsPostcoordinated = false,
-    [StringLength(10000)] string? ClusterDetailsJson = null
+    [StringLength(10000)] string? ClusterDetailsJson = null,
+    [StringLength(2000)]  string? DoctorNote = null
 );
 
 public record DiagnosisResponse(
@@ -179,6 +180,7 @@ public record DiagnosisResponse(
     string   DiagnosisTitle,
     bool     IsPostcoordinated,
     string?  ClusterDetailsJson,
+    string?  DoctorNote,
     DateTime CreatedAt
 );
 

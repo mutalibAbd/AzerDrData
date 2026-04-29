@@ -13,7 +13,7 @@ export default function Icd11Selector({ onReportIcdError, onSelected, onCleared 
         <h3 className="font-semibold text-gray-800">
           ICD-11 Diaqnozu <span className="text-red-500">*</span>
         </h3>
-        {onReportIcdError && (
+        {/* {onReportIcdError && (
           <button
             onClick={handleReportError}
             className="flex items-center gap-1 text-xs text-orange-500 hover:text-orange-700"
@@ -21,7 +21,7 @@ export default function Icd11Selector({ onReportIcdError, onSelected, onCleared 
           >
             <AlertCircle size={14} /> Xəta bildir
           </button>
-        )}
+        )} */}
       </div>
 
       <EctSelector onSelected={onSelected} onCleared={onCleared} />

@@ -12,6 +12,7 @@ public interface IAnomalyService
     Task<DashboardStats> GetStatsAsync(Guid doctorId);
     Task<List<MyCodingItem>> GetMyCodingsAsync(Guid doctorId, int page, int size);
     Task<AnomalyResponse?> GetNextAsync(Guid doctorId);
+    Task<AnomalyResponse?> GetByIdAsync(int anomalyId, Guid doctorId);
     Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request);
     Task<bool> SaveCodingIcd11Async(int anomalyId, Guid doctorId, SaveIcd11CodingRequest request);
     Task<bool> SkipAsync(int anomalyId, Guid doctorId);

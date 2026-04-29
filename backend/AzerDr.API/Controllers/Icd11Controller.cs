@@ -1,4 +1,3 @@
-using AzerDr.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -10,34 +9,21 @@ namespace AzerDr.API.Controllers;
 [Authorize]
 public class Icd11Controller : ControllerBase
 {
-    private readonly IIcd11Service _icd11;
 
-    public Icd11Controller(IIcd11Service icd11) => _icd11 = icd11;
-
-    [Obsolete("Use /api/diagnoses/save with ECT widget instead")]
     [HttpGet("search")]
     [EnableRateLimiting("api")]
-    public async Task<IActionResult> Search([FromQuery] string q)
+    public IActionResult Search([FromQuery] string q)
     {
-        if (string.IsNullOrWhiteSpace(q) || q.Length < 2)
-            return Ok(new List<object>());
-
-        var results = await _icd11.SearchAsync(q.Trim());
-        return Ok(results);
+        return StatusCode(StatusCodes.Status410Gone,
+            new { message = "This endpoint is no longer available. Use the ECT widget directly." });
     }
 
-    [Obsolete("Use /api/diagnoses/save with ECT widget instead")]
     [HttpGet("entity/{entityId}")]
     [EnableRateLimiting("api")]
-    public async Task<IActionResult> GetEntity(string entityId)
+    public IActionResult GetEntity(string entityId)
     {
-        if (string.IsNullOrWhiteSpace(entityId)) return BadRequest();
-        // WHO entity IDs are numeric strings
-        if (!System.Text.RegularExpressions.Regex.IsMatch(entityId, @"^\d+$"))
-            return BadRequest("Invalid entity ID format");
-
-        var details = await _icd11.GetEntityDetailsAsync(entityId);
-        return details == null ? NotFound() : Ok(details);
+        return StatusCode(StatusCodes.Status410Gone,
+            new { message = "This endpoint is no longer available. Use the ECT widget directly." });
     }
 
     /// <summary>

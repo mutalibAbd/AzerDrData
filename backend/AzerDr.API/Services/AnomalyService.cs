@@ -109,6 +109,15 @@ public class AnomalyService : IAnomalyService
             reader.GetString(5));
     }
 
+    public async Task<AnomalyResponse?> GetByIdAsync(int anomalyId, Guid doctorId)
+    {
+        var a = await _db.Anomalies
+            .FirstOrDefaultAsync(a => a.Id == anomalyId && a.CodedBy == doctorId);
+        if (a == null) return null;
+        return new AnomalyResponse(a.Id, a.ReportId, a.PatientId, a.Date.ToString("yyyy-MM-dd"),
+            a.Diagnosis, a.Explanation);
+    }
+
     public async Task<bool> SaveCodingAsync(int anomalyId, Guid doctorId, SaveCodingRequest request)
     {
         var anomaly = await _db.Anomalies

@@ -13,8 +13,8 @@ export default function CodingPage() {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      <div className="max-w-6xl mx-auto p-6">
-        <h2 className="text-xl font-bold text-gray-800 mb-4">ICD-11 Kodlama</h2>
+      <div className="max-w-screen-2xl mx-auto px-3 sm:px-6 py-4 sm:py-6">
+        <h2 className="text-lg sm:text-xl font-bold text-gray-800 mb-4">ICD-11 Kodlama</h2>
         <CodingWorkspace />
       </div>
     </div>

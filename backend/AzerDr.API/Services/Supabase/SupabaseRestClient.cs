@@ -102,6 +102,20 @@ public class SupabaseRestClient
         return list?.Count ?? 0;
     }
 
+    // ── Delete ─────────────────────────────────────────────
+
+    public async Task<int> Delete(string table, string filter)
+    {
+        var url = $"{_baseUrl}/rest/v1/{table}?{filter}";
+        using var request = new HttpRequestMessage(HttpMethod.Delete, url);
+        request.Headers.Add("Prefer", "return=representation");
+        var response = await _http.SendAsync(request);
+        response.EnsureSuccessStatusCode();
+        var responseJson = await response.Content.ReadAsStringAsync();
+        var list = JsonSerializer.Deserialize<List<JsonElement>>(responseJson, _jsonOptions);
+        return list?.Count ?? 0;
+    }
+
     // ── Upsert (INSERT ... ON CONFLICT DO UPDATE) ──────────
 
     /// <summary>

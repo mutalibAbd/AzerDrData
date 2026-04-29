@@ -104,8 +104,8 @@ export default function CodingWorkspace() {
 
   return (
     <div className="space-y-4">
-      <div className="grid grid-cols-1 lg:grid-cols-[2fr_5fr] gap-4 items-start">
-        <div className="space-y-4">
+      <div className="grid grid-cols-1 lg:grid-cols-[2fr_3fr] gap-4 items-start min-h-0">
+        <div className="space-y-4 min-w-0">
           <PatientInfo anomaly={currentAnomaly} />
           <DoctorNote
             note={doctorNote}
@@ -114,7 +114,7 @@ export default function CodingWorkspace() {
           />
         </div>
 
-        <div>
+        <div className="min-w-0 overflow-x-auto">
           <Icd11Selector
             anomalyId={currentAnomaly.id}
             onSelected={setPendingEntity}

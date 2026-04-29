@@ -78,10 +78,10 @@ export default function PatientInfo({ anomaly }) {
 
   return (
     <div className="border-2 border-amber-300 rounded-lg overflow-hidden">
-      <div className="bg-gradient-to-r from-amber-50 to-orange-50 px-5 py-3 border-b border-amber-200">
-        <div className="flex items-center justify-between">
+      <div className="bg-gradient-to-r from-amber-50 to-orange-50 px-4 py-3 border-b border-amber-200">
+        <div className="flex flex-wrap items-center justify-between gap-2">
           <h3 className="font-semibold text-gray-800">Xəstə Məlumatları</h3>
-          <div className="flex gap-3 text-sm text-gray-500">
+          <div className="flex flex-wrap gap-x-3 gap-y-1 text-xs sm:text-sm text-gray-500">
             <span>ID: <strong>{anomaly.patientId}</strong></span>
             <span>Tarix: <strong>{anomaly.date}</strong></span>
             <span>Rapor: <strong>{anomaly.reportId}</strong></span>
@@ -89,7 +89,7 @@ export default function PatientInfo({ anomaly }) {
         </div>
       </div>
 
-      <div className="bg-gradient-to-b from-amber-50/40 to-white px-5 py-4 space-y-4">
+      <div className="bg-gradient-to-b from-amber-50/40 to-white px-4 py-4 space-y-4">
         {/* Prominent title */}
         <div className="flex items-center justify-center gap-2 py-2 px-4 bg-gradient-to-r from-indigo-100 via-blue-100 to-indigo-100 rounded-lg border border-indigo-200">
           <Microscope size={20} className="text-indigo-600" />

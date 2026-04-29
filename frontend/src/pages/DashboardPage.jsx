@@ -24,7 +24,7 @@ export default function DashboardPage() {
             <h2 className="text-xl font-bold text-gray-800">
               Xoş gəldiniz, Dr. {user?.fullName || 'Doktor'}!
             </h2>
-            <p className="text-sm text-gray-500 mt-1">ICD-10 kodlama platformasına daxil oldunuz</p>
+            <p className="text-sm text-gray-500 mt-1">ICD-11 kodlama platformasına daxil oldunuz</p>
           </div>
           <button
             onClick={() => navigate('/coding')}
@@ -39,7 +39,7 @@ export default function DashboardPage() {
         <div className="bg-gradient-to-r from-emerald-50 via-teal-50 to-cyan-50 border border-teal-200 rounded-xl p-4 flex items-center gap-3">
           <Heart size={22} className="text-teal-500 flex-shrink-0" />
           <p className="text-sm font-medium text-teal-800">
-            Dr. Azərin 10 illik anomaliya bazasının İCD-10 kodlaşdırmasına dəstək olduğunuz üçün təşəkkür edirik.
+            Dr. Azərin 10 illik anomaliya bazasının İCD-11 kodlaşdırmasına dəstək olduğunuz üçün təşəkkür edirik.
           </p>
         </div>
 

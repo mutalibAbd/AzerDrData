@@ -114,9 +114,15 @@ builder.Services.AddCors(options =>
     options.AddPolicy("AllowFrontend", policy =>
     {
         policy.WithOrigins(corsOrigins)
-            .AllowAnyHeader()
+            .WithHeaders("Content-Type", "Authorization", "X-Correlation-Id")
             .WithMethods("GET", "POST", "PUT", "DELETE", "OPTIONS");
     });
+});
+
+// Limit request body to 50KB to prevent large payload DoS attacks
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.Limits.MaxRequestBodySize = 50 * 1024;
 });
 
 // Background job for stale assignment cleanup
@@ -170,6 +176,16 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseCors("AllowFrontend");
+
+// Security headers
+app.Use(async (context, next) =>
+{
+    context.Response.Headers["X-Content-Type-Options"] = "nosniff";
+    context.Response.Headers["X-Frame-Options"] = "DENY";
+    context.Response.Headers["Referrer-Policy"] = "strict-origin-when-cross-origin";
+    context.Response.Headers["X-XSS-Protection"] = "0"; // modern browsers use CSP instead
+    await next();
+});
 app.UseRateLimiter();
 app.UseAuthentication();
 app.UseAuthorization();

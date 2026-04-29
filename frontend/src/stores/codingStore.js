@@ -48,6 +48,8 @@ const useCodingStore = create((set) => ({
     await api.post(`/anomaly/${anomalyId}/error-report`, report);
   },
 
+  setAnomaly: (anomaly) => set({ currentAnomaly: anomaly }),
+
   clear: () => set({ currentAnomaly: null }),
 }));
 

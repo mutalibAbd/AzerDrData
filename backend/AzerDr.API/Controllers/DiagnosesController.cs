@@ -1,3 +1,4 @@
+using System.ComponentModel.DataAnnotations;
 using System.Security.Claims;
 using AzerDr.API.DTOs;
 using AzerDr.API.Services.Interfaces;
@@ -39,7 +40,10 @@ public class DiagnosesController : ControllerBase
     [EnableRateLimiting("api")]
     public async Task<IActionResult> GetByAnomaly(int anomalyId)
     {
-        var result = await _diagnoses.GetByAnomalyIdAsync(anomalyId);
+        var doctorIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!Guid.TryParse(doctorIdStr, out var doctorId)) return Unauthorized();
+
+        var result = await _diagnoses.GetByAnomalyIdAsync(anomalyId, doctorId);
         return result == null ? NoContent() : Ok(result);
     }
 
@@ -48,12 +52,28 @@ public class DiagnosesController : ControllerBase
     /// </summary>
     [HttpGet("my")]
     [EnableRateLimiting("api")]
-    public async Task<IActionResult> GetMyDiagnoses(int page = 1, int size = 10)
+    public async Task<IActionResult> GetMyDiagnoses(
+        [Range(1, 200)] int page = 1,
+        [Range(1, 100)] int size = 10)
     {
         var doctorIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
         if (!Guid.TryParse(doctorIdStr, out var doctorId)) return Unauthorized();
 
         var result = await _diagnoses.GetMyDiagnosesAsync(doctorId, page, size);
         return Ok(result);
+    }
+
+    /// <summary>
+    /// Delete the diagnosis for an anomaly (allows doctor to re-code).
+    /// </summary>
+    [HttpDelete("anomaly/{anomalyId:int}")]
+    [EnableRateLimiting("api")]
+    public async Task<IActionResult> DeleteByAnomaly(int anomalyId)
+    {
+        var doctorIdStr = User.FindFirstValue(ClaimTypes.NameIdentifier);
+        if (!Guid.TryParse(doctorIdStr, out var doctorId)) return Unauthorized();
+
+        var deleted = await _diagnoses.DeleteByAnomalyIdAsync(anomalyId, doctorId);
+        return deleted ? Ok(new { message = "Diaqnoz silindi" }) : NotFound(new { message = "Diaqnoz tapılmadı" });
     }
 }

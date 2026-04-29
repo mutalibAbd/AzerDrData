@@ -196,11 +196,13 @@ public class SupabaseAuthService : IAuthService
 {
     private readonly SupabaseRestClient _client;
     private readonly IConfiguration _config;
+    private readonly ILogger<SupabaseAuthService> _logger;
 
-    public SupabaseAuthService(SupabaseRestClient client, IConfiguration config)
+    public SupabaseAuthService(SupabaseRestClient client, IConfiguration config, ILogger<SupabaseAuthService> logger)
     {
         _client = client;
         _config = config;
+        _logger = logger;
     }
 
     public async Task<LoginResponse?> LoginAsync(LoginRequest request)
@@ -210,7 +212,10 @@ public class SupabaseAuthService : IAuthService
 
         var user = users.FirstOrDefault();
         if (user == null || !BCrypt.Net.BCrypt.Verify(request.Password, user.PasswordHash))
+        {
+            _logger.LogWarning("Failed login attempt for username: {Username}", request.Username);
             return null;
+        }
 
         var token = GenerateToken(user);
         return new LoginResponse(token, user.Username, user.FullName, user.Role);
@@ -233,7 +238,7 @@ public class SupabaseAuthService : IAuthService
             issuer: _config["Jwt:Issuer"],
             audience: _config["Jwt:Audience"],
             claims: claims,
-            expires: DateTime.UtcNow.AddHours(12),
+            expires: DateTime.UtcNow.AddHours(1),
             signingCredentials: creds);
 
         return new JwtSecurityTokenHandler().WriteToken(token);
@@ -293,6 +298,15 @@ public class SupabaseAnomalyService : IAnomalyService
         var a = results.FirstOrDefault();
         if (a == null) return null;
         return new AnomalyResponse(a.Id, a.ReportId, a.PatientId, a.Date, a.Diagnosis, a.Explanation);
+    }
+
+    public async Task<AnomalyResponse?> GetByIdAsync(int anomalyId, Guid doctorId)
+    {
+        var row = await _client.FromSingle<SupabaseAnomaly>(
+            "anomalies",
+            $"id=eq.{anomalyId}&coded_by=eq.{doctorId}");
+        if (row == null) return null;
+        return new AnomalyResponse(row.Id, row.ReportId, row.PatientId, row.Date, row.Diagnosis, row.Explanation);
     }
 
     // Extract short ICD code from full text (e.g. "(Q00–Q07) Sinir..." → "Q00-Q07")
