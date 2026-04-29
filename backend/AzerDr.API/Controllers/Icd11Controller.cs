@@ -1,3 +1,4 @@
+using AzerDr.API.Services;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.RateLimiting;
@@ -9,6 +10,9 @@ namespace AzerDr.API.Controllers;
 [Authorize]
 public class Icd11Controller : ControllerBase
 {
+    private readonly IIcd11Service _icd11;
+
+    public Icd11Controller(IIcd11Service icd11) => _icd11 = icd11;
 
     [HttpGet("search")]
     [EnableRateLimiting("api")]
@@ -27,14 +31,22 @@ public class Icd11Controller : ControllerBase
     }
 
     /// <summary>
-    /// TODO: Return a short-lived WHO API token for the ECT widget (production mode).
-    /// Currently returns 501 — ECT uses the public test server (no token needed).
+    /// Returns a short-lived WHO ICD-11 API access token for the ECT widget.
+    /// Token is cached server-side for 55 minutes.
     /// </summary>
     [HttpGet("/api/icd/token")]
-    public IActionResult GetToken()
+    [EnableRateLimiting("api")]
+    public async Task<IActionResult> GetToken()
     {
-        // TODO: implement OAuth2 token retrieval from WHO ICD API when apiSecured: true
-        return StatusCode(StatusCodes.Status501NotImplemented,
-            new { message = "Token endpoint not yet implemented. ECT uses public test server." });
+        try
+        {
+            var token = await _icd11.GetAccessTokenAsync();
+            return Ok(new { access_token = token, token_type = "Bearer" });
+        }
+        catch (Exception)
+        {
+            return StatusCode(StatusCodes.Status502BadGateway,
+                new { message = "WHO ICD-11 token service unavailable" });
+        }
     }
 }

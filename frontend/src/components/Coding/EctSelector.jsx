@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { CheckCircle, X } from 'lucide-react';
 import ConfirmDialog from './ConfirmDialog';
+import api from '../../services/api';
 
 // ECT loaded via <script src="/icd11ect.js"> in index.html
 // window.ECT = { Settings, Handler } — static methods are on Handler
@@ -47,7 +48,6 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     getHandler()?.clear(ECT_INO);
   }, [anomalyId]);
 
-  // Expose clearSelection for parent via ref — but simpler: just watch anomalyId reset from parent
   useEffect(() => {
     return () => {
       // cleanup on unmount
@@ -56,37 +56,72 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   }, []);
 
   useEffect(() => {
-    const settings = {
-      apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
-      apiSecured: false,
-      icdLinearization: 'mms',
-      language: 'en',
-      autoBind: false,
-    };
-
-    const callbacks = {
-      selectedEntityFunction: (selectedEntity) => {
-        setPendingEntity(selectedEntity);
-        getHandler()?.clear(ECT_INO);
-      },
-    };
-
-    getHandler().configure(settings, callbacks);
-    getHandler().bind(ECT_INO);
-
-    // Widget internal DOM-u fix et: WHO widget-inin öz daxili wrapper div-i
-    // overflow:auto + fixed px genişliklə sıxır — JS ilə override edirik
-    setTimeout(() => {
-      const ctwWindow = document.querySelector(`.ctw-window[data-ctw-ino="${ECT_INO}"]`);
-      if (!ctwWindow) return;
-      ctwWindow.style.overflowX = 'auto';
-      const inner = ctwWindow.parentElement;
-      if (inner) {
-        inner.style.width = '100%';
-        inner.style.maxWidth = '100%';
-        inner.style.overflowX = 'auto';
+    const initWidget = async () => {
+      // Fetch WHO API token from our backend (cached 55 min server-side)
+      let accessToken = null;
+      try {
+        const res = await api.get('/icd/token');
+        accessToken = res.data.access_token;
+      } catch {
+        // Fall back to developer test server if token fetch fails
+        console.warn('ICD-11 token fetch failed, falling back to test server');
       }
-    }, 500);
+
+      const settings = accessToken
+        ? {
+            apiServerUrl: 'https://id.who.int/icd',
+            apiSecured: true,
+            icdLinearization: 'mms',
+            language: 'en',
+            autoBind: false,
+            wordsAvailable: false,
+          }
+        : {
+            apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
+            apiSecured: false,
+            icdLinearization: 'mms',
+            language: 'en',
+            autoBind: false,
+          };
+
+      const callbacks = {
+        selectedEntityFunction: (selectedEntity) => {
+          setPendingEntity(selectedEntity);
+          getHandler()?.clear(ECT_INO);
+        },
+        getNewTokenFunction: async () => {
+          try {
+            const res = await api.get('/icd/token');
+            return res.data.access_token;
+          } catch {
+            return null;
+          }
+        },
+      };
+
+      getHandler().configure(settings, callbacks);
+
+      if (accessToken) {
+        getHandler().bind(ECT_INO, accessToken);
+      } else {
+        getHandler().bind(ECT_INO);
+      }
+
+      // Widget internal DOM fix
+      setTimeout(() => {
+        const ctwWindow = document.querySelector(`.ctw-window[data-ctw-ino="${ECT_INO}"]`);
+        if (!ctwWindow) return;
+        ctwWindow.style.overflowX = 'auto';
+        const inner = ctwWindow.parentElement;
+        if (inner) {
+          inner.style.width = '100%';
+          inner.style.maxWidth = '100%';
+          inner.style.overflowX = 'auto';
+        }
+      }, 500);
+    };
+
+    initWidget();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
   return (

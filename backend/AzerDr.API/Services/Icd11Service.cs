@@ -8,6 +8,7 @@ namespace AzerDr.API.Services;
 
 public interface IIcd11Service
 {
+    Task<string>             GetAccessTokenAsync();
     Task<List<Icd11SearchResult>> SearchAsync(string query);
     Task<Icd11EntityDetails?>     GetEntityDetailsAsync(string entityId);
 }
@@ -33,7 +34,7 @@ public class Icd11Service : IIcd11Service
         _logger = logger;
     }
 
-    private async Task<string> GetAccessTokenAsync()
+    public async Task<string> GetAccessTokenAsync()
     {
         if (_cache.TryGetValue(TokenCacheKey, out string? cachedToken) && cachedToken != null)
             return cachedToken;
