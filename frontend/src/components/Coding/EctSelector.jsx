@@ -31,6 +31,9 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   );
   // showEB: once true, EB div stays in DOM (CSS-toggled). Never goes false.
   const [showEB, setShowEB] = useState(false);
+  // ebGeneration: incremented to force EB div remount (fresh widget at ICD-11 root).
+  // React key change unmounts + remounts the EB div, then useEffect rebinds.
+  const [ebGeneration, setEbGeneration] = useState(0);
 
   const accessTokenRef = useRef(null); // reserved for future production WHO token
   const ebBoundRef = useRef(false);    // true after bind(EB_INO) called
@@ -38,7 +41,11 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   const handleModeChange = (mode) => {
     setCodingMode(mode);
     localStorage.setItem(LS_MODE_KEY, mode);
-    if (mode === 'browser') setShowEB(true); // mount EB div → triggers lazy init effect
+    if (mode === 'browser') {
+      setShowEB(true);
+      // If anomaly changed while in coding mode, ebBoundRef was cleared — remount now
+      if (!ebBoundRef.current) setEbGeneration(g => g + 1);
+    }
   };
 
   const handleConfirmSelect = () => {
@@ -68,8 +75,13 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   useEffect(() => {
     clearSelection();
     getHandler()?.clear(ECT_INO);
-    if (ebBoundRef.current) getHandler()?.clear(EB_INO);
-  }, [anomalyId]);
+    if (ebBoundRef.current) {
+      ebBoundRef.current = false;
+      // If EB is visible, remount immediately so it resets to ICD-11 tree root
+      if (codingMode === 'browser') setEbGeneration(g => g + 1);
+      // If EB is hidden (coding mode), rebind is deferred to next browser switch
+    }
+  }, [anomalyId]); // eslint-disable-line react-hooks/exhaustive-deps -- codingMode read at call time
 
   useEffect(() => {
     return () => {
@@ -123,12 +135,13 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     initEct();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
-  // Lazy-init EB: fires after showEB=true causes ctw-eb-window to appear in DOM
+  // Lazy-init EB: fires after showEB=true or ebGeneration changes (remount for reset).
+  // No ebBoundRef guard — key change already ensures fresh DOM node.
   useEffect(() => {
-    if (!showEB || ebBoundRef.current) return;
+    if (!showEB) return;
     getHandler()?.bind(EB_INO);
     ebBoundRef.current = true;
-  }, [showEB]);
+  }, [showEB, ebGeneration]);
 
   return (
     <div className="space-y-2 w-full min-w-0">
@@ -187,9 +200,10 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
         <div className="ctw-window" data-ctw-ino={ECT_INO} />
       </div>
 
-      {/* EB (Detaylı Tarayıcı) — only rendered after first browser switch, then CSS-toggled */}
+      {/* EB (Detaylı Tarayıcı) — only rendered after first browser switch, then CSS-toggled.
+          key={ebGeneration} forces remount when anomaly changes, resetting to ICD-11 root. */}
       {showEB && (
-        <div style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
+        <div key={ebGeneration} style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
           <div className="ctw-eb-window" data-ctw-ino={EB_INO} />
         </div>
       )}
