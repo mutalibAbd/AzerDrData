@@ -195,7 +195,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
           }`}
         >
           <Search size={13} />
-          Hızlı Arama
+          Sürətli Axtarış
         </button>
         <button
           onClick={() => handleModeChange('browser')}
@@ -206,7 +206,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
           }`}
         >
           <BookOpen size={13} />
-          Detaylı Tarayıcı
+          Detallı Axtarış
         </button>
       </div>
 
