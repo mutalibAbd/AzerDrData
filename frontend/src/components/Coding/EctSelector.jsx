@@ -1,6 +1,6 @@
-import { useEffect, useRef, useState } from 'react';
+import { useEffect, useState } from 'react';
 import toast from 'react-hot-toast';
-import { CheckCircle, X } from 'lucide-react';
+import { CheckCircle, X, Search, BookOpen } from 'lucide-react';
 import ConfirmDialog from './ConfirmDialog';
 import api from '../../services/api';
 
@@ -8,10 +8,12 @@ import api from '../../services/api';
 // window.ECT = { Settings, Handler } — static methods are on Handler
 const getHandler = () => window.ECT?.Handler;
 
-const ECT_INO = '1'; // Single ECT instance
+const ECT_INO = '1'; // Shared INO for both ECT and EB (library binds both from same INO)
+const LS_MODE_KEY = 'icd11_coding_mode';
 
 /**
- * WHO ECT (Embedded Classification Tool) wrapper.
+ * WHO ECT (Embedded Classification Tool) + Embedded Browser (EB) wrapper.
+ * Toggle between "Hızlı Arama" (ECT) and "Detaylı Tarayıcı" (EB) modes.
  * Selection is LOCAL ONLY — no DB save here.
  * Parent (CodingWorkspace) saves to DB when doctor clicks "Növbəti".
  */
@@ -19,6 +21,14 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   const [selectedCode, setSelectedCode] = useState(null); // { code, title }
   const [pendingEntity, setPendingEntity] = useState(null); // waiting for confirm
   const [showDeleteConfirm, setShowDeleteConfirm] = useState(false);
+  const [codingMode, setCodingMode] = useState(
+    () => localStorage.getItem(LS_MODE_KEY) || 'coding'
+  );
+
+  const handleModeChange = (mode) => {
+    setCodingMode(mode);
+    localStorage.setItem(LS_MODE_KEY, mode);
+  };
 
   const handleConfirmSelect = () => {
     const entity = pendingEntity;
@@ -126,6 +136,32 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
 
   return (
     <div className="space-y-2 w-full min-w-0">
+      {/* Mode toggle */}
+      <div className="flex rounded-lg border border-gray-200 overflow-hidden text-sm font-medium">
+        <button
+          onClick={() => handleModeChange('coding')}
+          className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 transition-colors ${
+            codingMode === 'coding'
+              ? 'bg-teal-600 text-white'
+              : 'bg-white text-gray-500 hover:bg-gray-50'
+          }`}
+        >
+          <Search size={13} />
+          Hızlı Arama
+        </button>
+        <button
+          onClick={() => handleModeChange('browser')}
+          className={`flex-1 flex items-center justify-center gap-1.5 px-3 py-2 transition-colors ${
+            codingMode === 'browser'
+              ? 'bg-teal-600 text-white'
+              : 'bg-white text-gray-500 hover:bg-gray-50'
+          }`}
+        >
+          <BookOpen size={13} />
+          Detaylı Tarayıcı
+        </button>
+      </div>
+
       {/* Locally selected code banner (not yet saved to DB) */}
       {selectedCode && (
         <div className="flex items-center gap-2 px-3 py-2 bg-amber-50 border border-amber-300 rounded-lg text-sm">
@@ -143,8 +179,8 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
         </div>
       )}
 
-      {/* WHO ECT widget — overflow-x-auto enables scroll on narrow screens */}
-      <div style={{ overflowX: 'auto', width: '100%' }}>
+      {/* ECT (Hızlı Arama) — shown when codingMode === 'coding' */}
+      <div style={{ display: codingMode === 'coding' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
         <input
           type="text"
           className="ctw-input w-full border border-gray-300 rounded-lg px-4 py-2.5 text-sm focus:ring-2 focus:ring-teal-400 focus:outline-none"
@@ -153,6 +189,11 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
           placeholder="ICD-11 diaqnoz axtar..."
         />
         <div className="ctw-window" data-ctw-ino={ECT_INO} />
+      </div>
+
+      {/* EB (Detaylı Tarayıcı) — shown when codingMode === 'browser' */}
+      <div style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
+        <div className="ctw-eb-window" data-ctw-ino={ECT_INO} />
       </div>
 
       {/* Confirm: select code */}
