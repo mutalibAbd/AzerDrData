@@ -2,8 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { CheckCircle, X, Search, BookOpen } from 'lucide-react';
 import ConfirmDialog from './ConfirmDialog';
-// api import kept for future production WHO token re-activation
-// import api from '../../services/api';
+// api import kept for production WHO token fetching
+import api from '../../services/api';
 
 // ECT loaded via <script src="/icd11ect.js"> in index.html
 // window.ECT = { Settings, Handler } — static methods are on Handler
@@ -105,15 +105,41 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
 
   useEffect(() => {
     const initEct = async () => {
-      // Force Azure developer test server — no OAuth token required.
-      // Switch to production WHO API once ECT/EB widgets are confirmed working.
-      const settings = {
-        apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
-        apiSecured: false,
-        icdLinearization: 'mms',
-        language: 'en',
-        autoBind: false,
-      };
+      // Fetch initial WHO token from backend (cached 55 min server-side)
+      let initialToken = null;
+      try {
+        const res = await api.get('/api/icd/token');
+        initialToken = res.data.access_token;
+        accessTokenRef.current = initialToken;
+      } catch (err) {
+        console.error('ICD-11 token fetch failed, falling back to test server', err);
+      }
+
+      const useProduction = !!initialToken;
+
+      const settings = useProduction
+        ? {
+            apiServerUrl: 'https://id.who.int/icd',
+            apiSecured: true,
+            icdLinearization: 'mms',
+            language: 'en',
+            autoBind: false,
+            wordsAvailable: false,
+            sourceApp: 'RadVision',
+            getNewTokenFunction: (_oldToken, callback) => {
+              api.get('/api/icd/token')
+                .then(r => callback(r.data.access_token))
+                .catch(() => callback(accessTokenRef.current ?? ''));
+            },
+          }
+        : {
+            // Fallback: Azure developer test server (no auth required)
+            apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
+            apiSecured: false,
+            icdLinearization: 'mms',
+            language: 'en',
+            autoBind: false,
+          };
 
       const callbacks = {
         selectedEntityFunction: (selectedEntity) => {
