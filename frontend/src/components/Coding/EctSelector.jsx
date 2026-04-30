@@ -2,7 +2,8 @@ import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { CheckCircle, X, Search, BookOpen } from 'lucide-react';
 import ConfirmDialog from './ConfirmDialog';
-import api from '../../services/api';
+// api import kept for future production WHO token re-activation
+// import api from '../../services/api';
 
 // ECT loaded via <script src="/icd11ect.js"> in index.html
 // window.ECT = { Settings, Handler } — static methods are on Handler
@@ -31,7 +32,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   // showEB: once true, EB div stays in DOM (CSS-toggled). Never goes false.
   const [showEB, setShowEB] = useState(false);
 
-  const accessTokenRef = useRef(null); // token stored for lazy EB init
+  const accessTokenRef = useRef(null); // reserved for future production WHO token
   const ebBoundRef = useRef(false);    // true after bind(EB_INO) called
 
   const handleModeChange = (mode) => {
@@ -79,33 +80,15 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
 
   useEffect(() => {
     const initEct = async () => {
-      // Fetch WHO API token from our backend (cached 55 min server-side)
-      let accessToken = null;
-      try {
-        const res = await api.get('/icd/token');
-        accessToken = res.data.access_token;
-        accessTokenRef.current = accessToken;
-      } catch {
-        // Fall back to developer test server if token fetch fails
-        console.warn('ICD-11 token fetch failed, falling back to test server');
-      }
-
-      const settings = accessToken
-        ? {
-            apiServerUrl: 'https://id.who.int/icd',
-            apiSecured: true,
-            icdLinearization: 'mms',
-            language: 'en',
-            autoBind: false,
-            wordsAvailable: false,
-          }
-        : {
-            apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
-            apiSecured: false,
-            icdLinearization: 'mms',
-            language: 'en',
-            autoBind: false,
-          };
+      // Force Azure developer test server — no OAuth token required.
+      // Switch to production WHO API once ECT/EB widgets are confirmed working.
+      const settings = {
+        apiServerUrl: 'https://icd11restapi-developer-test.azurewebsites.net',
+        apiSecured: false,
+        icdLinearization: 'mms',
+        language: 'en',
+        autoBind: false,
+      };
 
       const callbacks = {
         selectedEntityFunction: (selectedEntity) => {
@@ -113,23 +96,10 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
           getHandler()?.clear(ECT_INO);
           if (ebBoundRef.current) getHandler()?.clear(EB_INO);
         },
-        getNewTokenFunction: async () => {
-          try {
-            const res = await api.get('/icd/token');
-            return res.data.access_token;
-          } catch {
-            return null;
-          }
-        },
       };
 
       getHandler().configure(settings, callbacks);
-
-      if (accessToken) {
-        getHandler().bind(ECT_INO, accessToken);
-      } else {
-        getHandler().bind(ECT_INO);
-      }
+      getHandler().bind(ECT_INO);
 
       // Widget internal DOM fix
       setTimeout(() => {
@@ -156,12 +126,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   // Lazy-init EB: fires after showEB=true causes ctw-eb-window to appear in DOM
   useEffect(() => {
     if (!showEB || ebBoundRef.current) return;
-    const accessToken = accessTokenRef.current;
-    if (accessToken) {
-      getHandler()?.bind(EB_INO, accessToken);
-    } else {
-      getHandler()?.bind(EB_INO);
-    }
+    getHandler()?.bind(EB_INO);
     ebBoundRef.current = true;
   }, [showEB]);
 
