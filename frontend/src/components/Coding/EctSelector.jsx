@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import toast from 'react-hot-toast';
 import { CheckCircle, X, Search, BookOpen } from 'lucide-react';
 import ConfirmDialog from './ConfirmDialog';
@@ -8,7 +8,11 @@ import api from '../../services/api';
 // window.ECT = { Settings, Handler } — static methods are on Handler
 const getHandler = () => window.ECT?.Handler;
 
-const ECT_INO = '1'; // Shared INO for both ECT and EB (library binds both from same INO)
+// ECT and EB use separate INOs to avoid cross-binding interference.
+// bind("1") → only initializes ctw-input + ctw-window elements (ECT)
+// bind("2") → only initializes ctw-eb-window element (EB), called lazily on first browser switch
+const ECT_INO = '1';
+const EB_INO = '2';
 const LS_MODE_KEY = 'icd11_coding_mode';
 
 /**
@@ -24,10 +28,16 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   const [codingMode, setCodingMode] = useState(
     () => localStorage.getItem(LS_MODE_KEY) || 'coding'
   );
+  // showEB: once true, EB div stays in DOM (CSS-toggled). Never goes false.
+  const [showEB, setShowEB] = useState(false);
+
+  const accessTokenRef = useRef(null); // token stored for lazy EB init
+  const ebBoundRef = useRef(false);    // true after bind(EB_INO) called
 
   const handleModeChange = (mode) => {
     setCodingMode(mode);
     localStorage.setItem(LS_MODE_KEY, mode);
+    if (mode === 'browser') setShowEB(true); // mount EB div → triggers lazy init effect
   };
 
   const handleConfirmSelect = () => {
@@ -37,6 +47,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     onSelected?.(entity);
     toast('Kod seçildi. Saxlamaq üçün "Növbəti"yə basın', { icon: '💾' });
     getHandler()?.clear(ECT_INO);
+    if (ebBoundRef.current) getHandler()?.clear(EB_INO);
   };
 
   const handleDelete = () => {
@@ -56,6 +67,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   useEffect(() => {
     clearSelection();
     getHandler()?.clear(ECT_INO);
+    if (ebBoundRef.current) getHandler()?.clear(EB_INO);
   }, [anomalyId]);
 
   useEffect(() => {
@@ -66,12 +78,13 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   }, []);
 
   useEffect(() => {
-    const initWidget = async () => {
+    const initEct = async () => {
       // Fetch WHO API token from our backend (cached 55 min server-side)
       let accessToken = null;
       try {
         const res = await api.get('/icd/token');
         accessToken = res.data.access_token;
+        accessTokenRef.current = accessToken;
       } catch {
         // Fall back to developer test server if token fetch fails
         console.warn('ICD-11 token fetch failed, falling back to test server');
@@ -98,6 +111,7 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
         selectedEntityFunction: (selectedEntity) => {
           setPendingEntity(selectedEntity);
           getHandler()?.clear(ECT_INO);
+          if (ebBoundRef.current) getHandler()?.clear(EB_INO);
         },
         getNewTokenFunction: async () => {
           try {
@@ -129,10 +143,27 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
           inner.style.overflowX = 'auto';
         }
       }, 500);
+
+      // If saved mode is 'browser', mount EB div now (token is ready in ref)
+      if (localStorage.getItem(LS_MODE_KEY) === 'browser') {
+        setShowEB(true);
+      }
     };
 
-    initWidget();
+    initEct();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
+
+  // Lazy-init EB: fires after showEB=true causes ctw-eb-window to appear in DOM
+  useEffect(() => {
+    if (!showEB || ebBoundRef.current) return;
+    const accessToken = accessTokenRef.current;
+    if (accessToken) {
+      getHandler()?.bind(EB_INO, accessToken);
+    } else {
+      getHandler()?.bind(EB_INO);
+    }
+    ebBoundRef.current = true;
+  }, [showEB]);
 
   return (
     <div className="space-y-2 w-full min-w-0">
@@ -191,10 +222,12 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
         <div className="ctw-window" data-ctw-ino={ECT_INO} />
       </div>
 
-      {/* EB (Detaylı Tarayıcı) — shown when codingMode === 'browser' */}
-      <div style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
-        <div className="ctw-eb-window" data-ctw-ino={ECT_INO} />
-      </div>
+      {/* EB (Detaylı Tarayıcı) — only rendered after first browser switch, then CSS-toggled */}
+      {showEB && (
+        <div style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
+          <div className="ctw-eb-window" data-ctw-ino={EB_INO} />
+        </div>
+      )}
 
       {/* Confirm: select code */}
       {pendingEntity && (
