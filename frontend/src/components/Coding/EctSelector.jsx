@@ -11,9 +11,11 @@ const getHandler = () => window.ECT?.Handler;
 
 // ECT and EB use separate INOs to avoid cross-binding interference.
 // bind("1") → only initializes ctw-input + ctw-window elements (ECT)
-// bind("2") → only initializes ctw-eb-window element (EB), called lazily on first browser switch
+// bind(currentEbIno) → only initializes ctw-eb-window element (EB), called lazily.
+// currentEbIno changes with each ebGeneration so each bind() call uses a fresh INO,
+// avoiding the issue where bind() silently skips already-registered INOs.
 const ECT_INO = '1';
-const EB_INO = '2';
+const EB_INO_BASE = 2; // generation 0 → "2", 1 → "3", ...
 const LS_MODE_KEY = 'icd11_coding_mode';
 
 /**
@@ -31,20 +33,28 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
   );
   // showEB: once true, EB div stays in DOM (CSS-toggled). Never goes false.
   const [showEB, setShowEB] = useState(false);
-  // ebGeneration: incremented to force EB div remount (fresh widget at ICD-11 root).
-  // React key change unmounts + remounts the EB div, then useEffect rebinds.
+  // ebGeneration: incremented on anomaly change to force EB div remount at ICD-11 root.
+  // Each generation uses a unique INO so bind() always sees a fresh, unregistered INO.
   const [ebGeneration, setEbGeneration] = useState(0);
 
-  const accessTokenRef = useRef(null); // reserved for future production WHO token
-  const ebBoundRef = useRef(false);    // true after bind(EB_INO) called
+  const accessTokenRef = useRef(null);   // reserved for future production WHO token
+  const ebBoundRef = useRef(false);      // true after bind(currentEbIno) called
+  const ebNeedsResetRef = useRef(false); // true when anomaly changed while EB was hidden
+
+  // Derived from ebGeneration — used in both JSX (data-ctw-ino) and effects (bind call)
+  const currentEbIno = String(EB_INO_BASE + ebGeneration);
 
   const handleModeChange = (mode) => {
     setCodingMode(mode);
     localStorage.setItem(LS_MODE_KEY, mode);
     if (mode === 'browser') {
       setShowEB(true);
-      // If anomaly changed while in coding mode, ebBoundRef was cleared — remount now
-      if (!ebBoundRef.current) setEbGeneration(g => g + 1);
+      // Deferred reset: anomaly changed while EB was hidden in coding mode
+      if (ebNeedsResetRef.current) {
+        ebNeedsResetRef.current = false;
+        ebBoundRef.current = false;
+        setEbGeneration(g => g + 1); // new INO → remount → fresh widget
+      }
     }
   };
 
@@ -55,7 +65,6 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     onSelected?.(entity);
     toast('Kod seçildi. Saxlamaq üçün "Növbəti"yə basın', { icon: '💾' });
     getHandler()?.clear(ECT_INO);
-    if (ebBoundRef.current) getHandler()?.clear(EB_INO);
   };
 
   const handleDelete = () => {
@@ -77,11 +86,15 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     getHandler()?.clear(ECT_INO);
     if (ebBoundRef.current) {
       ebBoundRef.current = false;
-      // If EB is visible, remount immediately so it resets to ICD-11 tree root
-      if (codingMode === 'browser') setEbGeneration(g => g + 1);
-      // If EB is hidden (coding mode), rebind is deferred to next browser switch
+      if (codingMode === 'browser') {
+        // EB is visible: remount immediately with new INO → widget resets to ICD-11 root
+        setEbGeneration(g => g + 1);
+      } else {
+        // EB is hidden: defer remount until user switches to browser mode
+        ebNeedsResetRef.current = true;
+      }
     }
-  }, [anomalyId]); // eslint-disable-line react-hooks/exhaustive-deps -- codingMode read at call time
+  }, [anomalyId]); // eslint-disable-line react-hooks/exhaustive-deps -- codingMode intentionally read at call time
 
   useEffect(() => {
     return () => {
@@ -106,7 +119,6 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
         selectedEntityFunction: (selectedEntity) => {
           setPendingEntity(selectedEntity);
           getHandler()?.clear(ECT_INO);
-          if (ebBoundRef.current) getHandler()?.clear(EB_INO);
         },
       };
 
@@ -135,13 +147,14 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
     initEct();
   }, []); // eslint-disable-line react-hooks/exhaustive-deps -- configure once
 
-  // Lazy-init EB: fires after showEB=true or ebGeneration changes (remount for reset).
-  // No ebBoundRef guard — key change already ensures fresh DOM node.
+  // Lazy-init EB: bind after showEB=true (first browser switch) or ebGeneration changes
+  // (remount after anomaly reset). Guard with ebBoundRef so bind is called exactly once
+  // per generation. currentEbIno changes each generation → always a fresh, unregistered INO.
   useEffect(() => {
-    if (!showEB) return;
-    getHandler()?.bind(EB_INO);
+    if (!showEB || ebBoundRef.current) return;
+    getHandler()?.bind(currentEbIno);
     ebBoundRef.current = true;
-  }, [showEB, ebGeneration]);
+  }, [showEB, ebGeneration]); // eslint-disable-line react-hooks/exhaustive-deps -- currentEbIno derived from ebGeneration
 
   return (
     <div className="space-y-2 w-full min-w-0">
@@ -201,10 +214,11 @@ export default function EctSelector({ anomalyId, onSelected, onCleared }) {
       </div>
 
       {/* EB (Detaylı Tarayıcı) — only rendered after first browser switch, then CSS-toggled.
-          key={ebGeneration} forces remount when anomaly changes, resetting to ICD-11 root. */}
+          key={ebGeneration} forces DOM remount on reset; currentEbIno gives each generation
+          a fresh INO so bind() always initializes from the ICD-11 tree root. */}
       {showEB && (
         <div key={ebGeneration} style={{ display: codingMode === 'browser' ? 'block' : 'none', overflowX: 'auto', width: '100%' }}>
-          <div className="ctw-eb-window" data-ctw-ino={EB_INO} />
+          <div className="ctw-eb-window" data-ctw-ino={currentEbIno} />
         </div>
       )}
 
